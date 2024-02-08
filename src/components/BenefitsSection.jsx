@@ -12,7 +12,7 @@ const BenefitsSection = () => {
             Our Benefits
           </h1>
         </div>
-        <div className="w-full h-[800px] lgss:h-[520px] bg-[#EFD9D8]">
+        <div className="w-full h-[550px] lgss:h-[520px] bg-[#EFD9D8]">
           <div className="flex flex-row px-8 gap-14 xs:text-[16px] text-[22px] h-[100px] justify-center items-center text-black font-medium">
             <button
               onClick={() => setActiveScreen(1)}
