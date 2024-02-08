@@ -37,9 +37,9 @@ const BenefitsSection = () => {
           </div>
           {activeScreen === 1 ? (
             <div className="">
-              <div className="flex bg-rd mds:flex-row flex-col mds:gap-0 gap-[200px] justify-center">
-                <div className="flex mds:flex-row flex-col  items-center">
-                  <div className="flex mds:flex-col">
+              <div className="flex justify-center">
+                <div className="flex items-center ">
+                  <div className="flex flex-col">
                     <Benefits
                       title="Convenience & empowerment"
                       description="Schedule appointment seamlessly, track all your blood donations, gain health insights all in one place."
@@ -47,18 +47,18 @@ const BenefitsSection = () => {
                     />
 
                     <Benefits
-                      title="Streamlined donation management"
+                      title="Recognition & rewards"
                       description="Find nearby blood donation centers, flexible appointment booking, track the status of each blood donation"
                       icon={<PiMedalFill />}
                     />
                   </div>
-                  <div className="h-[270px] xs:hidden md:block border-gold border-l-[2px]"></div>
+                  <div className="h-[270px] xs:hidden md:block bg-gold w-[2px]"></div>
                 </div>
-                <div className="flex items-center gap-[80px] ml-[40px]">
-                  <div className="flex mds:flex-col">
+                <div className="lgss:flex lgss:items-center hidden ">
+                  <div className="flex flex-col">
                     <Benefits
                       title="Transparency & impact"
-                      description="Your blood donations directly help patients in critical need of blood."
+                      description="Schedule appointment seamlessly, track all your blood donations, gain health insights all in one place."
                       icon={<PiLifebuoyFill />}
                     />
 
@@ -70,8 +70,8 @@ const BenefitsSection = () => {
                   </div>
                   <div className="h-[270px] xs:hidden md:block bg-gold w-[2px]"></div>
                 </div>
-                <div className="lgss:flex lgss:items-center hidden">
-                  <div className="flex mds:flex-col">
+                <div className="lgss:flex lgss:items-center hidden  gap-[80px] ml-[40px]">
+                  <div className="flex flex-col">
                     <Benefits
                       title="Engage with other donors"
                       description="Participate in challenges, earn badges, and climb leader boards, fostering friendly competition."
