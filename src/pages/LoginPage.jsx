@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from '../components/NavBar'
 import SideBar from '../components/SideBar';
 
-const SignUpPage = () => {
+const LoginPage = () => {
   return (
     <div className="">
       <NavBar />
@@ -14,4 +14,4 @@ const SignUpPage = () => {
   );
 }
 
-export default SignUpPage
+export default LoginPage
