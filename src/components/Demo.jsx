@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { signImg } from "../assets";
 
 const Demo = () => {
   return (
-    <div className='bg-gold'>Demo</div>
-  )
-}
+    <div className=" mds:w-2/5 mds:h-screen">
+      <img className="h-[100%] w-full mds:h-screen mds:w-full" src={signImg} alt="" />
+    </div>
+  );
+};
 
-export default Demo
+export default Demo;

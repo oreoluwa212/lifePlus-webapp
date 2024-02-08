@@ -1,17 +1,17 @@
-import React from 'react'
-import NavBar from '../components/NavBar'
-import SideBar from '../components/SideBar';
+import React from "react";
+import NavBar from "../components/NavBar";
+import Demo from "../components/Demo";
 
 const LoginPage = () => {
   return (
     <div className="">
       <NavBar />
-      <div className="flex flex-row bg-red h-screen">
-        <SideBar />
-        <div className=" w-4/5 h-full overflow-auto"></div>
+      <div className="mds:flex mds:flex-row h-screen border-t-2 border-red w-full">
+        <Demo />
+        <div className=" mds:w-3/5 hidden mds:h-full overflow-auto"></div>
       </div>
     </div>
   );
-}
+};
 
-export default LoginPage
+export default LoginPage;

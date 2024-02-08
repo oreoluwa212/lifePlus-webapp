@@ -19,7 +19,7 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="mds:w-[15%] w-[65%] justify-between flex">
-          <Link to={"/log-in"}>
+          <Link to={"/login"}>
             <button
               onClick={() => handleButtonClick("login")}
               className={`h-[48px] w-[130px] flex justify-center items-center ${
