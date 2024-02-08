@@ -12,8 +12,8 @@ const BenefitsSection = () => {
             Our Benefits
           </h1>
         </div>
-        <div className="w-full h-[1300px] lgss:h-[520px] bg-[#EFD9D8]">
-          <div className="flex flex-row px-8 gap-16 xs:text-[16px] text-[22px] h-[100px] justify-center items-center text-black font-medium">
+        <div className="w-full h-[800px] lgss:h-[520px] bg-[#EFD9D8]">
+          <div className="flex flex-row px-8 gap-14 xs:text-[16px] text-[22px] h-[100px] justify-center items-center text-black font-medium">
             <button
               onClick={() => setActiveScreen(1)}
               className={
@@ -70,7 +70,7 @@ const BenefitsSection = () => {
                   </div>
                   <div className="h-[270px] xs:hidden md:block bg-gold w-[2px]"></div>
                 </div>
-                <div className="flex items-center">
+                <div className="lgss:flex lgss:items-center hidden">
                   <div className="flex mds:flex-col">
                     <Benefits
                       title="Engage with other donors"
@@ -90,7 +90,7 @@ const BenefitsSection = () => {
           ) : activeScreen === 2 ? (
             <div className="">
               <div className="flex justify-center">
-                <div className="flex items-center">
+                <div className="flex items-center ">
                   <div className="flex flex-col">
                     <Benefits
                       title="Convenience & empowerment"
@@ -106,7 +106,7 @@ const BenefitsSection = () => {
                   </div>
                   <div className="h-[270px] xs:hidden md:block bg-gold w-[2px]"></div>
                 </div>
-                <div className="flex items-center">
+                <div className="lgss:flex lgss:items-center hidden ">
                   <div className="flex flex-col">
                     <Benefits
                       title="Transparency & impact"
@@ -122,7 +122,7 @@ const BenefitsSection = () => {
                   </div>
                   <div className="h-[270px] xs:hidden md:block bg-gold w-[2px]"></div>
                 </div>
-                <div className="flex items-center gap-[80px] ml-[40px]">
+                <div className="lgss:flex lgss:items-center hidden  gap-[80px] ml-[40px]">
                   <div className="flex flex-col">
                     <Benefits
                       title="Engage with other donors"
