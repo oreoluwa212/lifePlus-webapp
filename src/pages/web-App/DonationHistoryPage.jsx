@@ -1,6 +1,7 @@
 import React from 'react'
 import SideBar from '../../components/web-App/SideBar'
 import Header from '../../components/web-App/Header';
+import DetailsCard from '../../components/web-App/DetailsCard';
 
 const DonationHistoryPage = () => {
   return (
@@ -11,6 +12,7 @@ const DonationHistoryPage = () => {
         <div className="mt-[50px] text-[34px] text-gold font-semibold">
           Donations
         </div>
+        <DetailsCard/>
       </div>
     </div>
   );
