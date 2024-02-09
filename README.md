@@ -14,10 +14,7 @@ Pushing:
 CODE.
 + Study the way the folders are arranged before starting work.
 + Ensure to make use of *React icons*, not Font Awesome
-+ Export all images as SVG.
-+ Study how I imported and used the image, so we won’t have much conflict when merging.
 + All reusable components like the header, sidebar, and navbar should be in the component folder.
-+ All pages like the Dashboard and Settings pages should be in the Pages folder.
-+ Name your pages, variables, etc. very well and distinctively to avoid mix-up.
-+ I’ll send all the other things to the WhatsApp group.
++ All Dashboard and Settings pages should be in the Pages folder.
++ Name your pages, variables, etc. very well and distinctively to avoid mix-ups.
 # HAPPY CODING!!!
