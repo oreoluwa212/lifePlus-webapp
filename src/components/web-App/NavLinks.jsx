@@ -39,7 +39,7 @@ const Navlinks = () => {
                 pathname === link.route ? "rounded-lg bg-red bg-opacity-65 text-white py-[.4rem] w-[300px] pl-4" : ""
               }`}
             >
-              <span className="font-source text-[1.1rem] font-normal leading-7 whitespace-nowrap">
+              <span className="text-[1.1rem] font-semibold leading-7 whitespace-nowrap">
                 {link.name}
               </span>
             </NavLink>
