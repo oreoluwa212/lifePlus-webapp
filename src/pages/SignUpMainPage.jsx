@@ -25,9 +25,11 @@ const SignUpMainPage = () => {
                     <input type="checkbox" name="" id="" />
                     <p className='text-white mds:text-black'>I agree to LifePlus Terms and conditions and the privacy policy</p>
                 </div>
+                <Link to={'/dashboard'}>
                 <button type="text" placeholder='password' className='bg-red text-white text-[18px] border-none rounded-[32px] lgss:px-8 lgss:h-[48px] w-[100%]'>
                     Sign Up
                 </button>
+                </Link>
             </div>
           </div>
         </div>
