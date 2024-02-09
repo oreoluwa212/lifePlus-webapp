@@ -6,6 +6,10 @@ import SignUpPage from './pages/SignUpPage';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/web-App/DashboardPage';
 import SignUpMainPage from './pages/SignUpMainPage';
+import AppointmentsPage from './pages/web-App/AppointmentsPage';
+import DonationHistoryPage from './pages/web-App/DonationHistoryPage';
+import LearningCenterPage from './pages/web-App/LearningCenterPage';
+import CommunityForumPage from './pages/web-App/CommunityForumPage';
 
 function App() {
   return (
@@ -16,6 +20,10 @@ function App() {
         <Route path="/signup-donor" element={<SignUpMainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/appointments" element={<AppointmentsPage />} />
+        <Route path="/donations" element={<DonationHistoryPage />} />
+        <Route path="/community" element={<CommunityForumPage />} />
+        <Route path="/learning" element={<LearningCenterPage />} />
       </Routes>
     </>
   )

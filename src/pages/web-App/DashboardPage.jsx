@@ -3,9 +3,9 @@ import SideBar from "../../components/web-App/SideBar";
 
 const DashboardPage = () => {
   return (
-    <div className="flex flex-row bg-red h-screen">
+    <div className="flex flex-row ">
       <SideBar />
-      <div className=" w-4/5 h-full overflow-auto"></div>
+      <div className="lgss:w-4/5 overflow-auto"></div>
     </div>
   );
 };
