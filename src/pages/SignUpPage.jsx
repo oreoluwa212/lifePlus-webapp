@@ -16,12 +16,12 @@ const SignUpPage = () => {
             <h3 className="lgss:text-[18px] mds:text-black text-gold font-semibold">Sign up as a donor or an healthcare provider here</h3>
             </div>
             <div className="mds:w-[90%] lgss:w-[80%] w-[100%] justify-between mds:flex mds:flex-col mds:gap-6">
-              <Link to={"/signup-donor"}>
+              <Link to={"/signup-as"}>
                 <button className="h-[48px] mt-5 mds:w-[100%] w-[100%] justify-center items-center bg-red text-white rounded-[32px] text-[1.2rem]">
                   Sign Up as a Donor
                 </button>
               </Link>
-              <Link to={"/signup-donor"}>
+              <Link to={"/signup-as"}>
                 <button className="h-[48px] mt-6 mds:mt-0 w-[100%] mds:w-[100%] flex justify-center items-center bg-gold text-white rounded-[32px] text-[1.2rem]">
                   Sign Up as an Healthcare Provider
                 </button>

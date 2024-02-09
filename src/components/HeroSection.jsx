@@ -1,5 +1,6 @@
 import React from 'react';
 import { homepage, overlap } from '../assets';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
@@ -28,9 +29,11 @@ const HeroSection = () => {
           Blood donation is not just an act of altruism, but a journey of
           personal growth and community impact.
         </h4>
+        <Link to={'/sign-up'}>
         <button className="h-[55px] w-[250px] mt-[40px] border-[2px] border-white flex justify-center items-center bg-red text-white mds:text-[18px] rounded-[32px] py-2">
           Get Started
         </button>
+        </Link>
       </div>
     </div>
   );
