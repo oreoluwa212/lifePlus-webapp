@@ -2,6 +2,7 @@ import React from "react";
 import SideBar from "../../components/web-App/SideBar";
 import Header from "../../components/web-App/Header";
 import DetailsCard from "../../components/web-App/DetailsCard";
+import DashboardCard from "../../components/web-App/DashboardCard";
 
 const DashboardPage = () => {
   return (
@@ -13,6 +14,7 @@ const DashboardPage = () => {
           Dashboard
         </div>
         <DetailsCard/>
+        <DashboardCard/>
       </div>
     </div>
   );
