@@ -19,7 +19,6 @@ const Header = () => {
             </div>
          </button>
       </div>
-      
     </div>
   );
 }

@@ -1,11 +1,13 @@
 import React from 'react'
 
-const DashboardCard = () => {
+const DashboardCard = ({ title, description, icon }) => {
   return (
-    <div className="bg-[#F3E4E4] lgss:h-[300px] lgss:mt-9 rounded-[32px] lgss:flex justify-center items-center hidden lgss:w-[300px]">
-      DashboardCard
+    <div className="max-w-md mx-auto bg-[#F3E4E4] border-none border-[1px] h-[260px] mds:w-[350px] w-[250px] rounded-md overflow-hidden shadow-md flex justify-center items-center text-center">
+      <div className="p-4">
+        {icon && <div className="mb-4 text-4xl text-red flex justify-center">{icon}</div>}
+        <h2 className="text-xl text-black font-bold mb-2">{title}</h2>
+      </div>
     </div>
   );
-}
-
+};
 export default DashboardCard

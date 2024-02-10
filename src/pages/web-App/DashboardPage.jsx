@@ -3,6 +3,7 @@ import SideBar from "../../components/web-App/SideBar";
 import Header from "../../components/web-App/Header";
 import DetailsCard from "../../components/web-App/DetailsCard";
 import DashboardCard from "../../components/web-App/DashboardCard";
+import { PiBinocularsBold, PiGaugeFill, PiListBold, PiUserCircleFill } from "react-icons/pi";
 
 const DashboardPage = () => {
   return (
@@ -14,7 +15,29 @@ const DashboardPage = () => {
           Dashboard
         </div>
         <DetailsCard/>
-        <DashboardCard/>
+        <>
+            <div className=' h-[900px] lgss:h-[350px] mt-[6rem]'>
+                <div className=" lgss:grid lgss:grid-cols-3 gap-8">
+                <DashboardCard
+                    title="Manage Profile"
+                    icon={<PiUserCircleFill/>}
+                />
+
+                <DashboardCard
+                    title="Leadership board & Challenges"
+                    icon={<PiListBold/>}
+                />
+                <DashboardCard
+                    title="News & Updates"
+                    icon={<PiBinocularsBold />}
+                />
+                <DashboardCard
+                    title="Points & Badges"
+                    icon={<PiBinocularsBold />}
+                />
+                </div>
+            </div>
+        </>
       </div>
     </div>
   );
