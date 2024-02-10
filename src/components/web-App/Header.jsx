@@ -4,8 +4,8 @@ import { PiMagnifyingGlassBold, PiMagnifyingGlassFill, PiMedalBold } from 'react
 
 const Header = () => {
   return (
-    <div className=" lgss:w-full lgss:h-[18%] lgss:flex lgss:justify-between lgss:items-center">
-      <div className="bg-[#F3E4E4] lgss:w-[70%] lgss:h-[45%] lgss:flex lgss:justify-between lgss:items-center lgss:px-4 rounded-[32px]">
+    <div className=" lgss:w-full lgss:h-[100px] lgss:flex lgss:justify-between lgss:items-center lgss:pt-8">
+      <div className="bg-[#F3E4E4] lgss:w-[70%] lgss:h-[80%] lgss:flex lgss:justify-between lgss:items-center lgss:px-4 rounded-[32px]">
          <PiMagnifyingGlassFill className='text-gold text-[28px] cursor-pointer'/>
          <input type="text" placeholder='Search' className='lgss:w-full lgss:h-full lgss:mx-2 placeholder:px-2 outline-none placeholder:text-gold placeholder:font-semibold placeholder:text-[18px] bg-transparent rounded-[32px' />
       </div>
