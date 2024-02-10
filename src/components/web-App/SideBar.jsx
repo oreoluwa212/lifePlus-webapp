@@ -4,7 +4,7 @@ import Navlinks from "./NavLinks";
 
 const SideBar = () => {
   return (
-    <div className="lgss:w-1/5 lgss:h-screen border-[1px]  h-screen border-gold bg-[#F0EDE7] lgss:flex hidden">
+    <div className="lgss:w-1/5 lgss:h-screen border-[1px] h-screen lgss:overflow-hidden border-gold bg-[#F0EDE7] lgss:flex hidden">
       <div className=" flex-col gap-5">
         <div className="flex justify-center items-center ">
           <Link to={"/"}>
