@@ -12,7 +12,7 @@ const links = [
     route: "/appointments",
   },
   {
-    name: "Donation History",
+    name: "Donations",
     route: "/donations",
   },
   {
