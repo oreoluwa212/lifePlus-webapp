@@ -4,8 +4,8 @@ import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import Header from "../../components/web-App/Header";
 import Demo from "../../components/Demo";
+import NavBar from "../../components/NavBar";
 
 const UpdateProfilePage = () => {
   const [gender, setGender] = useState("");
@@ -70,7 +70,7 @@ const UpdateProfilePage = () => {
 
   return (
     <div className="">
-      <Header currentUser={currentUser} />
+      <NavBar currentUser={currentUser} />
       <div className="mds:flex relative mds:absolute flex mds:flex-row h-[83vh] mds:overflow-y-hidden border-t-2 border-red w-full">
         <Demo />
         <div className=" mds:w-3/5 mds:relative  mds:h-full overflow-auto mds:flex mds:flex-col mds:justify-center mds:items-center absolute top-0 left-0 ">
@@ -82,91 +82,87 @@ const UpdateProfilePage = () => {
             </div>
             <div className="mds:w-[60%] w-[100%] justify-between lgss:flex lgss:flex-col lgss:gap-6">
               <form onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  defaultValue={currentUser.fullName}
-                  placeholder="full name"
-                  className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
-                />
-                <input
-                  type="email"
-                  defaultValue={currentUser.email}
-                  disabled
-                  placeholder="email"
-                  className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
-                />
-                <input
-                  type="text"
-                  placeholder="gender"
-                  className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
-                  onChange={(e) => {
-                    setGender(e.target.value);
-                  }}
-                />
+                <div className="lgss:grid lgss:grid-cols-2 lgss:gap-4">
+                  <input
+                    type="text"
+                    defaultValue={currentUser.fullName}
+                    placeholder="full name"
+                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                  />
+                  <input
+                    type="email"
+                    defaultValue={currentUser.email}
+                    disabled
+                    placeholder="email"
+                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                  />
+                  <input
+                    type="text"
+                    placeholder="gender (F or M)"
+                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    onChange={(e) => {
+                      setGender(e.target.value);
+                    }}
+                  />
 
-                <input
-                  type="text"
-                  placeholder="weight in kilogram"
-                  className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
-                  onChange={(e) => {
-                    setWeight(e.target.value);
-                  }}
-                />
-                <input
-                  type="text"
-                  placeholder="bloodgroup e.g o+"
-                  className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
-                  onChange={(e) => {
-                    setBloodGroup(e.target.value);
-                  }}
-                />
-                <input
-                  type="text"
-                  placeholder="genotype e.g AA"
-                  className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
-                  onChange={(e) => {
-                    setGenoType(e.target.value);
-                  }}
-                />
-                <input
-                  type="text"
-                  placeholder="address"
-                  className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
-                  onChange={(e) => {
-                    setAddress(e.target.value);
-                  }}
-                />
-                <input
-                  type="phone"
-                  placeholder="phone number"
-                  className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
-                  onChange={(e) => {
-                    setPhoneNumber(e.target.value);
-                  }}
-                />
-                <select
-                  name="role"
-                  required
-                  onChange={(e) => {
-                    setRole(e.target.value);
-                  }}
-                >
-                  <option> choose type of user</option>
-                  <option value={"Donor"}>Blood Donor</option>
-                  <option value={"health-care-admin"}>
-                    Health care Provider
-                  </option>
-                  <option value={"bd-admin"}>Blood bank Admin</option>
-                </select>
-                <input
-                  type="file"
-                  id="avatar"
-                  name="avatar"
-                  accept="image/png, image/jpeg"
-                  onChange={(e) => {
-                    setAvatar(e.target.value);
-                  }}
-                />
+                  <input
+                    type="text"
+                    placeholder="weight in kilogram"
+                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    onChange={(e) => {
+                      setWeight(e.target.value);
+                    }}
+                  />
+                  <input
+                    type="text"
+                    placeholder="bloodgroup e.g o+"
+                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    onChange={(e) => {
+                      setBloodGroup(e.target.value);
+                    }}
+                  />
+                  <input
+                    type="text"
+                    placeholder="genotype e.g AA"
+                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    onChange={(e) => {
+                      setGenoType(e.target.value);
+                    }}
+                  />
+                  <input
+                    type="text"
+                    placeholder="address"
+                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    onChange={(e) => {
+                      setAddress(e.target.value);
+                    }}
+                  />
+                  <input
+                    type="phone"
+                    placeholder="phone number"
+                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    onChange={(e) => {
+                      setPhoneNumber(e.target.value);
+                    }}
+                  />
+                </div>
+                <div className="lgss:p-4 flex gap-4 lgss:items-center">
+                  <label htmlFor="role" className="text-[18px]">Select User Type</label>
+                  <select
+                    name="role"
+                    className="bg-gold lgss:px-[40px] lgss:py-3 lgss:rounded-[32px] outline-none text-white lgss:text-[18px]"
+                    required
+                    onChange={(e) => {
+                      setRole(e.target.value);
+                    }}
+                  >
+                    <option value={"Donor"}>Blood Donor</option>
+                    <option value={"health-care-admin"}>
+                      Health care Provider
+                    </option>
+                    <option value={"bd-admin"}>Blood bank Admin</option>
+                  </select>
+                </div>
 
                 <button
                   type="submit"
