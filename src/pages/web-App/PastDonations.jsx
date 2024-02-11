@@ -20,6 +20,7 @@ const PastDonations = () => {
                 Donations History
               </p>
             </h1>
+            <div className=""></div>
           </div>
         </div>
       </div>

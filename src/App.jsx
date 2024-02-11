@@ -12,6 +12,7 @@ import LearningCenterPage from './pages/web-App/LearningCenterPage';
 import CommunityForumPage from './pages/web-App/CommunityForumPage';
 import PastDonations from './pages/web-App/PastDonations';
 import ForgotPasswordPage from './pages/web-App/ForgotPasswordPage';
+import CreateNewPassword from './pages/web-App/CreateNewPassword';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/signup-as" element={<SignUpMainPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/new-password" element={<CreateNewPassword />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/appointments" element={<AppointmentsPage />} />
