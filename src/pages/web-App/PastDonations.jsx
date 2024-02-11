@@ -1,7 +1,7 @@
-import React from 'react'
-import Header from '../../components/web-App/Header'
-import SideBar from '../../components/web-App/SideBar';
-import { FaAngleLeft, FaAngleRight } from 'react-icons/fa';
+import React from "react";
+import Header from "../../components/web-App/Header";
+import SideBar from "../../components/web-App/SideBar";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const PastDonations = () => {
   return (
@@ -16,15 +16,14 @@ const PastDonations = () => {
               <span className="text-[20px] font-light">
                 <FaAngleRight />
               </span>
-              <p className="text-[20px] font-normal">
-                Donations History
-              </p>
+              <p className="text-[20px] font-normal">Donations History</p>
             </h1>
+            <div className=""></div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default PastDonations
+export default PastDonations;

@@ -11,6 +11,8 @@ import DonationHistoryPage from "./pages/web-App/DonationHistoryPage";
 import LearningCenterPage from "./pages/web-App/LearningCenterPage";
 import CommunityForumPage from "./pages/web-App/CommunityForumPage";
 import PastDonations from "./pages/web-App/PastDonations";
+import ForgotPasswordPage from "./pages/web-App/ForgotPasswordPage";
+import CreateNewPassword from "./pages/web-App/CreateNewPassword";
 import UpdateProfilePage from "./pages/web-App/UpdateProfilePage";
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/signup-as" element={<SignUpMainPage />} />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/new-password" element={<CreateNewPassword />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/update-profile" element={<UpdateProfilePage />} />
