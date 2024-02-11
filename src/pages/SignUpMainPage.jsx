@@ -112,7 +112,7 @@ const SignUpMainPage = () => {
                   placeholder="password"
                   name="password"
                   id="password"
-                  className=" lgss:h-[48px] outline-none placeholder:text-[18px]"
+                  className=" lgss:h-[48px] outline-none placeholder:text-[18px] bg-transparent"
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
