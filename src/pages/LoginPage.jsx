@@ -17,7 +17,7 @@ const LoginPage = () => {
             </div>
             <div className="mds:w-[60%] w-[65%] justify-between lgss:flex lgss:flex-col lgss:gap-6">
               <input type="text" placeholder='email' className='bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]' />
-              <input type="text" placeholder='password' className='bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]' />
+              <input type="password" placeholder='password' className='bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]' />
               <div className="lgss:flex lgss:justify-between lgss:items-center">
                 <div className="lgss:flex px-4 lgss:gap-4 lgss:mt-2">
                   <input type="checkbox" name="" id="" />
