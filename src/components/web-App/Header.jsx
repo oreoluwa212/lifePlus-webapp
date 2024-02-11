@@ -25,7 +25,7 @@ const Header = ({ currentUser }) => {
         <img src={user} alt="" />
         <button className="lgss:flex lgss:items-start lgss:flex-col lgss:justify-between lgss:gap-1 ">
           <h1 className="text-[20px] font-semibold">
-            HI! {currentUser.fullName}
+            HI! {currentUser.fullname}
           </h1>
           <div className="lgss:flex gap-2">
             <PiMedalBold className="text-gold text-[22px]" />
