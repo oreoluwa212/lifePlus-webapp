@@ -48,7 +48,7 @@ const SignUpMainPage = () => {
                   placeholder="password"
                   className='bg-red text-white text-[18px] border-none rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] w-[100%] lgss:w-[100%]'
                 >
-                  Log in
+                  Sign Up
                 </button>
               </Link>
             </form>

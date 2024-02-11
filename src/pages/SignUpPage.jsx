@@ -9,7 +9,7 @@ const SignUpPage = () => {
       <NavBar />
       <div className="relative mds:absolute mds:flex mds:flex-row h-[80vh] border-t-2 border-red w-full">
         <Demo />
-        <div className="px-[5%] mds:w-3/5 absolute mds:relative top-0 mds:h-full overflow-auto mds:flex mds:flex-col mds:justify-center mds:items-center">
+        <div className="px-[5%] mds:w-3/5 absolute mds:relative top-0 mds:h-full overflow mds:flex mds:flex-col mds:justify-center mds:items-center">
           <div className="lgss:w-full lgss:flex xs:flex flex-col mds:justify-center mds:items-center mds:gap-16 xs:gap-8">
             <div className="lgss:flex lgss:flex-col mds:gap-6 lgss:items-center">
             <h1 className="text-gold font-bold text-[30px]">Sign Up for LifePlus</h1>
