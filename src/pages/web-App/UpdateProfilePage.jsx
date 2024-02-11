@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -16,6 +16,7 @@ const UpdateProfilePage = () => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [role, setRole] = useState("");
   const [avatar, setAvatar] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
 
@@ -49,11 +50,12 @@ const UpdateProfilePage = () => {
           avatar: avatar,
           role: role,
         };
+        setLoading(true);
         let response = await axios.post(
           "https://lifeplus-api.onrender.com/user/update",
           data
         );
-
+        setLoading(false);
         response = JSON.parse(response.data);
         if (response[0]) {
           localStorage.setItem("user", JSON.stringify(response[2]));
@@ -65,8 +67,26 @@ const UpdateProfilePage = () => {
       }
     }
   };
+  if (loading) {
+    MySwal.fire({
+      didOpen: () => {
+        MySwal.showLoading();
+      },
+    });
+    setLoading(false);
+  }
+  const loggedInUser = localStorage.getItem("user");
+  useEffect(() => {
+    if (!loggedInUser) {
+      MySwal.fire("you dont have access to view this page");
+      navigate("/login");
+    }
+  }, []);
   const location = useLocation();
-  const currentUser = location.state.user;
+  let currentUser = {};
+  if (location.state) {
+    currentUser = location.state.user;
+  }
 
   return (
     <div className="">

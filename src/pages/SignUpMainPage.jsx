@@ -15,6 +15,7 @@ const SignUpMainPage = () => {
   const [emailError, setemailError] = useState(false);
   const [passwordError, setpasswordError] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
@@ -34,11 +35,13 @@ const SignUpMainPage = () => {
       email: email,
       password: password,
     };
+    setLoading(true);
     let response = await axios.post(
       "https://lifeplus-api.onrender.com/signup",
       data
     );
     response = JSON.parse(response.data);
+    setLoading(false);
     if (response[0]) {
       setLoggedIn(true);
       setUser(response[1]);
@@ -51,10 +54,19 @@ const SignUpMainPage = () => {
       });
     }
   };
-
   if (loggedIn) {
     user.new = true;
     navigate("/dashboard", { state: { user: user } });
+    localStorage.setItem("user", loggedIn);
+  }
+
+  if (loading) {
+    MySwal.fire({
+      didOpen: () => {
+        MySwal.showLoading();
+      },
+    });
+    setLoading(false);
   }
   return (
     <div className="">

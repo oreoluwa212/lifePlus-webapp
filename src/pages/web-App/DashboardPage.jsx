@@ -24,9 +24,8 @@ const DashboardPage = () => {
   }
 
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
-
-  useEffect(() => {
-    if (newUser && newUser.new) {
+  if (newUser && newUser.new) {
+    useEffect(() => {
       MySwal.fire({
         icon: "info",
         title: "Profile Update Required",
@@ -34,15 +33,21 @@ const DashboardPage = () => {
         footer: '<a href="/update-profile">Update Now</a>',
       });
       navigate("/update-profile", { state: { user: newUser } });
+    }, []);
+  } else {
+    if (!loggedInUser) {
+      useEffect(() => {
+        MySwal.fire("you dont have access to view this page");
+        navigate("/login");
+      }, []);
     }
-  }, []);
-
+  }
   return (
     <div className="flex flex-row h-screen">
       <SideBar />
       <div className="lgss:w-4/5 lgss:overflow-auto">
         <div className="lgss:w-full lgss:h-full lgss:flex-1 lgss:overflow lgss:px-[4%] flex flex-col ">
-          <Header currentUser={loggedInUser} />{" "}
+          {loggedInUser && <Header currentUser={loggedInUser} />}{" "}
           <div className="mt-[50px] text-[34px] text-gold font-semibold">
             <h1>Dashboard</h1>
           </div>

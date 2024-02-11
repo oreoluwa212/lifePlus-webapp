@@ -5,8 +5,12 @@ import {
   PiMagnifyingGlassFill,
   PiMedalBold,
 } from "react-icons/pi";
+import { Link } from "react-router-dom";
 
 const Header = ({ currentUser }) => {
+  const handleLogout = () => {
+    localStorage.clear();
+  };
   return (
     <div className=" lgss:w-full lgss:h-[100px] lgss:flex lgss:justify-between lgss:items-center lgss:pt-8">
       <div className="bg-[#F3E4E4] lgss:w-[70%] lgss:h-[80%] lgss:flex lgss:justify-between lgss:items-center lgss:px-4 rounded-[32px]">
@@ -27,6 +31,13 @@ const Header = ({ currentUser }) => {
             <PiMedalBold className="text-gold text-[22px]" />
             <p className="text-[18px]">Bronze member</p>
           </div>
+          <Link
+            to={"/login"}
+            className="text-gold text-[14px]"
+            onClick={handleLogout}
+          >
+            <p>Log Out</p>
+          </Link>
         </button>
       </div>
     </div>

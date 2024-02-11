@@ -14,7 +14,6 @@ import PastDonations from "./pages/web-App/PastDonations";
 import ForgotPasswordPage from "./pages/web-App/ForgotPasswordPage";
 import CreateNewPassword from "./pages/web-App/CreateNewPassword";
 import UpdateProfilePage from "./pages/web-App/UpdateProfilePage";
-
 function App() {
   return (
     <>
