@@ -34,7 +34,6 @@ const UpdateProfilePage = () => {
         icon: "error",
         title: "Oopss..",
         text: "One or more filled is not filled",
-        timer: 2000,
       });
     } else {
       try {
@@ -63,7 +62,15 @@ const UpdateProfilePage = () => {
           navigate("/dashboard", { state: { user: response[2] } });
         }
       } catch (error) {
-        console.log(error);
+        setLoading(false);
+        MySwal.fire({
+          icon: "error",
+          title: "Oops...",
+        }).then(() => {
+          return MySwal.fire(
+            <p className="text-red">{JSON.parse(error.response.data).error}</p>
+          );
+        });
       }
     }
   };
@@ -137,7 +144,6 @@ const UpdateProfilePage = () => {
                     type="text"
                     placeholder="bloodgroup e.g o+"
                     className="lgss:bg-transparent border-gold lgss:placeholder:text-black border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] text-[18px] font-medium px-3 h-[50px] text-black placeholder:text-red outline-none placeholder:text-[18px]"
-                    
                     onChange={(e) => {
                       setBloodGroup(e.target.value);
                     }}
@@ -146,7 +152,6 @@ const UpdateProfilePage = () => {
                     type="text"
                     placeholder="genotype e.g AA"
                     className="lgss:bg-transparent lgss:placeholder:text-black border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] text-[18px] font-medium  px-3 h-[50px] text-black placeholder:text-red  outline-none placeholder:text-[18px]"
-                    
                     onChange={(e) => {
                       setGenoType(e.target.value);
                     }}
@@ -163,7 +168,6 @@ const UpdateProfilePage = () => {
                     type="phone"
                     placeholder="phone number"
                     className="lgss:bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] text-[18px] lgss:placeholder:text-black font-medium text-black placeholder:text-red px-3 h-[50px]  outline-none placeholder:text-[18px]"
-                    
                     onChange={(e) => {
                       setPhoneNumber(e.target.value);
                     }}

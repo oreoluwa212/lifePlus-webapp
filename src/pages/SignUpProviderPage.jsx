@@ -12,10 +12,11 @@ function togglePasswordVisibility() {
 }
 const SignUpProviderPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const [fullName, setFullName] = useState("");
+  const [facilityName, setfacilityName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [fullNameError, setfullNameError] = useState(false);
+  const [address, setAddress] = useState(false);
+  const [facilityNameError, setFacilityNameError] = useState(false);
   const [emailError, setemailError] = useState(false);
   const [addressError, setaddressError] = useState(false);
   const [passwordError, setpasswordError] = useState(false);
@@ -27,42 +28,55 @@ const SignUpProviderPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!fullName) {
-      setfullNameError(true);
+    if (!facilityName) {
+      setFacilityNameError(true);
     } else if (!email) {
       setemailError(true);
     } else if (!password) {
       setpasswordError(true);
-    }
-
-    const data = {
-      fullName: fullName,
-      email: email,
-      password: password,
-    };
-    setLoading(true);
-    let response = await axios.post(
-      "https://lifeplus-api.onrender.com/signup",
-      data
-    );
-    response = JSON.parse(response.data);
-    setLoading(false);
-    if (response[0]) {
-      setLoggedIn(true);
-      setUser(response[1]);
+    } else if (!address) {
+      setaddressError(true);
     } else {
-      MySwal.fire({
-        icon: "error",
-        title: "Oops...",
-      }).then(() => {
-        return MySwal.fire(<p className="text-red">{response[1]}</p>);
-      });
+      try {
+        const data = {
+          facilityName: facilityName,
+          email: email,
+          password: password,
+          address: address,
+        };
+        setLoading(true);
+        let response = await axios.post(
+          "https://lifeplus-api.onrender.com/provider/signup",
+          data
+        );
+        response = JSON.parse(response.data);
+        setLoading(false);
+        if (response[0]) {
+          setLoggedIn(true);
+          setUser(response[1]);
+        } else {
+          MySwal.fire({
+            icon: "error",
+            title: "Oops...",
+          }).then(() => {
+            return MySwal.fire(<p className="text-red">{response[1]}</p>);
+          });
+        }
+      } catch (error) {
+        MySwal.fire({
+          icon: "error",
+          title: "Oops...",
+        }).then(() => {
+          return MySwal.fire(
+            <p className="text-red">{JSON.parse(error.response.data)[1]}</p>
+          );
+        });
+      }
     }
   };
   if (loggedIn) {
-    user.new = true;
     navigate("/dashboard", { state: { user: user } });
-    localStorage.setItem("user", loggedIn);
+    localStorage.setItem("user", JSON.stringify(user));
   }
 
   if (loading) {
@@ -94,16 +108,15 @@ const SignUpProviderPage = () => {
             >
               <input
                 type="text"
-                name="fullName"
-                id="fullName"
+                name="facilityName"
                 placeholder="Name of HealthCare Facility"
                 className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0 outline-none placeholder:text-[18px]"
                 onChange={(e) => {
-                  setFullName(e.target.value);
+                  setfacilityName(e.target.value);
                 }}
               />
-              {fullNameError && (
-                <small className="text-red">Name is required</small>
+              {facilityNameError && (
+                <small className="text-red">Facility name is required</small>
               )}
               <input
                 type="text"
@@ -192,8 +205,7 @@ const SignUpProviderPage = () => {
               <div className="flex px-4 gap-4 mt-2">
                 <input type="checkbox" name="aggree" id="aggree" />
                 <p className="text-black">
-                  I agree to LifePlus Terms, conditions and the privacy
-                  policy
+                  I agree to LifePlus Terms, conditions and the privacy policy
                 </p>
               </div>
               <button
