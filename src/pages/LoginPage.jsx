@@ -79,8 +79,11 @@ const LoginPage = () => {
                 Enter your details to sign in to your account
               </h3>
             </div>
-            <div className="mds:w-[60%] w-[100%] h-[50%] mds:h-full justify-between flex flex-col gap-4 lgss:gap-6">
-              <form onSubmit={handleSubmit}>
+            <div className="mds:w-[100%] w-[100%] h-[50%] mds:h-full justify-between flex flex-col gap-4 lgss:gap-6">
+              <form
+                onSubmit={handleSubmit}
+                className="mds:w-full mds:px-[5%] w-[100%] h-[50%] mds:h-full justify-between flex flex-col gap-4 lgss:gap-6"
+              >
                 <input
                   type="email"
                   placeholder="email"
@@ -97,6 +100,17 @@ const LoginPage = () => {
                     setPassword(e.target.value);
                   }}
                 />
+                <div className="flex lgss:flex lgss:justify-between lgss:items-center">
+                  <div className="flex gap-2 px-4 lgss:gap-4 lgss:mt-2">
+                    <input type="checkbox" name="" id="" />
+                    <p className="mds:text-black text-white">Remember me</p>
+                  </div>
+                  <div className=" lgss:px-4 mds:text-black text-white">
+                    <Link to={"/forgot-password"}>
+                      <button>Forgot password?</button>
+                    </Link>
+                  </div>
+                </div>
                 <button
                   type="submit"
                   className="bg-red text-white text-[18px] lgss:w-[100%] border-none rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] w-full"
@@ -104,17 +118,6 @@ const LoginPage = () => {
                   Log in
                 </button>
               </form>
-              <div className="flex lgss:flex lgss:justify-between lgss:items-center">
-                <div className="flex gap-2 px-4 lgss:gap-4 lgss:mt-2">
-                  <input type="checkbox" name="" id="" />
-                  <p className="mds:text-black text-white">Remember me</p>
-                </div>
-                <div className=" lgss:px-4 mds:text-black text-white">
-                  <Link to={"/forgot-password"}>
-                    <button>Forgot password?</button>
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </div>

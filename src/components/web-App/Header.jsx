@@ -24,9 +24,8 @@ const Header = ({ currentUser }) => {
       <div className=" lgss:w-[24%] lgss:px-4 lgss:h-[45%] lgss:flex lgss:justify-between lgss:items-center rounded-[32px]">
         <img src={user} alt="" />
         <button className="lgss:flex lgss:items-start lgss:flex-col lgss:justify-between lgss:gap-1 ">
-          <h1 className="text-[20px] font-semibold">
-            HI! {currentUser.fullName}
-          </h1>
+          <h1 className="text-[20px] font-semibold">Wallace</h1>
+          {/* HI! {currentUser.fullName} */}
           <div className="lgss:flex gap-2">
             <PiMedalBold className="text-gold text-[22px]" />
             <p className="text-[18px]">Bronze member</p>
