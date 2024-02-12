@@ -18,7 +18,7 @@ const Header = ({ currentUser }) => {
         <input
           type="text"
           placeholder="Search"
-          className="lgss:w-full lgss:h-full lgss:mx-2 placeholder:px-2 outline-none placeholder:text-gold placeholder:font-semibold placeholder:text-[18px] bg-transparent rounded-[32px"
+          className="lgss:w-full lgss:h-full lgss:mx-2 placeholder:px-2 outline-none placeholder:text-gold placeholder:font-semibold placeholder:text-[18px] bg-transparent"
         />
       </div>
       <div className=" lgss:w-[24%] lgss:px-4 lgss:h-[45%] lgss:flex lgss:justify-between lgss:items-center rounded-[32px]">
