@@ -22,32 +22,32 @@ const ForumHeader = ({ currentUser }) => {
   };
   return (
     <div className="w-screen px-3 mds:w-full">
-          <div className="w-full h-[100px] flex justify-between items-center pt-8">
-      <div className="w-[100%] lgss:w-[70%] lgss:h-[80%] flex lgss:px-4">
-        <h1 className="text-[28px] lgss:text-[34px] text-gold font-semibold">
-          {getTitleText()}
-        </h1>
-      </div>
-      <div className=" w-[100%] lgss:w-[20%] px-4 h-[45%] flex justify-between items-center rounded-[32px]">
-        <img src={user} alt="" />
-        <button className="flex items-start flex-col justify-between gap-1 ">
-          <h1 className="text-[16px] mds:text-[20px] font-semibold">
-            {currentUser.fullName}
+      <div className="w-full h-[100px] flex justify-between items-center pt-8">
+        <div className="w-[80%] lgss:w-[80%] lgss:h-[80%] flex lgss:px-4">
+          <h1 className="text-[28px] lgss:text-[34px] text-gold font-semibold">
+            {getTitleText()}
           </h1>
-          <div className="flex gap-2">
-            <PiMedalBold className="text-gold hidden mdss:flex text-[26px] mds:text-[22px]" />
-            <p className="text-[18px]">Bronze member</p>
-          </div>
-          <Link
-            to={"/login"}
-            className="text-gold text-[14px]"
-            onClick={handleLogout}
-          >
-            <p>Log Out</p>
-          </Link>
-        </button>
+        </div>
+        <div className=" w-[100%] lgss:w-[30%] w-[40%] px-4 h-[45%] flex justify-end gap-6 items-center rounded-[32px]">
+          <img src={user} alt="" className="hidden mds:flex" />
+          <button className="flex items-start flex-col justify-between gap-1 ">
+            <h1 className="text-[16px] mds:text-[20px] font-semibold">
+              {currentUser.fullName}
+            </h1>
+            <div className="flex gap-2">
+              <PiMedalBold className="text-gold hidden mdss:flex text-[26px] mds:text-[22px]" />
+              <p className="text-[14px] mds:text-[18px]">Bronze member</p>
+            </div>
+            <Link
+              to={"/login"}
+              className="text-gold text-[14px]"
+              onClick={handleLogout}
+            >
+              <p>Log Out</p>
+            </Link>
+          </button>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

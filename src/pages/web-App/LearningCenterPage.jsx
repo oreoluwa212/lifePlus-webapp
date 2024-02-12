@@ -15,9 +15,9 @@ const LearningCenterPage = () => {
       <div className=" lgss:w-4/5 w-full h-full overflow-auto lgss:px-[4%] flex flex-col lgss:gap-12">
         <ForumHeader currentUser={loggedInUser} />
         <div className="flex gap-9 mt-10 lgss:mt-4 px-[5%] mds:px-0 w-full">
-          <div className="flex flex-col justify-between lgss:gap-7 lgss:items-center ">
-            <div className="flex w-full gap-6">
-            <div className="bg-[#F3E4E4] w-[80%] flex px-4 h-[50px] items-center rounded-[32px]">
+          <div className="flex flex-col justify-between lgss:gap-5 lgss:items-center ">
+            <div className="flex w-full gap-[6%]">
+            <div className="bg-[#F3E4E4] w-[90%] flex px-4 h-[50px] items-center rounded-[32px]">
               <PiMagnifyingGlassFill className="text-gold text-[28px] cursor-pointer" />
               <input
                 type="text"
@@ -31,9 +31,9 @@ const LearningCenterPage = () => {
             </div>
             </div>
 
-            <div className="">
-            <div className="flex flex-col justify-center lgss:items-start lgss:pt-14 pt-4">
-              <div className=" flex flex-col lgss:grid lgss:grid-cols-3 gap-8">
+            <div className="w-full">
+            <div className="flex flex-col justify-center lgss:items-start lgss:pt-14 pt-4 w-full">
+              <div className=" flex flex-col lgss:grid lgss:grid-cols-3 gap-8 w-full">
               <LearningCard
                   title="How to maintain good health"
                 />
