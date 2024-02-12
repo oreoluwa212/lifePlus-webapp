@@ -31,7 +31,7 @@ const ForgotPasswordPage = () => {
       } catch (error) {
         MySwal.fire({
           icon: "error",
-          title: "Oops...",
+          title: "user not found",
         }).then(() => {
           return MySwal.fire(
             <p className="text-red">{JSON.parse(error.response.data).error}</p>
@@ -53,9 +53,9 @@ const ForgotPasswordPage = () => {
     <div className="">
       <NavBar />
       <div className="mds:absolute mds:flex mds:flex-row h-[80vh] border-t-2 border-red bg-[#fafafa] w-full">
-        <div className="mds:w-full absolute mds:relative top-0 mds:h-full overflow-auto mds:flex mds:flex-col mds:justify-center mds:items-center">
-          <div className=" lgss:flex xs:flex flex-col shadow-lg shadow-gray-400/50 bg-white lgss:w-[50%] lgss:h-[65%] rounded-[32px] mds:justify-center mds:items-center mds:gap-9 xs:gap-8">
-            <div className="lgss:flex lgss:flex-col mds:gap-4 lgss:items-center">
+        <div className="mds:w-full px-[5%] mdss:px-0 mds:relative top-0 mds:h-full  h-full overflow-auto flex flex-col justify-center items-center">
+          <div className="flex flex-col shadow-lg shadow-gray-400/50 bg-white lgss:w-[50%] lgss:h-[65%] p-4 mdss:p-0 rounded-[32px] justify-center items-center mds:gap-9 xs:gap-8">
+            <div className="flex flex-col mds:gap-4 lgss:items-center">
               <h1 className="text-gold font-bold text-[30px]">
                 Reset Your Password
               </h1>

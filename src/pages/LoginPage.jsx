@@ -93,7 +93,7 @@ const LoginPage = () => {
                   }}
                 />
                 <input
-                  type="text"
+                  type="password"
                   placeholder="password"
                   className="mdss:bg-transparent px-12 h-[50px] bg-white border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
                   onChange={(e) => {
