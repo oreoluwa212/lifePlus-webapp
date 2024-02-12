@@ -12,8 +12,12 @@ const SignUpPage = () => {
         <div className=" mds:w-3/5 absolute mds:relative top-0 mds:h-full overflow-auto mds:flex mds:flex-col mds:justify-center mds:items-center">
           <div className="lgss:w-full lgss:flex xs:flex flex-col mds:justify-center mds:items-center mds:gap-16 xs:gap-8">
             <div className="lgss:flex lgss:flex-col mds:gap-6 lgss:items-center">
-            <h1 className="text-gold font-bold text-[30px]">Sign Up for LifePlus</h1>
-            <h3 className="lgss:text-[18px] mds:text-black text-gold font-semibold">Sign up as a donor or an healthcare provider here</h3>
+              <h1 className="text-gold font-bold text-[30px]">
+                Sign Up for LifePlus
+              </h1>
+              <h3 className="lgss:text-[18px] mds:text-black text-gold font-semibold">
+                Sign up as a donor or an healthcare provider here
+              </h3>
             </div>
             <div className="mds:w-[90%] lgss:w-[80%] w-[100%] justify-between mds:flex mds:flex-col mds:gap-6">
               <Link to={"/signup-as"}>
