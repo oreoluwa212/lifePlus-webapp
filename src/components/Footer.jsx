@@ -20,11 +20,11 @@ const Footer = () => {
                     <div className="flex flex-col gap-4 justify-start items-start text-[20px] ">
                         <div className="flex justify-center items-center">
                             <PiGithubLogoFill/>
-                        <a href="https://github.com/oreoluwa212/lifePlus-webapp" className='text-[16px]'>Link to Github Repo</a>
+                        <a href="https://github.com/oreoluwa212/lifePlus-webapp" target='_blank' className='text-[16px]'>Link to Github Repo</a>
                         </div>
                         <div className="flex justify-center items-center">
                             <PiGithubLogoFill/>
-                        <a href="https://github.com/DCTP-GROUP-49-CAPSTONE-PROJECT" className='text-[16px]'>Link to Github Organisation(Backend)</a>
+                        <a href="https://github.com/DCTP-GROUP-49-CAPSTONE-PROJECT" target='_blank' className='text-[16px]'>Link to Github Organisation(Backend)</a>
                         </div>
                     </div>
                 </div>
