@@ -116,7 +116,7 @@ const SignUpProviderPage = () => {
                 }}
               />
               {facilityNameError && (
-                <small className="text-red">Facility name is required</small>
+                <small className="text-red">facility name is required</small>
               )}
               <input
                 type="text"
