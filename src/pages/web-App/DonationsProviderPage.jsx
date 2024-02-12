@@ -1,5 +1,5 @@
 import React from "react";
-import SideBar from "../../components/web-App/SideBar";
+import SideBarProvider from "../../components/web-App/SideBarProvider";
 import Header from "../../components/web-App/Header";
 import DetailsCard from "../../components/web-App/DetailsCard";
 import DashboardCard from "../../components/web-App/DashboardCard";
@@ -15,7 +15,7 @@ const DonationsProviderPage = () => {
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
   return (
     <div className="flex flex-row h-screen">
-      <SideBar />
+      <SideBarProvider />
       <div className="lgss:w-4/5 lgss:overflow-auto">
         <div className="lgss:w-full lgss:h-full lgss:flex-1 lgss:overflow lgss:px-[4%] flex flex-col ">
           <Header currentUser={loggedInUser} />
