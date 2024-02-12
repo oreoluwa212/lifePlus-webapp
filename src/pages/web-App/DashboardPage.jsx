@@ -9,7 +9,7 @@ import {
   PiShieldCheckFill,
   PiUserCircleFill,
 } from "react-icons/pi";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useEffect } from "react";
@@ -55,10 +55,12 @@ const DashboardPage = () => {
           <div className="">
             <div className="flex flex-col justify-center lgss:items-start lgss:pt-14 pt-4">
               <div className=" flex flex-col lgss:grid lgss:grid-cols-3 gap-8">
+                <Link to={'/dashboard/profile'}>
                 <DashboardCard
                   title="Manage Profile"
                   icon={<PiUserCircleFill />}
                 />
+                </Link>
 
                 <DashboardCard
                   title="Leadership board & Challenges"

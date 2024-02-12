@@ -16,6 +16,7 @@ import CreateNewPassword from "./pages/web-App/CreateNewPassword";
 import UpdateProfilePage from "./pages/web-App/UpdateProfilePage";
 import SignUpProviderPage from "./pages/SignUpProviderPage.jsx";
 import LoginProviderPage from "./pages/LoginProviderPage.jsx";
+import DonorsManageProfile from "./pages/web-App/DonorsManageProfile.jsx";
 function App() {
   return (
     <>
@@ -29,6 +30,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/login-provider" element={<LoginProviderPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/dashboard/profile" element={<DonorsManageProfile />} />
         <Route path="/update-profile" element={<UpdateProfilePage />} />
         <Route path="/appointments" element={<AppointmentsPage />} />
         <Route path="/donations" element={<DonationHistoryPage />} />

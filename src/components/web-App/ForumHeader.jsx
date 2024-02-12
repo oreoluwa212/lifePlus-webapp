@@ -1,5 +1,5 @@
 import React from "react";
-import { PiMagnifyingGlassFill, PiMedalBold } from "react-icons/pi";
+import { PiMedalBold } from "react-icons/pi";
 import { user } from "../../assets";
 import { Link, useLocation } from "react-router-dom";
 
@@ -14,12 +14,14 @@ const ForumHeader = ({ currentUser }) => {
         return "Community Forum";
       case "/learning":
         return "Learning Center";
+      case "/dashboard/profile":
+        return "Manage Profile";
       default:
-        return "Community Forum"; // Default title
+        return "Community Forum";
     }
   };
   return (
-    <div className="w-screen px-5 mds:w-full">
+    <div className="w-screen px-3 mds:w-full">
           <div className="w-full h-[100px] flex justify-between items-center pt-8">
       <div className="w-[100%] lgss:w-[70%] lgss:h-[80%] flex lgss:px-4">
         <h1 className="text-[28px] lgss:text-[34px] text-gold font-semibold">
