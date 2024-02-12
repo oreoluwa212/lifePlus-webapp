@@ -1,9 +1,54 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import NavBar from "../../components/NavBar";
-import Demo from "../../components/Demo";
+import axios from "axios";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const ForgotPasswordPage = () => {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const MySwal = withReactContent(Swal);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!email) {
+      MySwal.fire("Email field cannot be empty");
+    } else {
+      try {
+        const data = {
+          email: email,
+        };
+        setLoading(true);
+        let response = await axios.post(
+          "https://lifeplus-api.onrender.com/user/forgot-password",
+          data
+        );
+        response = JSON.parse(response.data);
+        setLoading(false);
+
+        if (response.ok) {
+          MySwal.fire(response.ok);
+        }
+      } catch (error) {
+        MySwal.fire({
+          icon: "error",
+          title: "Oops...",
+        }).then(() => {
+          return MySwal.fire(
+            <p className="text-red">{JSON.parse(error.response.data).error}</p>
+          );
+        });
+      }
+    }
+  };
+
+  if (loading) {
+    MySwal.fire({
+      didOpen: () => {
+        MySwal.showLoading();
+      },
+    });
+    setLoading(false);
+  }
   return (
     <div className="">
       <NavBar />
@@ -19,19 +64,26 @@ const ForgotPasswordPage = () => {
                 your password
               </h3>
             </div>
-            <form action="" className="mds:w-[90%] lgss:w-[60%] w-[100%] justify-between mds:flex mds:flex-col mds:gap-6">
-            <div>
-              <input
-                type="text"
-                className="h-[48px] mt-5 mds:w-[100%] w-[100%] justify-center items-center bg-transparent border-gold border-2 placeholder:text-gold pl-4 rounded-[32px] text-[1.2rem] outline-none"
-                placeholder="Email address"
-              />
-              <Link to={"/new-password"}>
-                <button className="h-[48px] mt-6 mds:mt-8 w-[100%] mds:w-[100%] flex justify-center items-center bg-red text-white rounded-[32px] text-[1.2rem]">
+            <form
+              onSubmit={handleSubmit}
+              className="mds:w-[90%] lgss:w-[60%] w-[100%] justify-between mds:flex mds:flex-col mds:gap-6"
+            >
+              <div>
+                <input
+                  type="text"
+                  className="h-[48px] mt-5 mds:w-[100%] w-[100%] justify-center items-center bg-transparent border-gold border-2 placeholder:text-gold pl-4 rounded-[32px] text-[1.2rem] outline-none"
+                  placeholder="Email address"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                <button
+                  type="submit"
+                  className="h-[48px] mt-6 mds:mt-8 w-[100%] mds:w-[100%] flex justify-center items-center bg-red text-white rounded-[32px] text-[1.2rem]"
+                >
                   Submit Email
                 </button>
-              </Link>
-            </div>
+              </div>
             </form>
           </div>
         </div>

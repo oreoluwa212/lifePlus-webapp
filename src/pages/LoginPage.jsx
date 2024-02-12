@@ -17,6 +17,7 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!email || !password) {
       MySwal.fire("Ensure all fields are filled");
     } else {
@@ -31,6 +32,7 @@ const LoginPage = () => {
           data
         );
         response = JSON.parse(response.data);
+
         setLoading(false);
         if (response[0]) {
           localStorage.setItem("user", JSON.stringify(response[1]));
