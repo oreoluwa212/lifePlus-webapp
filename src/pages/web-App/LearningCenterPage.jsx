@@ -3,6 +3,8 @@ import SideBar from "../../components/web-App/SideBar";
 import ForumHeader from "../../components/web-App/ForumHeader";
 import { PiMagnifyingGlassFill } from "react-icons/pi";
 import { MdOutlineFilterList } from "react-icons/md";
+import LearningCard from "../../components/web-App/LearningCard";
+import { Link } from "react-router-dom";
 
 
 const LearningCenterPage = () => {
@@ -12,9 +14,10 @@ const LearningCenterPage = () => {
       <SideBar />
       <div className=" lgss:w-4/5 w-full h-full overflow-auto lgss:px-[4%] flex flex-col lgss:gap-12">
         <ForumHeader currentUser={loggedInUser} />
-        <div className="flex flex-col gap-9 mt-10 lgss:mt-4 px-[5%] mds:px-0">
-          <div className="flex justify-between lgss:w-[80%] lgss:gap-7 lgss:items-center ">
-            <div className="bg-[#F3E4E4] lgss:w-[90%] w-[70%] flex px-4 h-[50px] items-center rounded-[32px]">
+        <div className="flex gap-9 mt-10 lgss:mt-4 px-[5%] mds:px-0 w-full">
+          <div className="flex flex-col justify-between lgss:gap-7 lgss:items-center ">
+            <div className="flex w-full gap-6">
+            <div className="bg-[#F3E4E4] w-[80%] flex px-4 h-[50px] items-center rounded-[32px]">
               <PiMagnifyingGlassFill className="text-gold text-[28px] cursor-pointer" />
               <input
                 type="text"
@@ -26,7 +29,35 @@ const LearningCenterPage = () => {
               <h1 className="text-[24px] text-gold font-semibold">Filters</h1>
               <MdOutlineFilterList className="text-gold text-[22px]" />
             </div>
-            <div className=""></div>
+            </div>
+
+            <div className="">
+            <div className="flex flex-col justify-center lgss:items-start lgss:pt-14 pt-4">
+              <div className=" flex flex-col lgss:grid lgss:grid-cols-3 gap-8">
+              <LearningCard
+                  title="How to maintain good health"
+                />
+                <Link to={''}>
+                <LearningCard
+                  title="Grapefruit Wonders"
+                />
+                </Link>
+
+                <LearningCard
+                  title="A sound mental health is vital"
+                />
+                <LearningCard
+                  title="Blood Donation"
+                />
+                <LearningCard
+                  title="The dangers of High Blood Pressure"
+                />
+                <LearningCard
+                  title="Managing your health and stress"
+                />
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </div>

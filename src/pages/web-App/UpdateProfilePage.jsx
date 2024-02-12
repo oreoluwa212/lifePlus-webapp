@@ -121,7 +121,7 @@ const UpdateProfilePage = () => {
                     defaultValue={currentUser.email}
                     disabled
                     placeholder="email"
-                    className="lgss:bg-transparent bg-white lgss:text-black lgss:placeholder:text-black text-red border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] text-[18px] font-medium px-3 h-[50px]  outline-none placeholder:text-[18px]"
+                    className="lgss:bg-transparent bg-white lgss:text-black lgss:placeholder:text-gray-400 text-red border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] text-[18px] font-medium px-3 h-[50px]  outline-none placeholder:text-[18px]"
                   />
                   <input
                     type="text"

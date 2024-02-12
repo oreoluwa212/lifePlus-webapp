@@ -5,5 +5,6 @@ import gauge from '../assets/images/gauge.png';
 import onboard from '../assets/images/onboarding.png';
 import signImg from '../assets/images/signupImg.png'
 import user from '../assets/images/user.png'
+import learning from '../assets/images/learning.png'
 
-export { landing, homepage, overlap, gauge, onboard, signImg, user}
+export { landing, learning, homepage, overlap, gauge, onboard, signImg, user}
