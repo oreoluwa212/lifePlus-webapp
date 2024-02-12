@@ -50,14 +50,14 @@ const LoginPage = () => {
     }
   };
 
-  if (loading) {
-    MySwal.fire({
-      didOpen: () => {
-        MySwal.showLoading();
-      },
-    });
-    setLoading(false);
-  }
+  // if (loading) {
+  //   MySwal.fire({
+  //     didOpen: () => {
+  //       MySwal.showLoading();
+  //     },
+  //   });
+  //   setLoading(false);
+  // }
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
