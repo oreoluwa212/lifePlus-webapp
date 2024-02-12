@@ -34,7 +34,6 @@ const UpdateProfilePage = () => {
         icon: "error",
         title: "Oopss..",
         text: "One or more filled is not filled",
-        timer: 2000,
       });
     } else {
       try {
@@ -63,7 +62,15 @@ const UpdateProfilePage = () => {
           navigate("/dashboard", { state: { user: response[2] } });
         }
       } catch (error) {
-        console.log(error);
+        setLoading(false);
+        MySwal.fire({
+          icon: "error",
+          title: "Oops...",
+        }).then(() => {
+          return MySwal.fire(
+            <p className="text-red">{JSON.parse(error.response.data).error}</p>
+          );
+        });
       }
     }
   };
@@ -167,7 +174,9 @@ const UpdateProfilePage = () => {
                   />
                 </div>
                 <div className="lgss:p-4 flex gap-4 lgss:items-center">
-                  <label htmlFor="role" className="text-[18px]">Select User Type</label>
+                  <label htmlFor="role" className="text-[18px]">
+                    Select User Type
+                  </label>
                   <select
                     name="role"
                     className="bg-gold lgss:px-[40px] lgss:py-3 lgss:rounded-[32px] outline-none text-white lgss:text-[18px]"
