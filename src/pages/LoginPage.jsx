@@ -32,7 +32,6 @@ const LoginPage = () => {
           data
         );
         response = JSON.parse(response.data);
-
         setLoading(false);
         if (response[0]) {
           localStorage.setItem("user", JSON.stringify(response[1]));
