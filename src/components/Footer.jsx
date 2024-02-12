@@ -1,5 +1,6 @@
 import React from 'react'
-import { PiFacebookLogoFill, PiTwitterLogoFill, PiYoutubeLogoFill } from 'react-icons/pi'
+import { PiFacebookLogoFill, PiGithubLogoFill, PiTwitterLogoFill, PiYoutubeLogoFill } from 'react-icons/pi'
+
 
 const Footer = () => {
     return (
@@ -11,15 +12,20 @@ const Footer = () => {
                 <div className="justify-between flex w-[80%] items-center">
                     <nav>
                         <ul className='lgss:flex hidden justify-between w-[400px] text-[20px]'>
-                            <li><button>Our benefits</button></li>
+                            <li><button><a href="">Our benefits</a></button></li>
                             <li><button>Services</button></li>
                             <li><button>Contact Us</button></li>
                         </ul>
                     </nav>
-                    <div className="flex gap-[30px] text-[26px] ">
-                        <PiFacebookLogoFill/>
-                        <PiYoutubeLogoFill/>
-                        <PiTwitterLogoFill/>
+                    <div className="flex flex-col gap-4 justify-start items-start text-[20px] ">
+                        <div className="flex justify-center items-center">
+                            <PiGithubLogoFill/>
+                        <a href="https://github.com/oreoluwa212/lifePlus-webapp" className='text-[16px]'>Link to Github Repo</a>
+                        </div>
+                        <div className="flex justify-center items-center">
+                            <PiGithubLogoFill/>
+                        <a href="https://github.com/DCTP-GROUP-49-CAPSTONE-PROJECT" className='text-[16px]'>Link to Github Organisation(Backend)</a>
+                        </div>
                     </div>
                 </div>
             </div>
