@@ -25,7 +25,7 @@ const SignUpPage = () => {
                   Sign Up as a Donor
                 </button>
               </Link>
-              <Link to={"/signup-as"}>
+              <Link to={"/signup-provider"}>
                 <button className="h-[48px] mt-6 mds:mt-0 w-[100%] mds:w-[100%] flex justify-center items-center bg-gold text-white rounded-[32px] text-[1.2rem]">
                   Sign Up as an Healthcare Provider
                 </button>
