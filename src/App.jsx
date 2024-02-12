@@ -14,16 +14,20 @@ import PastDonations from "./pages/web-App/PastDonations";
 import ForgotPasswordPage from "./pages/web-App/ForgotPasswordPage";
 import CreateNewPassword from "./pages/web-App/CreateNewPassword";
 import UpdateProfilePage from "./pages/web-App/UpdateProfilePage";
+import SignUpProviderPage from "./pages/SignUpProviderPage.jsx";
+import LoginProviderPage from "./pages/LoginProviderPage.jsx";
 function App() {
   return (
     <>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
-        <Route path="/signup-as" element={<SignUpMainPage />} />
+        <Route path="/signup-donor" element={<SignUpMainPage />} />
+        <Route path="/signup-provider" element={<SignUpProviderPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/new-password" element={<CreateNewPassword />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/login-provider" element={<LoginProviderPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/update-profile" element={<UpdateProfilePage />} />
         <Route path="/appointments" element={<AppointmentsPage />} />

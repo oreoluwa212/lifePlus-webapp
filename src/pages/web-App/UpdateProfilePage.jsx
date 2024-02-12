@@ -94,32 +94,32 @@ const UpdateProfilePage = () => {
       <div className="mds:flex relative mds:absolute flex mds:flex-row h-[83vh] mds:overflow-y-hidden border-t-2 border-red w-full">
         <Demo />
         <div className=" mds:w-3/5 mds:relative  mds:h-full overflow-auto mds:flex mds:flex-col mds:justify-center mds:items-center absolute top-0 left-0 ">
-          <div className="lgss:w-full lgss:flex flex-col lgss:justify-center lgss:items-center lgss:gap-16 ">
-            <div className="lgss:flex lgss:flex-col lgss:gap-6 lgss:items-center">
+          <div className="lgss:w-full lgss:flex flex-col lgss:justify-center lgss:items-center lgss:gap-16 mt-[5%] lgss:mt-0">
+            <div className="flex justify-center items-center">
               <h1 className="text-gold font-bold text-[30px]">
                 Update your LifePlus Profile
               </h1>
             </div>
-            <div className="mds:w-[60%] w-[100%] justify-between lgss:flex lgss:flex-col lgss:gap-6">
-              <form onSubmit={handleSubmit}>
-                <div className="lgss:grid lgss:grid-cols-2 lgss:gap-4">
+            <div className="mds:w-[60%] w-[100%] justify-between lgss:flex lgss:flex-col lgss:gap-6 mt-[5%] lgss:mt-0">
+              <form onSubmit={handleSubmit} className="px-[2%] lgss:px-0">
+                <div className="grid grid-cols-2 gap-8">
                   <input
                     type="text"
                     defaultValue={currentUser.fullName}
                     placeholder="full name"
-                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    className="lgss:bg-transparent text-red lgss:text-black lgss:placeholder:text-black placeholder:text-red border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] text-[18px] font-medium px-3 h-[50px] outline-none "
                   />
                   <input
                     type="email"
                     defaultValue={currentUser.email}
                     disabled
                     placeholder="email"
-                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    className="lgss:bg-transparent bg-white lgss:text-black lgss:placeholder:text-black text-red border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] text-[18px] font-medium px-3 h-[50px]  outline-none placeholder:text-[18px]"
                   />
                   <input
                     type="text"
                     placeholder="gender (F or M)"
-                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    className="lgss:bg-transparent border-gold border-2 lgss:placeholder:text-black rounded-[32px] lgss:px-8 lgss:h-[48px] text-[18px] font-medium px-3 h-[50px] text-black placeholder:text-red  outline-none placeholder:text-[18px]"
                     onChange={(e) => {
                       setGender(e.target.value);
                     }}
@@ -128,7 +128,7 @@ const UpdateProfilePage = () => {
                   <input
                     type="text"
                     placeholder="weight in kilogram"
-                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    className="lgss:bg-transparent lgss:placeholder:text-black border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] text-[18px] font-medium text-black placeholder:text-red px-3 h-[50px] outline-none placeholder:text-[18px]"
                     onChange={(e) => {
                       setWeight(e.target.value);
                     }}
@@ -136,7 +136,8 @@ const UpdateProfilePage = () => {
                   <input
                     type="text"
                     placeholder="bloodgroup e.g o+"
-                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    className="lgss:bg-transparent border-gold lgss:placeholder:text-black border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] text-[18px] font-medium px-3 h-[50px] text-black placeholder:text-red outline-none placeholder:text-[18px]"
+                    
                     onChange={(e) => {
                       setBloodGroup(e.target.value);
                     }}
@@ -144,7 +145,8 @@ const UpdateProfilePage = () => {
                   <input
                     type="text"
                     placeholder="genotype e.g AA"
-                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    className="lgss:bg-transparent lgss:placeholder:text-black border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] text-[18px] font-medium  px-3 h-[50px] text-black placeholder:text-red  outline-none placeholder:text-[18px]"
+                    
                     onChange={(e) => {
                       setGenoType(e.target.value);
                     }}
@@ -152,7 +154,7 @@ const UpdateProfilePage = () => {
                   <input
                     type="text"
                     placeholder="address"
-                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    className="lgss:bg-transparent lgss:placeholder:text-black border-gold border-2 rounded-[32px] lgss:px-8 px-3 font-medium  lgss:h-[48px] outline-none text-black placeholder:text-red placeholder:text-[18px]"
                     onChange={(e) => {
                       setAddress(e.target.value);
                     }}
@@ -160,33 +162,16 @@ const UpdateProfilePage = () => {
                   <input
                     type="phone"
                     placeholder="phone number"
-                    className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                    className="lgss:bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] text-[18px] lgss:placeholder:text-black font-medium text-black placeholder:text-red px-3 h-[50px]  outline-none placeholder:text-[18px]"
+                    
                     onChange={(e) => {
                       setPhoneNumber(e.target.value);
                     }}
                   />
                 </div>
-                <div className="lgss:p-4 flex gap-4 lgss:items-center">
-                  <label htmlFor="role" className="text-[18px]">Select User Type</label>
-                  <select
-                    name="role"
-                    className="bg-gold lgss:px-[40px] lgss:py-3 lgss:rounded-[32px] outline-none text-white lgss:text-[18px]"
-                    required
-                    onChange={(e) => {
-                      setRole(e.target.value);
-                    }}
-                  >
-                    <option value={"Donor"}>Blood Donor</option>
-                    <option value={"health-care-admin"}>
-                      Health care Provider
-                    </option>
-                    <option value={"bd-admin"}>Blood bank Admin</option>
-                  </select>
-                </div>
-
                 <button
                   type="submit"
-                  className="bg-red text-white text-[18px] border-none rounded-[32px] lgss:px-8 lgss:h-[48px] w-[100%]"
+                  className="bg-red text-white text-[18px] border-none rounded-[32px] lgss:px-8 mt-10 lgss:h-[48px] h-[50px] w-[100%]"
                 >
                   Submit
                 </button>

@@ -23,8 +23,9 @@ const DonationHistoryPage = () => {
           </div>
           <DetailsCard loggedInUser={loggedInUser} />
           <div>
-            <div className="flex flex-col justify-center items-start lgss:h-[350px]">
-              <div className=" flex flex-col gap-10 justify-center items-center lgss:grid lgss:grid-cols-3 lgss:gap-8">
+            
+          <div className="flex flex-col justify-center lgss:items-start lgss:pt-14 pt-4">
+              <div className=" flex flex-col lgss:grid lgss:grid-cols-3 gap-8">
                 <Link to={"/donations/history"}>
                   <DashboardCard
                     title="Donation History"
