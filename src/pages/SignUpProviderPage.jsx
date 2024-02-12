@@ -10,13 +10,14 @@ import withReactContent from "sweetalert2-react-content";
 function togglePasswordVisibility() {
   setIsPasswordVisible((prevState) => !prevState);
 }
-const SignUpMainPage = () => {
+const SignUpProviderPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullNameError, setfullNameError] = useState(false);
   const [emailError, setemailError] = useState(false);
+  const [addressError, setaddressError] = useState(false);
   const [passwordError, setpasswordError] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -77,7 +78,7 @@ const SignUpMainPage = () => {
       <NavBar />
       <div className="mds:flex relative mds:absolute flex flex-row h-[83vh] mds:overflow-y-hidden border-t-2 border-red w-full">
         <Demo />
-        <div className=" mds:w-3/5 bg-white rounded-[32px] mds:bg-transparent  mt-[10%] mds:mt-0 mds:relative h-[65%] mds:h-full overflow-auto flex flex-col justify-center items-center absolute top-0 left-0 ">
+        <div className=" mds:w-3/5 bg-white rounded-[32px] mds:bg-transparent  mt-[10%] mds:mt-0 mds:relative h-[80%] mds:h-full overflow-auto flex flex-col justify-center items-center absolute top-0 left-0 ">
           <div className="lgss:w-full px-[5%] mds:px-0 lgss:flex flex-col lgss:justify-center lgss:items-center lgss:gap-16 ">
             <div className="lgss:flex lgss:flex-col lgss:gap-6 lgss:items-center">
               <h1 className="text-gold font-bold text-[30px]">
@@ -95,20 +96,33 @@ const SignUpMainPage = () => {
                 type="text"
                 name="fullName"
                 id="fullName"
-                placeholder="full name"
+                placeholder="Name of HealthCare Facility"
                 className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0 outline-none placeholder:text-[18px]"
                 onChange={(e) => {
                   setFullName(e.target.value);
                 }}
               />
               {fullNameError && (
-                <small className="text-red">full name is required</small>
+                <small className="text-red">Name is required</small>
+              )}
+              <input
+                type="text"
+                name="address"
+                id="address"
+                placeholder="Address"
+                className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0  outline-none placeholder:text-[18px]"
+                onChange={(e) => {
+                  setAddress(e.target.value);
+                }}
+              />
+              {addressError && (
+                <small className="text-red">address is required</small>
               )}
               <input
                 type="email"
                 name="email"
                 id="email"
-                placeholder="email"
+                placeholder="Institution Email Address"
                 className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0  outline-none placeholder:text-[18px]"
                 onChange={(e) => {
                   setEmail(e.target.value);
@@ -196,4 +210,4 @@ const SignUpMainPage = () => {
   );
 };
 
-export default SignUpMainPage;
+export default SignUpProviderPage;

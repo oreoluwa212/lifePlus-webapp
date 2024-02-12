@@ -6,9 +6,9 @@ const SideBar = () => {
   return (
     <div className="lgss:w-1/5 lgss:h-screen border-[1px] h-screen lgss:overflow-hidden border-gold bg-[#F0EDE7] lgss:flex hidden">
       <div className=" flex-col gap-5">
-        <div className="flex justify-center items-center ">
+        <div className="flex justify-center items-center mt-[15%] ">
           <Link to={"/"}>
-            <h1 className="text-black text-[36px] font-semibold ">
+            <h1 className="text-black text-[36px] font-semibold">
               Life<span className="text-red">Plus</span>
             </h1>
           </Link>

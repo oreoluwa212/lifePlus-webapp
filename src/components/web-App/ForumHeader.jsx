@@ -19,18 +19,21 @@ const ForumHeader = ({ currentUser }) => {
     }
   };
   return (
-    <div className=" lgss:w-full lgss:h-[100px] lgss:flex  lgss:justify-between lgss:items-center lgss:pt-8">
-      <div className="lgss:w-[70%] lgss:h-[80%] lgss:flex lgss:px-4">
-        <h1 className="text-[34px] text-gold font-semibold">
+    <div className="w-screen px-5 mds:w-full">
+          <div className="w-full h-[100px] flex justify-between items-center pt-8">
+      <div className="w-[100%] lgss:w-[70%] lgss:h-[80%] flex lgss:px-4">
+        <h1 className="text-[28px] lgss:text-[34px] text-gold font-semibold">
           {getTitleText()}
         </h1>
       </div>
-      <div className=" lgss:w-[24%] lgss:px-4 lgss:h-[45%] lgss:flex lgss:justify-between lgss:items-center rounded-[32px]">
+      <div className=" w-[100%] lgss:w-[20%] px-4 h-[45%] flex justify-between items-center rounded-[32px]">
         <img src={user} alt="" />
-        <button className="lgss:flex lgss:items-start lgss:flex-col lgss:justify-between lgss:gap-1 ">
-          <h1 className="text-[20px] font-semibold">{currentUser.fullName}</h1>
-          <div className="lgss:flex gap-2">
-            <PiMedalBold className="text-gold text-[22px]" />
+        <button className="flex items-start flex-col justify-between gap-1 ">
+          <h1 className="text-[16px] mds:text-[20px] font-semibold">
+            {currentUser.fullName}
+          </h1>
+          <div className="flex gap-2">
+            <PiMedalBold className="text-gold hidden mdss:flex text-[26px] mds:text-[22px]" />
             <p className="text-[18px]">Bronze member</p>
           </div>
           <Link
@@ -42,6 +45,7 @@ const ForumHeader = ({ currentUser }) => {
           </Link>
         </button>
       </div>
+    </div>
     </div>
   );
 };

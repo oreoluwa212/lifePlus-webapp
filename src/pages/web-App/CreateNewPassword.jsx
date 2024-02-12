@@ -65,24 +65,24 @@ const CreateNewPassword = () => {
   return (
     <div className="">
       <NavBar />
-      <div className="mds:absolute mds:flex mds:flex-row h-[80vh] border-t-2 border-red bg-[#fafafa] w-full">
-        <div className="mds:w-full absolute mds:relative top-0 mds:h-full overflow-auto mds:flex mds:flex-col mds:justify-center mds:items-center">
-          <div className=" lgss:flex xs:flex flex-col shadow-lg shadow-gray-400/50 bg-white lgss:w-[50%] lgss:h-[75%] rounded-[32px] mds:justify-center mds:items-center mds:gap-9 xs:gap-8">
-            <div className="lgss:flex lgss:flex-col mds:gap-4 lgss:items-center">
+      <div className="mds:absolute relative flex flex-row h-[80vh] border-t-2 border-red bg-[#fafafa] w-full">
+        <div className="w-full absolute mds:relative h-full overflow-auto flex flex-col mt-[10%] mds:mt-0 lgss:justify-center items-center">
+          <div className=" flex flex-col shadow-lg shadow-gray-400/50 bg-white lgss:w-[50%] w-[80%] lgss:h-[75%] h-[350px] rounded-[32px] px-[5%] mdss:px-0  mds:justify-center mds:items-center mds:gap-9 xs:gap-8">
+            <div className="flex flex-col pt-4 mds:pt-0 mds:gap-4 items-center">
               <h1 className="text-gold font-bold text-[30px]">
                 Create a New Password
               </h1>
             </div>
             <form
               onSubmit={handleSubmit}
-              className="mds:w-[90%] lgss:w-[60%] w-[100%] justify-between mds:flex mds:flex-col mds:gap-6"
+              className="mds:w-[90%] lgss:w-[60%] w-[100%] justify-between flex flex-col lgssgap-6 gap-3 "
             >
               <div className="">
                 <label htmlFor="NewPassword" className="font-semibold">
                   New Password
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   name="NewPassword"
                   onChange={(e) => {
                     setPasword(e.target.value);
@@ -96,7 +96,7 @@ const CreateNewPassword = () => {
                   Confirm Password
                 </label>
                 <input
-                  type="text"
+                  type="password"
                   name="ConfirmPassword"
                   onChange={(e) => {
                     setConfirmPassword(e.target.value);

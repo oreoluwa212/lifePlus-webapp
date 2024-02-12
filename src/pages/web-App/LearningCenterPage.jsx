@@ -10,9 +10,9 @@ const LearningCenterPage = () => {
   return (
     <div className="flex flex-row h-screen">
       <SideBar />
-      <div className=" w-4/5 h-full overflow-auto lgss:px-[4%] flex flex-col lgss:gap-12">
+      <div className=" lgss:w-4/5 w-full h-full overflow-auto lgss:px-[4%] flex flex-col lgss:gap-12">
         <ForumHeader currentUser={loggedInUser} />
-        <div className="flex flex-col gap-9 mt-4">
+        <div className="flex flex-col gap-9 mt-10 lgss:mt-4 px-[5%] mds:px-0">
           <div className="flex justify-between lgss:w-[80%] lgss:gap-7 lgss:items-center ">
             <div className="bg-[#F3E4E4] lgss:w-[90%] w-[70%] flex px-4 h-[50px] items-center rounded-[32px]">
               <PiMagnifyingGlassFill className="text-gold text-[28px] cursor-pointer" />

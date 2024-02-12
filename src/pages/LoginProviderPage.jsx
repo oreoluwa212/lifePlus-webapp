@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-const LoginPage = () => {
+const LoginProviderPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -28,7 +28,7 @@ const LoginPage = () => {
         };
         setLoading(true);
         let response = await axios.post(
-          "https://lifeplus-api.onrender.com/login",
+          "https://lifeplus-api.onrender.com/provider/login",
           data
         );
         response = JSON.parse(response.data);
@@ -126,4 +126,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default LoginProviderPage;

@@ -48,12 +48,12 @@ const DashboardPage = () => {
       <div className="lgss:w-4/5 lgss:overflow-auto">
         <div className="lgss:w-full lgss:h-full lgss:flex-1 lgss:overflow lgss:px-[4%] flex flex-col ">
           {loggedInUser && <Header currentUser={loggedInUser} />}{" "}
-          <div className="mt-[50px] text-[34px] text-gold font-semibold">
+          <div className="mt-[50px] text-[34px] text-gold font-semibold px-[5%] mds:px-0">
             <h1>Dashboard</h1>
           </div>
           {loggedInUser && <DetailsCard loggedInUser={loggedInUser} />}
           <div className="">
-            <div className="flex flex-col justify-center items-start lgss:pt-14 pt-4">
+            <div className="flex flex-col justify-center lgss:items-start lgss:pt-14 pt-4">
               <div className=" flex flex-col lgss:grid lgss:grid-cols-3 gap-8">
                 <DashboardCard
                   title="Manage Profile"
