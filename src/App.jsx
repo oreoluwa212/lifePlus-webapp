@@ -17,6 +17,9 @@ import UpdateProfilePage from "./pages/web-App/UpdateProfilePage";
 import SignUpProviderPage from "./pages/SignUpProviderPage.jsx";
 import LoginProviderPage from "./pages/LoginProviderPage.jsx";
 import DonorsManageProfile from "./pages/web-App/DonorsManageProfile.jsx";
+import DashboardProviderPage from "./pages/web-App/DashboardProviderPage.jsx";
+import AppointmentsProviderPage from "./pages/web-App/AppointmentsProviderPage.jsx";
+import DonationsProviderPage from "./pages/web-App/DonationsProviderPage.jsx";
 function App() {
   return (
     <>
@@ -30,10 +33,13 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/login-provider" element={<LoginProviderPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/dashboard-provider" element={<DashboardProviderPage />} />
         <Route path="/dashboard/profile" element={<DonorsManageProfile />} />
         <Route path="/update-profile" element={<UpdateProfilePage />} />
         <Route path="/appointments" element={<AppointmentsPage />} />
+        <Route path="/appointments-provider" element={<AppointmentsProviderPage />} />
         <Route path="/donations" element={<DonationHistoryPage />} />
+        <Route path="/donations-provider" element={<DonationsProviderPage />} />
         <Route path="/donations/history" element={<PastDonations />} />
         <Route path="/community" element={<CommunityForumPage />} />
         <Route path="/learning" element={<LearningCenterPage />} />

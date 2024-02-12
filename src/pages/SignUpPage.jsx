@@ -20,7 +20,7 @@ const SignUpPage = () => {
               </h3>
             </div>
             <div className="mds:w-[70%] w-[80%] justify-between mds:flex mds:flex-col mds:gap-6">
-              <Link to={"/signup-as"}>
+              <Link to={"/signup-donor"}>
                 <button className="h-[48px] mt-5 mds:w-[100%] w-[100%] justify-center items-center bg-red text-white rounded-[32px] text-[1.2rem]">
                   Sign Up as a Donor
                 </button>

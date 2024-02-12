@@ -75,7 +75,7 @@ const SignUpProviderPage = () => {
     }
   };
   if (loggedIn) {
-    navigate("/dashboard", { state: { user: user } });
+    navigate("/dashboard-provider", { state: { user: user } });
     localStorage.setItem("user", JSON.stringify(user));
   }
 
