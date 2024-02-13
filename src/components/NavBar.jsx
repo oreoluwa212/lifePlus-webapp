@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const NavBar = () => {
-  const [activeButton, setActiveButton] = useState('signup');
-
+const location = useLocation()
+const pathname = location.pathname
   const handleButtonClick = (button) => {
     setActiveButton(button);
   };
@@ -23,7 +23,7 @@ const NavBar = () => {
             <button
               onClick={() => handleButtonClick("login")}
               className={`h-[48px] w-[130px] flex justify-center items-center ${
-                activeButton === "login"
+              pathname.includes("/login")
                   ? "bg-red text-white"
                   : "bg-transparent text-black"
               } rounded-[32px]`}
@@ -31,11 +31,11 @@ const NavBar = () => {
               Log In
             </button>
           </Link>
-          <Link to={"/sign-up"}>
+          <Link to={"/signup"}>
             <button
               onClick={() => handleButtonClick("signup")}
               className={`h-[48px] w-[130px] flex justify-center items-center ${
-                activeButton === "signup"
+                pathname.includes("/signup")
                   ? "bg-red text-white"
                   : "bg-transparent text-black"
               } rounded-[32px]`}

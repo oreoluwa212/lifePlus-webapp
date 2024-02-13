@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../components/web-App/Header";
 import SideBar from "../../components/web-App/SideBar";
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa";
 
 const PastDonations = () => {
   return (
@@ -18,7 +18,9 @@ const PastDonations = () => {
               </span>
               <p className="text-[20px] font-normal">Donations History</p>
             </h1>
-            <div className=""></div>
+            <div className="">
+              
+            </div>
           </div>
         </div>
       </div>

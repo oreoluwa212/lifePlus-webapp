@@ -7,9 +7,6 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-function togglePasswordVisibility() {
-  setIsPasswordVisible((prevState) => !prevState);
-}
 const SignUpProviderPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [facilityName, setfacilityName] = useState("");
@@ -25,6 +22,10 @@ const SignUpProviderPage = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
+
+  function togglePasswordVisibility() {
+    setIsPasswordVisible((prevState) => !prevState);
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -144,13 +145,11 @@ const SignUpProviderPage = () => {
               {emailError && (
                 <small className="text-red">email is required</small>
               )}
-              <div className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0  flex outline-none placeholder:text-[18px]">
+              <div className="bg-transparent border-gold border-2 rounded-[32px] lgss:pl-8 lgss:pr-2 lgss:h-[48px] h-[50px] pl-4 mds:px-0  flex outline-none  text-[16px] w-full justify-between">
                 <input
                   type={isPasswordVisible ? "text" : "password"}
                   placeholder="password"
-                  name="password"
-                  id="password"
-                  className=" lgss:h-[48px] w-full  outline-none placeholder:text-[18px] bg-transparent"
+                  className=" lgss:h-[48px] outline-none  text-[16px] bg-transparent"
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
@@ -197,7 +196,6 @@ const SignUpProviderPage = () => {
                   )}
                 </button>
               </div>
-
               {passwordError && (
                 <small className="text-red">password is required</small>
               )}
