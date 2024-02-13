@@ -9,8 +9,8 @@ const NavBar = () => {
   };
 
   return (
-    <div className="flex bg-[#fafafa] text-white justify-between h-[144px] w-full">
-      <div className="flex justify-between items-center w-full px-[5%]">
+    <div className="flex bg-[#fafafa] text-white justify-between h-[100px] w-full">
+      <div className="flex justify-between items-center w-[90%] px-[5%]">
         <div className="">
           <Link to={"/"}>
             <h1 className="text-black text-[36px] font-semibold">
@@ -18,7 +18,7 @@ const NavBar = () => {
             </h1>
           </Link>
         </div>
-        <div className="mds:w-[15%] w-[65%] justify-between flex">
+        <div className="mds:w-[15%] w-[55%] justify-between flex">
           <Link to={"/login"}>
             <button
               onClick={() => handleButtonClick("login")}
