@@ -45,6 +45,7 @@ const SignUpMainPage = () => {
     response = JSON.parse(response.data);
     if (response[0]) {
       setLoggedIn(true);
+      localStorage.setItem("user", response[1])
       setUser(response[1]);
     } else {
       MySwal.fire({
@@ -58,7 +59,7 @@ const SignUpMainPage = () => {
 
   if (loggedIn) {
     user.new = true;
-    navigate("/dashboard", { state: { user: user } });
+    navigate("/update-profile", { state: { user: user } });
   }
   return (
     <div className="">
@@ -172,7 +173,7 @@ const SignUpMainPage = () => {
                 type="submit"
                 className="bg-red text-white text-[18px] border-none rounded-[32px] lgss:px-8 h-[50px] lgss:h-[48px] w-[100%]"
               >
-                Sign Up
+                Next
               </button>
             </form>
           </div>
