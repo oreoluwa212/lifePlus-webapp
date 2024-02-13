@@ -25,26 +25,26 @@ const SideBar = ({ isOpen }) => {
                 </div>
               </div>
             </div>
-            <Link
-              to={"/login"}
-              className="text-gold text-[14px] lgss:hidden flex"
-              onClick={handleLogout}
-            >
-              <p>Log Out</p>
-            </Link>
           </div>
         </div>
       </div>
 
       {isOpen && (
         <div
-          className={`absolute  top-0 left-0  h-screen bg-[#F0EDE7] w-1/2 lgss:hidden flex  py-4 px-4 pt-10   transform transition-transform duration-300 ${
+          className={`absolute  top-0 left-0  h-screen bg-[#F0EDE7] w-1/2 lgss:hidden flex  flex-col py-4 px-4 pt-10   transform transition-transform duration-300 ${
             isOpen ? "translate-x-0 " : "-translate-x-full"
           }`}
         >
           <div className="lgss:mt-12 flex lgss:hidden">
             <Navlinks />
           </div>
+          <Link
+            to={"/login"}
+            className="text-gold text-[14px] lgss:hidden flex px-2"
+            onClick={handleLogout}
+          >
+            <p>Log Out</p>
+          </Link>
         </div>
       )}
     </>
