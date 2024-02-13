@@ -29,7 +29,7 @@ const HeroSection = () => {
           Blood donation is not just an act of altruism, but a journey of
           personal growth and community impact.
         </h4>
-        <Link to={'/sign-up'}>
+        <Link to={'/signup'}>
         <button className="h-[55px] w-[250px] mt-[40px] border-[2px] border-white flex justify-center items-center bg-red text-white mds:text-[18px] rounded-[32px] py-2">
           Get Started
         </button>
