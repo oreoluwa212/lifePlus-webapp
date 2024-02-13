@@ -59,7 +59,7 @@ const SignUpMainPage = () => {
 
   if (loggedIn) {
     user.new = true;
-    navigate("/dashboard", { state: { user: user } });
+    navigate("/update-profile", { state: { user: user } });
   }
   return (
     <div className="">
