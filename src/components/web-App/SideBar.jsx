@@ -24,7 +24,7 @@ const SideBar = ({isOpen}) => {
                   <Navlinks />
                   <Link
                     to={"/login"}
-                    className="text-gold text-[14px]"
+                    className="text-gold text-[14px] lgss:hidden flex"
                     onClick={handleLogout}
                   >
                     <p>Log Out</p>

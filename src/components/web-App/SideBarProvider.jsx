@@ -38,7 +38,7 @@ const SideBarProvider = ({isOpen}) => {
             <NavlinksProvider />
             <Link
               to={"/login"}
-              className="text-gold text-[14px]"
+              className="text-gold lgss:hidden flex text-[14px]"
               onClick={handleLogout}
             >
               <p>Log Out</p>
