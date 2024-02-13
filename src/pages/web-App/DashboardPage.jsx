@@ -49,7 +49,7 @@ const DashboardPage = () => {
       <div className="lgss:w-4/5 w-full lgss:overflow-auto">
         <div className="lgss:w-full lgss:h-full lgss:flex-1 lgss:overflow lgss:px-[4%] flex flex-col ">
           {loggedInUser && <Header setIsOpen={setIsOpen} isOpen={isOpen} currentUser={loggedInUser} />}{" "}
-          <div className="mt-[20px] lgss:mt-0 text-[34px] text-gold font-semibold px-[5%] mds:px-0">
+          <div className="mt-[50px] lgss:mt-0 text-[34px] text-gold font-semibold px-[5%] mds:px-0">
             <h1>Dashboard</h1>
           </div>
           {loggedInUser && <DetailsCard loggedInUser={loggedInUser} />}

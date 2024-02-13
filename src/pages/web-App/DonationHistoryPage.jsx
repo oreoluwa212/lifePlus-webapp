@@ -26,7 +26,7 @@ const DonationHistoryPage = () => {
               currentUser={loggedInUser}
             />
           )}{" "}
-          <div className="mt-[20px] lgss:mt-0 text-[34px] text-gold font-semibold px-[5%] mds:px-0">
+          <div className="mt-[50px] lgss:mt-0 text-[34px] text-gold font-semibold px-[5%] mds:px-0">
             <h1>Appointments</h1>
           </div>
           {loggedInUser && <DetailsCard loggedInUser={loggedInUser} />}

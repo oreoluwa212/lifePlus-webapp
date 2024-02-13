@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
-const location = useLocation()
-const pathname = location.pathname
+  const [activeButton, setActiveButton] = useState("signup");
+  const location = useLocation();
+  const pathname = location.pathname;
   const handleButtonClick = (button) => {
     setActiveButton(button);
   };
@@ -23,7 +24,7 @@ const pathname = location.pathname
             <button
               onClick={() => handleButtonClick("login")}
               className={`h-[48px] w-[130px] flex justify-center items-center ${
-              pathname.includes("/login")
+                pathname.includes("/login") || activeButton === "login"
                   ? "bg-red text-white"
                   : "bg-transparent text-black"
               } rounded-[32px]`}
@@ -35,7 +36,7 @@ const pathname = location.pathname
             <button
               onClick={() => handleButtonClick("signup")}
               className={`h-[48px] w-[130px] flex justify-center items-center ${
-                pathname.includes("/signup")
+                pathname.includes("/signup") || activeButton === "signup"
                   ? "bg-red text-white"
                   : "bg-transparent text-black"
               } rounded-[32px]`}

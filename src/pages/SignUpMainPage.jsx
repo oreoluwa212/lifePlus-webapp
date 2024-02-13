@@ -60,7 +60,16 @@ const SignUpMainPage = () => {
   if (loggedIn) {
     user.new = true;
     navigate("/update-profile", { state: { user: user } });
+    // localStorage.setItem("user", JSON.stringify(user));
   }
+    if (loading) {
+      MySwal.fire({
+        didOpen: () => {
+          MySwal.showLoading();
+        },
+      });
+      setLoading(false);
+    }
   return (
     <div className="">
       <NavBar />
