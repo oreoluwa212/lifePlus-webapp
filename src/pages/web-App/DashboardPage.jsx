@@ -71,10 +71,12 @@ const DashboardPage = () => {
                   title="News & Updates"
                   icon={<PiArticleFill />}
                 />
+                <Link to={'/dashboard/points'}>
                 <DashboardCard
                   title="Points & Badges"
                   icon={<PiShieldCheckFill />}
                 />
+                 </Link> 
               </div>
             </div>
           </div>
