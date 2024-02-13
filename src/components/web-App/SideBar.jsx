@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navlinks from "./NavLinks";
 
-const SideBar = ({isOpen}) => {
+const SideBar = ({ isOpen }) => {
   const handleLogout = () => {
     localStorage.clear();
   };
@@ -22,16 +22,16 @@ const SideBar = ({isOpen}) => {
               <div className="">
                 <div className="lgss:mt-12">
                   <Navlinks />
-                  <Link
-                    to={"/login"}
-                    className="text-gold text-[14px] lgss:hidden flex"
-                    onClick={handleLogout}
-                  >
-                    <p>Log Out</p>
-                  </Link>
                 </div>
               </div>
             </div>
+            <Link
+              to={"/login"}
+              className="text-gold text-[14px] lgss:hidden flex"
+              onClick={handleLogout}
+            >
+              <p>Log Out</p>
+            </Link>
           </div>
         </div>
       </div>
