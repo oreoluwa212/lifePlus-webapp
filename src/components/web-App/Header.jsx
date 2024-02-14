@@ -8,8 +8,7 @@ import {
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Header = ({ currentUser, setIsOpen,
-isOpen }) => {
+const Header = ({ currentUser, setIsOpen, isOpen }) => {
   const handleLogout = () => {
     localStorage.clear();
   };
@@ -29,14 +28,17 @@ isOpen }) => {
           <img src={user} alt="" />
           <button className="flex items-start flex-col justify-between gap-1 ">
             <h1 className="text-[16px] mds:text-[20px] font-semibold">
-              {currentUser.fullName}
+              Hi{" "}
+              {currentUser.fullName
+                ? currentUser.fullName
+                : currentUser.facilityName}
             </h1>
             <div className="flex gap-2">
               <PiMedalBold className="text-gold hidden mdss:flex text-[26px] mds:text-[22px]" />
               <p className="text-[18px]">Bronze member</p>
             </div>
             <Link
-              to={"/login"}
+              to={currentUser.fullName ? "/login" : "/login-provider"}
               className="text-gold text-[14px]"
               onClick={handleLogout}
             >
@@ -54,18 +56,17 @@ isOpen }) => {
           </Link>
         </div>
         <div className="">
-
-        {isOpen ? (
-          <FaTimes
-            onClick={() => setIsOpen(false)}
-            className=" cursor-pointer text-red text-xl"
-          />
-        ) : (
-          <FaBars
-            onClick={() => setIsOpen(true)}
-            className=" cursor-pointer text-red text-xl"
-          />
-        )}
+          {isOpen ? (
+            <FaTimes
+              onClick={() => setIsOpen(false)}
+              className=" cursor-pointer text-red text-xl"
+            />
+          ) : (
+            <FaBars
+              onClick={() => setIsOpen(true)}
+              className=" cursor-pointer text-red text-xl"
+            />
+          )}
         </div>
       </div>
     </div>

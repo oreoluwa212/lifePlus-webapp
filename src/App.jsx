@@ -21,6 +21,8 @@ import DashboardProviderPage from "./pages/web-App/DashboardProviderPage.jsx";
 import AppointmentsProviderPage from "./pages/web-App/AppointmentsProviderPage.jsx";
 import DonationsProviderPage from "./pages/web-App/DonationsProviderPage.jsx";
 import PointsDonor from "./pages/web-App/PointsDonor.jsx";
+import LoginAsPage from "./pages/LoginAsPage";
+LoginAsPage;
 function App() {
   return (
     <>
@@ -32,6 +34,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/new-password" element={<CreateNewPassword />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/login-as" element={<LoginAsPage />} />
         <Route path="/login-provider" element={<LoginProviderPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/dashboard-provider" element={<DashboardProviderPage />} />
@@ -39,7 +42,10 @@ function App() {
         <Route path="/dashboard/points" element={<PointsDonor />} />
         <Route path="/update-profile" element={<UpdateProfilePage />} />
         <Route path="/appointments" element={<AppointmentsPage />} />
-        <Route path="/appointments-provider" element={<AppointmentsProviderPage />} />
+        <Route
+          path="/appointments-provider"
+          element={<AppointmentsProviderPage />}
+        />
         <Route path="/donations" element={<DonationHistoryPage />} />
         <Route path="/donations-provider" element={<DonationsProviderPage />} />
         <Route path="/donations/history" element={<PastDonations />} />

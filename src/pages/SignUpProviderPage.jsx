@@ -45,16 +45,27 @@ const SignUpProviderPage = () => {
           password: password,
           address: address,
         };
-        setLoading(true);
+        MySwal.fire({
+          didOpen: () => {
+            MySwal.showLoading();
+          },
+        });
         let response = await axios.post(
           "https://lifeplus-api.onrender.com/provider/signup",
           data
         );
+
         response = JSON.parse(response.data);
-        setLoading(false);
         if (response[0]) {
-          setLoggedIn(true);
-          setUser(response[1]);
+          MySwal.fire({
+            icon: "info",
+            text: "Profile Created",
+            didOpen: () => {
+              MySwal.hideLoading();
+            },
+          });
+          navigate("/dashboard-provider", { state: { user: response } });
+          localStorage.setItem("user", JSON.stringify(response));
         } else {
           MySwal.fire({
             icon: "error",
@@ -75,19 +86,7 @@ const SignUpProviderPage = () => {
       }
     }
   };
-  if (loggedIn) {
-    navigate("/dashboard-provider", { state: { user: user } });
-    localStorage.setItem("user", JSON.stringify(user));
-  }
 
-  if (loading) {
-    MySwal.fire({
-      didOpen: () => {
-        MySwal.showLoading();
-      },
-    });
-    setLoading(false);
-  }
   return (
     <div className="">
       <NavBar />
