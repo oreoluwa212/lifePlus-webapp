@@ -7,9 +7,6 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-function togglePasswordVisibility() {
-  setIsPasswordVisible((prevState) => !prevState);
-}
 const SignUpProviderPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [facilityName, setfacilityName] = useState("");
@@ -25,6 +22,10 @@ const SignUpProviderPage = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
+
+  function togglePasswordVisibility() {
+    setIsPasswordVisible((prevState) => !prevState);
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -90,9 +91,9 @@ const SignUpProviderPage = () => {
   return (
     <div className="">
       <NavBar />
-      <div className="mds:flex relative mds:absolute flex flex-row h-[83vh] mds:overflow-y-hidden border-t-2 border-red w-full">
+      <div className="mds:flex relative mds:absolute flex flex-row mds:overflow-y-hidden border-t-2 border-red w-full">
         <Demo />
-        <div className=" mds:w-3/5 bg-white rounded-[32px] mds:bg-transparent  mt-[10%] mds:mt-0 mds:relative h-[80%] mds:h-full overflow-auto flex flex-col justify-center items-center absolute top-0 left-0 ">
+        <div className=" mds:w-3/5 bg-white rounded-[32px] mds:bg-transparent  mt-[10%] mds:mt-0 py-[2%] mds:relative h-[80%] mds:h-full overflow-auto flex flex-col justify-center items-center absolute top-0 left-0 ">
           <div className="lgss:w-full px-[5%] mds:px-0 lgss:flex flex-col lgss:justify-center lgss:items-center lgss:gap-16 ">
             <div className="lgss:flex lgss:flex-col lgss:gap-6 lgss:items-center">
               <h1 className="text-gold font-bold text-[30px]">
@@ -116,7 +117,7 @@ const SignUpProviderPage = () => {
                 }}
               />
               {facilityNameError && (
-                <small className="text-red">Facility name is required</small>
+                <small className="text-red">facility name is required</small>
               )}
               <input
                 type="text"
@@ -144,13 +145,11 @@ const SignUpProviderPage = () => {
               {emailError && (
                 <small className="text-red">email is required</small>
               )}
-              <div className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0  flex outline-none placeholder:text-[18px]">
+              <div className="bg-transparent border-gold border-2 rounded-[32px] lgss:pl-8 lgss:pr-2 lgss:h-[48px] h-[50px] pl-4 mds:px-0  flex outline-none  text-[16px] w-full justify-between">
                 <input
                   type={isPasswordVisible ? "text" : "password"}
                   placeholder="password"
-                  name="password"
-                  id="password"
-                  className=" lgss:h-[48px] w-full  outline-none placeholder:text-[18px] bg-transparent"
+                  className=" lgss:h-[48px] outline-none  text-[16px] bg-transparent"
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
@@ -197,7 +196,6 @@ const SignUpProviderPage = () => {
                   )}
                 </button>
               </div>
-
               {passwordError && (
                 <small className="text-red">password is required</small>
               )}

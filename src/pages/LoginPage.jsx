@@ -4,16 +4,22 @@ import NavBar from "../components/NavBar";
 import Demo from "../components/Demo";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
 const LoginPage = () => {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
+
+  function togglePasswordVisibility() {
+    setIsPasswordVisible((prevState) => !prevState);
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -87,25 +93,33 @@ const LoginPage = () => {
                 <input
                   type="email"
                   placeholder="email"
-                  className="mdss:bg-transparent px-12 h-[50px] bg-white border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                  className="bg-white lgss:bg-transparent px-4 h-[50px] border-gold border-2 rounded-[32px] lgss:px-4 lgss:h-[48px] outline-none placeholder:text-[18px]"
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
                 />
-                <input
-                  type="password"
-                  placeholder="password"
-                  className="mdss:bg-transparent px-12 h-[50px] bg-white border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
-                  onChange={(e) => {
-                    setPassword(e.target.value);
-                  }}
-                />
-                <div className="flex lgss:flex lgss:justify-between lgss:items-center">
+                <div className=" border-gold bg-white lgss:bg-transparent border-2 rounded-[32px] lgss:pl-8 lgss:pr-2 lgss:h-[48px] h-[50px] pl-4 mds:px-0  flex outline-none  text-[16px] w-full justify-between">
+                  <input
+                    type={isPasswordVisible ? "text" : "password"}
+                    placeholder="password"
+                    className=" lgss:h-[48px] outline-none bg-transparent text-[16px]"
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                  />
+                  
+                    {isPasswordVisible ? (
+                      <IoMdEye onClick={togglePasswordVisibility} className="cursor-pointer text-xl relative top-4 text-gold right-4" />
+                    ) : (
+                      <IoMdEyeOff onClick={togglePasswordVisibility} className="cursor-pointer text-xl relative top-4 text-gold right-4" />
+                    )}
+                </div>
+                <div className="flex justify-between w-full lgss:items-center">
                   <div className="flex gap-2 px-4 lgss:gap-4 lgss:mt-2">
                     <input type="checkbox" name="" id="" />
-                    <p className="mds:text-black text-white">Remember me</p>
+                    <p className="mds:text-black  text-gold">Remember me</p>
                   </div>
-                  <div className=" lgss:px-4 mds:text-black text-white">
+                  <div className=" lgss:px-4 mds:text-black text-gold  ">
                     <Link to={"/forgot-password"}>
                       <button>Forgot password?</button>
                     </Link>

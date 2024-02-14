@@ -17,7 +17,7 @@ const HeroSection = () => {
       />
 
       <div
-        className="absolute text-white text-left w-[100%] h-[96%] flex flex-col gap-[20px] xs:px-[5%] pt-[20%] mds:pt-[5%] px-[5%] transition-all duration-850"
+        className="absolute text-white text-left w-[100%] h-[96%] flex flex-col xs:px-[5%] pt-[20%] mds:pt-[5%] px-[5%] transition-all duration-850"
       >
         <h1 className="lgss:text-[70px] font-extrabold text-[40px] mds:text-[46px] w-[100%] mds:w-[50%] transition-all duration-850">
           Blood donation Revolutionized
@@ -29,7 +29,7 @@ const HeroSection = () => {
           Blood donation is not just an act of altruism, but a journey of
           personal growth and community impact.
         </h4>
-        <Link to={'/sign-up'}>
+        <Link to={'/signup'}>
         <button className="h-[55px] w-[250px] mt-[40px] border-[2px] border-white flex justify-center items-center bg-red text-white mds:text-[18px] rounded-[32px] py-2">
           Get Started
         </button>

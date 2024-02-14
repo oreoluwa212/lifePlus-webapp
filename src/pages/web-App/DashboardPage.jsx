@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SideBar from "../../components/web-App/SideBar";
 import Header from "../../components/web-App/Header";
 import DetailsCard from "../../components/web-App/DetailsCard";
@@ -16,6 +16,7 @@ import { useEffect } from "react";
 
 const DashboardPage = () => {
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
   const MySwal = withReactContent(Swal);
   let newUser = {};
   let location = useLocation();
@@ -43,12 +44,12 @@ const DashboardPage = () => {
     }
   }
   return (
-    <div className="flex flex-row h-screen">
-      <SideBar />
-      <div className="lgss:w-4/5 lgss:overflow-auto">
+    <div className="flex flex-row h-screen w-full">
+      <SideBar isOpen={isOpen}/>
+      <div className="lgss:w-4/5 w-full lgss:overflow-auto">
         <div className="lgss:w-full lgss:h-full lgss:flex-1 lgss:overflow lgss:px-[4%] flex flex-col ">
-          {loggedInUser && <Header currentUser={loggedInUser} />}{" "}
-          <div className="mt-[50px] text-[34px] text-gold font-semibold px-[5%] mds:px-0">
+          {loggedInUser && <Header setIsOpen={setIsOpen} isOpen={isOpen} currentUser={loggedInUser} />}{" "}
+          <div className="mt-[50px] lgss:mt-0 text-[34px] text-gold font-semibold px-[5%] mds:px-0">
             <h1>Dashboard</h1>
           </div>
           {loggedInUser && <DetailsCard loggedInUser={loggedInUser} />}
@@ -70,10 +71,12 @@ const DashboardPage = () => {
                   title="News & Updates"
                   icon={<PiArticleFill />}
                 />
+                <Link to={'/dashboard/points'}>
                 <DashboardCard
                   title="Points & Badges"
                   icon={<PiShieldCheckFill />}
                 />
+                 </Link> 
               </div>
             </div>
           </div>

@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
 const LoginProviderPage = () => {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -17,6 +18,9 @@ const LoginProviderPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+      function togglePasswordVisibility() {
+        setIsPasswordVisible((prevState) => !prevState);
+      }
 
     if (!email || !password) {
       MySwal.fire("Ensure all fields are filled");

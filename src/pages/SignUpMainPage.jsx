@@ -7,9 +7,6 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-function togglePasswordVisibility() {
-  setIsPasswordVisible((prevState) => !prevState);
-}
 const SignUpMainPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [fullName, setFullName] = useState("");
@@ -22,7 +19,10 @@ const SignUpMainPage = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
-
+  
+  function togglePasswordVisibility() {
+    setIsPasswordVisible((prevState) => !prevState);
+  }
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!fullName) {
@@ -45,6 +45,7 @@ const SignUpMainPage = () => {
     response = JSON.parse(response.data);
     if (response[0]) {
       setLoggedIn(true);
+      localStorage.setItem("user", response[1])
       setUser(response[1]);
     } else {
       MySwal.fire({
@@ -58,17 +59,18 @@ const SignUpMainPage = () => {
 
   if (loggedIn) {
     user.new = true;
-    navigate("/dashboard", { state: { user: user } });
+    navigate("/update-profile", { state: { user: user } });
+    // localStorage.setItem("user", JSON.stringify(user));
   }
+
   return (
     <div className="">
       <NavBar />
       <div className="mds:flex relative mds:absolute flex mds:flex-row h-[83vh] mds:overflow-y-hidden border-t-2 border-red w-full">
         <Demo />
-
-        <div className=" mds:w-3/5 mds:relative  mds:h-full overflow-auto mds:flex mds:flex-col mds:justify-center mds:items-center absolute top-0 left-0 ">
-          <div className="lgss:w-full lgss:flex flex-col lgss:justify-center lgss:items-center lgss:gap-16 ">
-            <div className="lgss:flex lgss:flex-col lgss:gap-6 lgss:items-center">
+        <div className=" mds:w-3/5 mx-[5%] mds:mx-0 bg-white rounded-[32px] mds:bg-transparent mt-[10%] mds:mt-[2%] mds:relative h-[75%] mds:h-screen overflow-auto flex flex-col items-center absolute top-0 left-0 ">
+          <div className="lgss:w-full px-[5%] mds:px-0 lgss:flex flex-col lgss:justify-center lgss:items-center lgss:gap-3 ">
+            <div className="lgss:flex lgss:flex-col lgss:items-center ">
               <h1 className="text-gold font-bold text-[30px]">
                 Sign Up for LifePlus
               </h1>
@@ -77,7 +79,7 @@ const SignUpMainPage = () => {
               </h3>
             </div>
             <form
-              className="mds:w-[60%] w-[100%] justify-between lgss:flex lgss:flex-col lgss:gap-6"
+              className="mds:w-[60%] w-[100%] justify-between flex flex-col gap-6"
               onSubmit={handleSubmit}
             >
               <input
@@ -85,7 +87,7 @@ const SignUpMainPage = () => {
                 name="fullName"
                 id="fullName"
                 placeholder="full name"
-                className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0 outline-none placeholder:text-[18px]"
                 onChange={(e) => {
                   setFullName(e.target.value);
                 }}
@@ -98,7 +100,7 @@ const SignUpMainPage = () => {
                 name="email"
                 id="email"
                 placeholder="email"
-                className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0  outline-none placeholder:text-[18px]"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
@@ -106,13 +108,11 @@ const SignUpMainPage = () => {
               {emailError && (
                 <small className="text-red">email is required</small>
               )}
-              <div className="relative lgss:w-full flex justify-between bg-transparent border-gold border-2 mx-auto rounded-[32px] lgss:px-8">
+              <div className="bg-transparent border-gold border-2 rounded-[32px] lgss:pl-8 lgss:pr-2 lgss:h-[48px] h-[50px] pl-4 mds:px-0  flex outline-none  text-[16px] w-full justify-between">
                 <input
                   type={isPasswordVisible ? "text" : "password"}
                   placeholder="password"
-                  name="password"
-                  id="password"
-                  className=" lgss:h-[48px] outline-none placeholder:text-[18px] bg-transparent"
+                  className=" lgss:h-[48px] outline-none  text-[16px] bg-transparent"
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
@@ -164,18 +164,18 @@ const SignUpMainPage = () => {
                 <small className="text-red">password is required</small>
               )}
 
-              <div className="lgss:flex px-4 lgss:gap-4 lgss:mt-2">
+              <div className="flex px-4 gap-4 mt-2">
                 <input type="checkbox" name="aggree" id="aggree" />
-                <p className="text-white mds:text-black">
+                <p className="text-black">
                   I agree to LifePlus Terms and conditions and the privacy
                   policy
                 </p>
               </div>
               <button
                 type="submit"
-                className="bg-red text-white text-[18px] border-none rounded-[32px] lgss:px-8 lgss:h-[48px] w-[100%]"
+                className="bg-red text-white text-[18px] border-none rounded-[32px] lgss:px-8 h-[50px] lgss:h-[48px] w-[100%]"
               >
-                Sign Up
+                Next
               </button>
             </form>
           </div>
