@@ -65,6 +65,7 @@ const LoginProviderPage = () => {
     }
   }, []);
   return (
+    // https://lifeplus-api.onrender.com/provider/login
     <div className="">
       <NavBar />
       <div className="relative mds:absolute mds:flex mds:flex-row h-[80vh] border-t-2 border-red w-full">

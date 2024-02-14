@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
-    <div className="relative w-full h-screen transition-all duration-850">
+    <div className="relative w-full h-screen">
       <img
         src={homepage}
         alt=""
@@ -19,13 +19,13 @@ const HeroSection = () => {
       <div
         className="absolute text-white text-left w-[100%] h-[96%] flex flex-col gap-[20px] xs:px-[5%] pt-[20%] mds:pt-[5%] px-[5%] transition-all duration-850"
       >
-        <h1 className="lgss:text-[70px] font-extrabold text-[40px] mds:text-[46px] w-[100%] mds:w-[60%] transition-all duration-850">
+        <h1 className="lgss:text-[70px] font-extrabold text-[40px] mds:text-[46px] w-[100%] mds:w-[50%] transition-all duration-850">
           Blood donation Revolutionized
         </h1>
-        <h3 className="lgss:text-[36px] w-[100%] text-[24px] mds:w-[68%]">
+        <h3 className="lgss:text-[36px] w-[80%] text-[24px] mds:w-[40%]">
           Modern, efficient, tech powered blood donation system
         </h3>
-        <h4 className="lgss:text-[24px] mds:w-[55%] w-[320px] text-[16px]">
+        <h4 className="lgss:text-[24px] mds:w-[45%] w-[320px] text-[16px]">
           Blood donation is not just an act of altruism, but a journey of
           personal growth and community impact.
         </h4>

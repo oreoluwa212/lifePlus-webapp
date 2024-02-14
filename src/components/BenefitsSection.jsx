@@ -93,14 +93,14 @@ const BenefitsSection = () => {
                 <div className="flex items-center ">
                   <div className="flex flex-col">
                     <Benefits
-                      title="Convenience & empowerment"
-                      description="Schedule appointment seamlessly, track all your blood donations, gain health insights all in one place."
+                      title="Streamlined operations"
+                      description="Efficiency in appointment scheduling, and inventory tracking"
                       icon={<PiCalendarPlusFill />}
                     />
 
                     <Benefits
-                      title="Recognition & rewards"
-                      description="Find nearby blood donation centers, flexible appointment booking, track the status of each blood donation"
+                      title="Emergency response"
+                      description="Send urgent notifications to donors in case of critical shortages, mobilizing the community to save lives"
                       icon={<PiMedalFill />}
                     />
                   </div>
@@ -109,14 +109,14 @@ const BenefitsSection = () => {
                 <div className="lgss:flex lgss:items-center hidden ">
                   <div className="flex flex-col">
                     <Benefits
-                      title="Transparency & impact"
-                      description="Schedule appointment seamlessly, track all your blood donations, gain health insights all in one place."
+                      title="Real-time data insights"
+                      description="Monitor blood supply levels, donor behavior and trends, for decision making and resource allocation."
                       icon={<PiLifebuoyFill />}
                     />
 
                     <Benefits
-                      title="Personalized experience"
-                      description="We create tailored content, recommendations, and rewards based on your uniqueness."
+                      title="Partnership opportunities"
+                      description="Collaborate with institutions and organizations to offer diverse rewards and incentives."
                       icon={<PiUserFill />}
                     />
                   </div>
@@ -125,8 +125,8 @@ const BenefitsSection = () => {
                 <div className="lgss:flex lgss:items-center hidden  gap-[80px] ml-[40px]">
                   <div className="flex flex-col">
                     <Benefits
-                      title="Engage with other donors"
-                      description="Participate in challenges, earn badges, and climb leader boards, fostering friendly competition."
+                      title="Targeted outreach"
+                      description="Target donors based on eligibility, location, and blood type, at the right time"
                       icon={<PiUsersFourFill />}
                     />
 
