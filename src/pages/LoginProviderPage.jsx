@@ -12,15 +12,14 @@ const LoginProviderPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-      function togglePasswordVisibility() {
-        setIsPasswordVisible((prevState) => !prevState);
-      }
+    function togglePasswordVisibility() {
+      setIsPasswordVisible((prevState) => !prevState);
+    }
 
     if (!email || !password) {
       MySwal.fire("Ensure all fields are filled");
@@ -30,16 +29,26 @@ const LoginProviderPage = () => {
           email: email,
           password: password,
         };
-        setLoading(true);
+        MySwal.fire({
+          didOpen: () => {
+            MySwal.showLoading();
+          },
+        });
         let response = await axios.post(
           "https://lifeplus-api.onrender.com/provider/login",
           data
         );
         response = JSON.parse(response.data);
-        setLoading(false);
         if (response[0]) {
+          MySwal.fire({
+            icon: "info",
+            text: "welcome back",
+            didOpen: () => {
+              MySwal.hideLoading();
+            },
+          });
           localStorage.setItem("user", JSON.stringify(response[1]));
-          navigate("/dashboard");
+          navigate("/dashboard-provider");
         }
       } catch (error) {
         MySwal.fire({
@@ -53,15 +62,6 @@ const LoginProviderPage = () => {
       }
     }
   };
-
-  if (loading) {
-    MySwal.fire({
-      didOpen: () => {
-        MySwal.showLoading();
-      },
-    });
-    setLoading(false);
-  }
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user");
     if (loggedInUser) {
@@ -69,7 +69,6 @@ const LoginProviderPage = () => {
     }
   }, []);
   return (
-    // https://lifeplus-api.onrender.com/provider/login
     <div className="">
       <NavBar />
       <div className="relative mds:absolute mds:flex mds:flex-row h-[80vh] border-t-2 border-red w-full">
@@ -78,7 +77,7 @@ const LoginProviderPage = () => {
           <div className="lgss:w-full lgss:flex xs:flex flex-col mds:justify-center mds:items-center mds:gap-16 xs:gap-8">
             <div className="lgss:flex lgss:flex-col mds:gap-6 lgss:items-center">
               <h1 className="text-gold font-bold text-[30px]">
-                Login to LifePlus
+                Login to LifePlus As An Health Care Provider
               </h1>
               <h3 className="lgss:text-[18px] mds:text-black text-gold font-semibold">
                 Enter your details to sign in to your account

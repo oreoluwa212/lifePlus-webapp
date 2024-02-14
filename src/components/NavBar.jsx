@@ -20,11 +20,11 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="mds:w-[15%] w-[55%] justify-between flex">
-          <Link to={"/login"}>
+          <Link to={"/login-as"}>
             <button
               onClick={() => handleButtonClick("login")}
               className={`h-[48px] w-[130px] flex justify-center items-center ${
-                pathname.includes("/login") 
+                pathname.includes("/login")
                   ? "bg-red text-white"
                   : "bg-transparent text-black"
               } rounded-[32px]`}

@@ -19,7 +19,7 @@ const SignUpMainPage = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
-  
+
   function togglePasswordVisibility() {
     setIsPasswordVisible((prevState) => !prevState);
   }
@@ -45,7 +45,7 @@ const SignUpMainPage = () => {
     response = JSON.parse(response.data);
     if (response[0]) {
       setLoggedIn(true);
-      localStorage.setItem("user", response[1])
+      localStorage.setItem("user", response[1]);
       setUser(response[1]);
     } else {
       MySwal.fire({
