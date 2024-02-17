@@ -43,11 +43,12 @@ const DonationsProviderPage = () => {
                   title="Track Donations"
                   icon={<PiBinocularsFill />}
                 />
-
-                <DashboardCard
-                  title="Blood centres & drives"
-                  icon={<PiMapPinFill />}
-                />
+                <Link to={"/donations-provider/blood-drive"}>
+                  <DashboardCard
+                    title="Blood centres & drives"
+                    icon={<PiMapPinFill />}
+                  />
+                </Link>
               </div>
             </div>
           </div>
