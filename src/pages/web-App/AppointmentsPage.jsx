@@ -9,6 +9,7 @@ import {
   PiUsersFill,
 } from "react-icons/pi";
 import DashboardCard from "../../components/web-App/DashboardCard";
+import { Link } from "react-router-dom";
 
 const AppointmentsPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,10 +34,12 @@ const AppointmentsPage = () => {
           <div className="">
             <div className="flex flex-col justify-center lgss:items-start lgss:pt-14 pt-4">
               <div className=" flex flex-col lgss:grid lgss:grid-cols-3 gap-8">
-                <DashboardCard
-                  title="Schedule New Appointments"
-                  icon={<PiUsersFill />}
-                />
+                <Link to={"/appointments/schedule"}>
+                  <DashboardCard
+                    title="Schedule New Appointments"
+                    icon={<PiUsersFill />}
+                  />
+                </Link>
 
                 <DashboardCard
                   title="Appointments"

@@ -24,6 +24,7 @@ import PointsDonor from "./pages/web-App/PointsDonor.jsx";
 import LoginAsPage from "./pages/LoginAsPage";
 import BloodDriveProvider from "./pages/web-App/BloodDriveProvider.jsx";
 import BloodDriveDonor from "./pages/web-App/BloodDriveDonor.jsx";
+import AppointmentsScheduleDonor from "./pages/web-App/AppointmentsScheduleDonor.jsx";
 LoginAsPage;
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path="/dashboard/points" element={<PointsDonor />} />
         <Route path="/update-profile" element={<UpdateProfilePage />} />
         <Route path="/appointments" element={<AppointmentsPage />} />
+        <Route path="/appointments/schedule" element={<AppointmentsScheduleDonor />} />
         <Route
           path="/appointments-provider"
           element={<AppointmentsProviderPage />}
