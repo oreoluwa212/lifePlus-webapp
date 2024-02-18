@@ -8,5 +8,7 @@ import user from '../assets/images/user.png'
 import learning from '../assets/images/learning.png'
 import points from '../assets/images/points.png'
 import map from '../assets/images/map.png'
+import donor1 from '../assets/images/donor.png'
+import donor2 from '../assets/images/donor1.png'
 
-export { landing, points, learning, homepage, overlap, gauge, onboard, signImg, user, map}
+export { donor1, donor2, landing, points, learning, homepage, overlap, gauge, onboard, signImg, user, map}
