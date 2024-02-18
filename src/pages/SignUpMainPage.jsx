@@ -165,7 +165,7 @@ const SignUpMainPage = () => {
               )}
 
               <div className="flex px-4 gap-4 mt-2">
-                <input type="checkbox" name="aggree" id="aggree" />
+                <input type="checkbox" name="aggree" id="aggree" required/>
                 <p className="text-black">
                   I agree to LifePlus Terms and conditions and the privacy
                   policy
