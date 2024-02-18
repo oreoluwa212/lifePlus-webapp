@@ -14,8 +14,8 @@ const Header = ({ currentUser, setIsOpen, isOpen }) => {
   };
   return (
     <div className="">
-      <div className="w-full h-[100px] hidden lgss:flex lgss:justify-between items-center lgss:pt-8">
-        <div className="bg-[#F3E4E4] w-[50%] lgss:w-[70%] lgss:h-[80%] flex justify-between items-center px-4 rounded-[32px]">
+      <div className="w-full h-[100px] hidden lgss:flex lgss:justify-between items-center lgss:pt-8 lgss:mb-10">
+        <div className="bg-[#F3E4E4] w-[50%] lgss:w-[65%] lgss:h-[80%] flex justify-between items-center px-4 rounded-[32px]">
           <PiMagnifyingGlassFill className="text-gold text-[35px] mds:text-[24px] cursor-pointer" />
           <input
             type="text"
@@ -24,8 +24,8 @@ const Header = ({ currentUser, setIsOpen, isOpen }) => {
           />
         </div>
 
-        <div className=" w-[100%] lgss:w-[24%] px-4 h-[45%] hidden lgss:flex justify-between items-center rounded-[32px]">
-          <img src={user} alt="" />
+        <div className=" w-[100%] lgss:w-[30%] px-4 h-[45%] hidden lgss:flex gap-6 items-center rounded-[32px]">
+          <img src={user} alt="" className="w-[50px]" />
           <button className="flex items-start flex-col justify-between gap-1 ">
             <h1 className="text-[16px] mds:text-[20px] font-semibold">
               Hi{" "}

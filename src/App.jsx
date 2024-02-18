@@ -22,6 +22,9 @@ import AppointmentsProviderPage from "./pages/web-App/AppointmentsProviderPage.j
 import DonationsProviderPage from "./pages/web-App/DonationsProviderPage.jsx";
 import PointsDonor from "./pages/web-App/PointsDonor.jsx";
 import LoginAsPage from "./pages/LoginAsPage";
+import BloodDriveProvider from "./pages/web-App/BloodDriveProvider.jsx";
+import BloodDriveDonor from "./pages/web-App/BloodDriveDonor.jsx";
+import AppointmentsScheduleDonor from "./pages/web-App/AppointmentsScheduleDonor.jsx";
 LoginAsPage;
 function App() {
   return (
@@ -47,7 +50,12 @@ function App() {
           element={<AppointmentsProviderPage />}
         />
         <Route path="/donations" element={<DonationHistoryPage />} />
+        <Route path="/donations-donor/track" element={<BloodDriveDonor />} />
         <Route path="/donations-provider" element={<DonationsProviderPage />} />
+        <Route
+          path="/donations-provider/blood-drive"
+          element={<BloodDriveProvider />}
+        />
         <Route path="/donations/history" element={<PastDonations />} />
         <Route path="/community" element={<CommunityForumPage />} />
         <Route path="/learning" element={<LearningCenterPage />} />

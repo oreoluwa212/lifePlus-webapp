@@ -27,7 +27,7 @@ const DonationHistoryPage = () => {
             />
           )}{" "}
           <div className="mt-[50px] lgss:mt-0 text-[34px] text-gold font-semibold px-[5%] mds:px-0">
-            <h1>Appointments</h1>
+            <h1>Donations</h1>
           </div>
           {loggedInUser && <DetailsCard loggedInUser={loggedInUser} />}
           <div className="">
@@ -43,11 +43,12 @@ const DonationHistoryPage = () => {
                   title="Track Donations"
                   icon={<PiBinocularsFill />}
                 />
-
-                <DashboardCard
-                  title="Blood centres & drives"
-                  icon={<PiMapPinFill />}
-                />
+                <Link to={"/donations-donor/track"}>
+                  <DashboardCard
+                    title="Blood centres & drives"
+                    icon={<PiMapPinFill />}
+                  />
+                </Link>
               </div>
             </div>
           </div>

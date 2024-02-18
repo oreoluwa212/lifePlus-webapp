@@ -24,27 +24,30 @@ const LearningCenterPage = () => {
               currentUser={loggedInUser}
             />
           )}{" "}
-        <div className="flex gap-9 mt-10 lgss:mt-0  px-[5%] mds:px-0 w-full">
-          <div className="flex flex-col justify-between lgss:gap-5 lgss:items-center ">
-            <div className="w-full">
-              <div className="flex flex-col justify-center lgss:items-start lgss:pt-14 pt-0 w-full">
-                <div className=" flex flex-col lgss:grid lgss:grid-cols-3 gap-8 w-full">
-                  <LearningCard title="How to maintain good health" />
-                  <Link to={""}>
-                    <LearningCard title="Grapefruit Wonders" />
-                  </Link>
+          <div className="mt-[50px] lgss:mt-0 text-[34px] text-gold font-semibold px-[5%] mds:px-0">
+            <h1>Learning Center</h1>
+          </div>
+          <div className="flex gap-9 mt-10 lgss:mt-0  px-[5%] mds:px-0 w-full">
+            <div className="flex flex-col justify-between lgss:gap-5 lgss:items-center ">
+              <div className="w-full">
+                <div className="flex flex-col justify-center lgss:items-start lgss:pt-4 pt-0 w-full">
+                  <div className=" flex flex-col lgss:grid lgss:grid-cols-3 gap-8 w-full">
+                    <LearningCard title="How to maintain good health" />
+                    <Link to={""}>
+                      <LearningCard title="Grapefruit Wonders" />
+                    </Link>
 
-                  <LearningCard title="A sound mental health is vital" />
-                  <LearningCard title="Blood Donation" />
-                  <LearningCard title="The dangers of High Blood Pressure" />
-                  <LearningCard title="Managing your health and stress" />
+                    <LearningCard title="A sound mental health is vital" />
+                    <LearningCard title="Blood Donation" />
+                    <LearningCard title="The dangers of High Blood Pressure" />
+                    <LearningCard title="Managing your health and stress" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
