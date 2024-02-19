@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const BloodDriveProvider = () => {
+const BloodDriveProvider = ({currentUser}) => {
   const [title, setTitle] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -29,16 +29,6 @@ const BloodDriveProvider = () => {
   });
   const [formErrors, setFormErrors] = useState({});
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-    setFormErrors({
-      ...formErrors,
-      [e.target.name]: "",
-    });
-  };
 
   const validateForm = () => {
     const errors = {};
@@ -60,6 +50,7 @@ const BloodDriveProvider = () => {
 
     console.log("Points Value:", formData.tokenAmount);
     console.log("Trimmed Points Value:", formData.tokenAmount.trim());
+    
     // Validate points
     if (!formData.tokenAmount.trim().length) {
       errors.tokenAmount = "Points Reward is required";
@@ -69,7 +60,6 @@ const BloodDriveProvider = () => {
 
     setFormErrors(errors);
     console.log("Form Errors:", errors);
-
     return Object.keys(errors).length === 0;
   };
 
@@ -90,9 +80,10 @@ const BloodDriveProvider = () => {
           startDate: startDate,
           endDate: endDate,
           tokenAmount: tokenAmount,
-          userId: loggedInUser.userId,
+          userId: loggedInUser._id
         };
         console.log("Blood Drive Creation Request Data:", data);
+
         MySwal.fire({
           didOpen: () => {
             MySwal.showLoading();
@@ -102,18 +93,15 @@ const BloodDriveProvider = () => {
           "https://lifeplus-api.onrender.com/create-blood-drive",
           data
         );
-
-        response = JSON.parse(response.data);
-        if (response[0]) {
+        if (response["status"]===201) {
           MySwal.fire({
-            icon: "info",
+            icon: "success",
             text: "Blood Drive Created",
             didOpen: () => {
               MySwal.hideLoading();
             },
           });
-          navigate("/dashboard", { state: { user: response } });
-          localStorage.setItem("user", JSON.stringify(response));
+          document.getElementById("createDrive").reset()
         } else {
           MySwal.fire({
             icon: "error",
@@ -124,11 +112,9 @@ const BloodDriveProvider = () => {
         }
       } catch (error) {
         if (axios.isAxiosError(error)) {
-          // Axios error
           console.error("Axios error:", error.message);
           console.error("Status code:", error.response?.status);
         } else {
-          // Other types of errors
           console.error("An unexpected error occurred:", error.message);
         }
       }
@@ -152,6 +138,7 @@ const BloodDriveProvider = () => {
           {loggedInUser && <DetailsProviderCard loggedInUser={loggedInUser} />}
           <div className="flex justify-center items-center">
             <form
+              id="createDrive"
               className="mds:w-[100%] w-[90%] justify-between flex flex-col gap-6 h-[80vh] items-center bg-[#F3E4E4] mds:mt-8 mt-4 mds:py-12 py-4 rounded-[32px]"
               onSubmit={handleSubmit}
             >
