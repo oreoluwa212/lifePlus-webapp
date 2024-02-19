@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import Header from "../../components/web-App/Header";
-import {
-  PiCalendarCheckFill,
-  PiMapPinFill,
-  PiUsersFill,
-} from "react-icons/pi";
+import { PiCalendarCheckFill, PiMapPinFill, PiUsersFill } from "react-icons/pi";
 import DashboardCard from "../../components/web-App/DashboardCard";
 import SideBarProvider from "../../components/web-App/SideBarProvider";
 import DetailsProviderCard from "../../components/web-App/DetailsProviderCard";
+import { Link } from "react-router-dom";
 
 const AppointmentsProviderPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,10 +37,12 @@ const AppointmentsProviderPage = () => {
                   title="Appointments"
                   icon={<PiCalendarCheckFill />}
                 />
-                <DashboardCard
-                  title="Blood drives & centres"
-                  icon={<PiMapPinFill />}
-                />
+                <Link to={"/donations-provider/blood-drive"}>
+                  <DashboardCard
+                    title="Blood drives & centres"
+                    icon={<PiMapPinFill />}
+                  />
+                </Link>
               </div>
             </div>
           </div>

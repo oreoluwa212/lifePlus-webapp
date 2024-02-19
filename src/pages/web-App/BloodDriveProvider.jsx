@@ -7,7 +7,6 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 const BloodDriveProvider = () => {
   const [title, setTitle] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -19,7 +18,6 @@ const BloodDriveProvider = () => {
   const [tokenAmountError, setTokenAmountError] = useState(false);
   const MySwal = withReactContent(Swal);
   const navigate = useNavigate();
-
 
   const [isOpen, setIsOpen] = useState(false);
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
@@ -70,7 +68,8 @@ const BloodDriveProvider = () => {
     }
 
     setFormErrors(errors);
-    console.log("Form Errors:", errors); // Log errors to the console
+    console.log("Form Errors:", errors);
+
     return Object.keys(errors).length === 0;
   };
 
@@ -124,14 +123,14 @@ const BloodDriveProvider = () => {
           });
         }
       } catch (error) {
-  if (axios.isAxiosError(error)) {
-    // Axios error
-    console.error("Axios error:", error.message);
-    console.error("Status code:", error.response?.status);
-  } else {
-    // Other types of errors
-    console.error("An unexpected error occurred:", error.message);
-  };
+        if (axios.isAxiosError(error)) {
+          // Axios error
+          console.error("Axios error:", error.message);
+          console.error("Status code:", error.response?.status);
+        } else {
+          // Other types of errors
+          console.error("An unexpected error occurred:", error.message);
+        }
       }
     }
   };
