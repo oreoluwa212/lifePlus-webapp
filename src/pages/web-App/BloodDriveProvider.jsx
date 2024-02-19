@@ -91,7 +91,9 @@ const BloodDriveProvider = () => {
           startDate: startDate,
           endDate: endDate,
           tokenAmount: tokenAmount,
+          userId: loggedInUser.userId,
         };
+        console.log("Blood Drive Creation Request Data:", data);
         MySwal.fire({
           didOpen: () => {
             MySwal.showLoading();
@@ -122,15 +124,14 @@ const BloodDriveProvider = () => {
           });
         }
       } catch (error) {
-        console.error("An unexpected error occurred:", error);
-
-        MySwal.fire({
-          icon: "error",
-          title: "Oops...",
-          text:
-            error.response?.data ||
-            "An unknown error occurred. Please try again.",
-        });
+  if (axios.isAxiosError(error)) {
+    // Axios error
+    console.error("Axios error:", error.message);
+    console.error("Status code:", error.response?.status);
+  } else {
+    // Other types of errors
+    console.error("An unexpected error occurred:", error.message);
+  };
       }
     }
   };
