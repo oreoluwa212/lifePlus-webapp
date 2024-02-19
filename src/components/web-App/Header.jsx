@@ -8,7 +8,7 @@ import {
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Header = ({ currentUser, setIsOpen, isOpen }) => {
+const Header = ({ currentUser, setIsOpen, isOpen, avatar }) => {
   const handleLogout = () => {
     localStorage.clear();
   };
@@ -25,7 +25,15 @@ const Header = ({ currentUser, setIsOpen, isOpen }) => {
         </div>
 
         <div className=" w-[100%] lgss:w-[30%] px-4 h-[45%] hidden lgss:flex gap-6 items-center rounded-[32px]">
-          <img src={user} alt="" className="w-[50px]" />
+          {avatar ? (
+            <img
+              src={URL.createObjectURL(avatar)}
+              alt=""
+              className="w-[50px]"
+            />
+          ) : (
+            <img src={user} alt="" className="w-[50px]" />
+          )}
           <button className="flex items-start flex-col justify-between gap-1 ">
             <h1 className="text-[16px] mds:text-[20px] font-semibold">
               Hi{" "}

@@ -20,6 +20,11 @@ const UpdateProfilePage = () => {
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
 
+    const handleImageChange = (e) => {
+      const file = e.target.files[0];
+      setAvatar(file);
+    };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (
@@ -172,6 +177,21 @@ const UpdateProfilePage = () => {
                       setPhoneNumber(e.target.value);
                     }}
                   />
+                  <div>
+                    <label
+                      htmlFor="avatar"
+                      className="block text-[18px] text-gold"
+                    >
+                      Upload Profile Image:
+                    </label>
+                    <input
+                      type="file"
+                      id="avatar"
+                      accept="image/*"
+                      onChange={handleImageChange}
+                      className="lgss:bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 px-3 font-medium lgss:h-[48px] outline-none text-black placeholder:text-red placeholder:text-[18px]"
+                    />
+                  </div>
                 </div>
                 <button
                   type="submit"
