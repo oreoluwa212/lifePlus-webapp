@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/DropdownModal.css"; // Import the corresponding CSS
+import "../../styles/DropdownModal.css"; 
 import { Link } from "react-router-dom";
 import { user } from "../../assets";
 
@@ -13,7 +13,6 @@ const DropdownModal = ({ isOpen, handleClose, currentUser }) => {
       onClick={handleClose}
     >
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        {/* Content of your dropdown goes here */}
         <div className="btn-div">
           <div className="flex items-start flex-col justify-between gap-1 w-full cursor-pointer">
             <div className="flex justify-center items-center w-full">
