@@ -5,6 +5,7 @@ import NavBar from '../components/NavBar'
 import ServicesSection from '../components/ServicesSection'
 import BenefitsSection from '../components/BenefitsSection'
 import Footer from '../components/Footer'
+import AboutUs from '../components/AboutUs'
 
 
 export const LandingPage = () => {
@@ -13,6 +14,7 @@ export const LandingPage = () => {
             <NavBar/>
             <HeroSection />
             <BenefitsSection/>
+            <AboutUs/>
             <ServicesSection/>
             <Footer/>
         </div>

@@ -8,7 +8,7 @@ const BenefitsSection = () => {
     return (
       <div className="">
         <div className="flex justify-center items-center h-[166px]">
-          <h1 className="text-gold mds:text-[36px] xs:text-[26px] font-semibold">
+          <h1 className="text-red mds:text-[36px] xs:text-[26px] font-bold uppercase">
             Our Benefits
           </h1>
         </div>

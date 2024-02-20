@@ -19,30 +19,34 @@ const NavBar = () => {
             </h1>
           </Link>
         </div>
-        <div className="mds:w-[15%] w-[55%] justify-between flex">
+        <div className="mds:w-[20%] gap-6 w-[55%] justify-between flex ">
           <Link to={"/login-as"}>
-            <button
-              onClick={() => handleButtonClick("login")}
-              className={`h-[48px] w-[130px] flex justify-center items-center ${
-                pathname.includes("/login")
-                  ? "bg-red text-white"
-                  : "bg-transparent text-black"
-              } rounded-[32px]`}
-            >
-              Log In
-            </button>
+            <div className="bg-red rounded-[16px] shadow-sm border-white border-[1px] shadow-black ">
+              <button
+                onClick={() => handleButtonClick("login")}
+                className={`h-[48px] w-[130px] flex justify-center items-center text-white ${
+                  pathname.includes("/login")
+                    ? "bg-red text-white"
+                    : "bg-transparent text-black"
+                } rounded-[32px]`}
+              >
+                Log In
+              </button>
+            </div>
           </Link>
           <Link to={"/signup"}>
-            <button
-              onClick={() => handleButtonClick("signup")}
-              className={`h-[48px] w-[130px] flex justify-center items-center ${
-                pathname.includes("/signup")
-                  ? "bg-red text-white"
-                  : "bg-transparent text-black"
-              } rounded-[32px]`}
-            >
-              Sign Up
-            </button>
+            <div className="bg-red rounded-[16px] shadow-sm border-white border-[1px] shadow-black">
+              <button
+                onClick={() => handleButtonClick("signup")}
+                className={`h-[48px] w-[130px] flex justify-center items-center text-white  ${
+                  pathname.includes("/signup")
+                    ? "bg-red text-white"
+                    : "bg-transparent text-black"
+                } rounded-[32px]`}
+              >
+                Sign Up
+              </button>
+            </div>
           </Link>
         </div>
       </div>

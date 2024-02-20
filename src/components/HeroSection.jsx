@@ -15,19 +15,19 @@ const HeroSection = () => {
         alt=""
         className="absolute w-full h-full object-cover bg-center"
       />
-      <div className="absolute text-white text-left w-[100%] h-[96%] flex flex-col xs:px-[5%] pt-[20%] mds:pt-[5%] px-[5%] mds:gap-5">
-        <h1 className="lgss:text-[70px] font-extrabold text-[40px] mds:text-[46px] w-[100%] mds:w-[50%] transition-all duration-850 leading-[5rem]">
+      <div className="absolute text-white text-left w-[100%] h-[96%] flex flex-col xs:px-[5%] pt-[10%] mds:pt-[5%] px-[5%] gap-5">
+        <h1 className="lgss:text-[70px] font-extrabold text-[40px] mds:text-[46px] w-[100%] mds:w-[50%] transition-all duration-850 lgss:leading-[5rem]">
           Blood donation Revolutionized
         </h1>
-        <h3 className="lgss:text-[36px] w-[80%] text-[24px] mds:w-[50%] leading-[3rem]">
+        <h3 className="lgss:text-[36px] w-[80%] text-[24px] mds:w-[50%] lgss:leading-[3rem]">
           Modern, efficient, tech powered blood donation system
         </h3>
-        <h4 className="lgss:text-[24px] mds:w-[50%] w-[320px] text-[16px] leading-[2rem]">
+        <h4 className="lgss:text-[24px] mds:w-[50%] w-[320px] text-[16px] lgss:leading-[2rem]">
           Blood donation is not just an act of altruism, but a journey of
           personal growth and community impact.
         </h4>
         <Link to={"/signup"}>
-          <button className="h-[55px] w-[250px] mt-[30px] border-[2px] border-white flex justify-center items-center bg-red text-white mds:text-[18px] rounded-[32px] py-2">
+          <button className="h-[55px] w-[200px] mt-[30px] flex justify-center items-center bg-white text-red mds:text-[24px] rounded-[16px] py-2 font-extrabold shadow-sm shadow-black">
             Get Started
           </button>
         </Link>

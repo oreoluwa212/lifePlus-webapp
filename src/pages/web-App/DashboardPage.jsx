@@ -72,10 +72,6 @@ const DashboardPage = () => {
                 </Link>
 
                 <DashboardCard
-                  title="Leadership board & Challenges"
-                  icon={<PiLadderSimpleFill />}
-                />
-                <DashboardCard
                   title="News & Updates"
                   icon={<PiArticleFill />}
                 />
