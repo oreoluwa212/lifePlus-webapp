@@ -190,7 +190,7 @@ const SignUpMainPage = () => {
                 >
                   <div className="bg-white text-black text-[18px] flex justify-center items-center gap-4 border-black border-[1px] p-3 m-auto  rounded-[32px] lgss:px-8 h-[50px] lgss:h-[48px] w-full mt-3">
                     <img src={google} alt="" />
-                    <button>Login with Google</button>
+                    <button>Signup with Google</button>
                   </div>
                 </Link>
               </div>
