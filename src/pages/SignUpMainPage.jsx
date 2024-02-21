@@ -180,7 +180,8 @@ const SignUpMainPage = () => {
               >
                 Next
               </button>
-              <div className='flex w-full flex-col justify-center items-center'>
+            </form>
+            <div className='flex w-full flex-col justify-center items-center'>
                 <h4>or</h4>
                 <Link
                   to={
@@ -193,7 +194,6 @@ const SignUpMainPage = () => {
                   </div>
                 </Link>
               </div>
-            </form>
           </div>
         </div>
       </div>
