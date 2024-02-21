@@ -8,6 +8,7 @@ import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { FaGoogle } from "react-icons/fa";
 
 const LoginPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -107,12 +108,18 @@ const LoginPage = () => {
                       setPassword(e.target.value);
                     }}
                   />
-                  
-                    {isPasswordVisible ? (
-                      <IoMdEye onClick={togglePasswordVisibility} className="cursor-pointer text-xl relative top-4 text-gold right-4" />
-                    ) : (
-                      <IoMdEyeOff onClick={togglePasswordVisibility} className="cursor-pointer text-xl relative top-4 text-gold right-4" />
-                    )}
+
+                  {isPasswordVisible ? (
+                    <IoMdEye
+                      onClick={togglePasswordVisibility}
+                      className="cursor-pointer text-xl relative top-4 text-gold right-4"
+                    />
+                  ) : (
+                    <IoMdEyeOff
+                      onClick={togglePasswordVisibility}
+                      className="cursor-pointer text-xl relative top-4 text-gold right-4"
+                    />
+                  )}
                 </div>
                 <div className="flex justify-between w-full lgss:items-center">
                   <div className="flex gap-2 px-4 lgss:gap-4 lgss:mt-2">
@@ -132,6 +139,17 @@ const LoginPage = () => {
                   Log in
                 </button>
               </form>
+              <div>
+                <Link
+                  to={
+                    "https://lifeplus-api.onrender.com/auth/google/?usertype=donor"
+                  }
+                >
+                  <button className="bg-transparent text-black text-[18px] flex border-black border-2 justify-between p-3 m-auto  rounded-[32px] lgss:px-8 h-[50px] lgss:h-[48px] w-[90%] mt-3 md-4">
+                    <FaGoogle /> Login with Google
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

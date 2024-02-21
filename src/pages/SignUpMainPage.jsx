@@ -3,9 +3,11 @@ import NavBar from "../components/NavBar";
 import Demo from "../components/Demo";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { FaGoogle } from "react-icons/fa";
+import { data } from "autoprefixer";
 
 const SignUpMainPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -79,7 +81,7 @@ const SignUpMainPage = () => {
               </h3>
             </div>
             <form
-              className="mds:w-[60%] w-[100%] justify-between flex flex-col gap-6"
+              className="mds:w-[60%] w-[100%] justify-between flex flex-col gap-1.5"
               onSubmit={handleSubmit}
             >
               <input
@@ -177,7 +179,19 @@ const SignUpMainPage = () => {
               >
                 Next
               </button>
+              <h4>or</h4>
             </form>
+            <div>
+              <Link
+                to={
+                  "https://lifeplus-api.onrender.com/auth/google/?usertype=donor"
+                }
+              >
+                <button className="bg-transparent text-black text-[18px] flex border-black border-2 justify-between p-3 m-auto  rounded-[32px] lgss:px-8 h-[50px] lgss:h-[48px] w-[90%] mt-3 md-4">
+                  <FaGoogle /> Signup with Google
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
