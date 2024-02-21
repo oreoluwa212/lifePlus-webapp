@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
-    <div className="relative w-full h-screen">
+    <div className="relative w-full h-[80vh]">
       <img
         src={homepage}
         alt=""
@@ -15,7 +15,7 @@ const HeroSection = () => {
         alt=""
         className="absolute w-full h-full object-cover bg-center"
       />
-      <div className="absolute text-white text-left w-[100%] h-[96%] flex flex-col xs:px-[5%] pt-[10%] mds:pt-[5%] px-[5%] gap-5">
+      <div className="absolute text-white text-left w-[100%] h-[96%] flex flex-col justify-center xs:px-[5%] pt-[10%] mds:pt-[5%] px-[5%] gap-5">
         <h1 className="lgss:text-[70px] font-extrabold text-[40px] mds:text-[46px] w-[100%] mds:w-[50%] transition-all duration-850 lgss:leading-[5rem]">
           Blood donation Revolutionized
         </h1>

@@ -10,7 +10,7 @@ const NavBar = () => {
   };
 
   return (
-    <div className="flex bg-[#fafafa] text-white justify-between h-[100px] w-full">
+    <div className="flex bg-[#fafafa] text-white justify-between h-[100px] w-[90%] lgss:w-full">
       <div className="flex justify-between items-center w-[90%] px-[5%]">
         <div className="">
           <Link to={"/"}>
@@ -19,7 +19,7 @@ const NavBar = () => {
             </h1>
           </Link>
         </div>
-        <div className="mds:w-[20%] gap-6 w-[55%] justify-between flex ">
+        <div className="mds:w-[10%] gap-6 w-[55%] justify-between flex ">
           <Link to={"/login-as"}>
             <div className="bg-red rounded-[16px] shadow-sm border-white border-[1px] shadow-black ">
               <button
