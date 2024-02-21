@@ -29,7 +29,6 @@ const DonationsProviderPage = () => {
           <div className="mt-[50px] lgss:mt-0 text-[34px] text-gold font-semibold px-[5%] mds:px-0">
             <h1>Donations</h1>
           </div>
-          {loggedInUser && <DetailsProviderCard loggedInUser={loggedInUser} />}
           <div>
             <div className="flex flex-col justify-center lgss:items-start lgss:pt-14 pt-4">
               <div className=" flex flex-col lgss:grid lgss:grid-cols-3 gap-8">

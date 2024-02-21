@@ -1,13 +1,10 @@
 import React, { useState } from "react";
 import Header from "../../components/web-App/Header";
-import {
-  PiCalendarCheckFill,
-  PiMapPinFill,
-  PiUsersFill,
-} from "react-icons/pi";
+import { PiCalendarCheckFill, PiMapPinFill, PiUsersFill } from "react-icons/pi";
 import DashboardCard from "../../components/web-App/DashboardCard";
 import SideBarProvider from "../../components/web-App/SideBarProvider";
 import DetailsProviderCard from "../../components/web-App/DetailsProviderCard";
+import { Link } from "react-router-dom";
 
 const AppointmentsProviderPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +25,6 @@ const AppointmentsProviderPage = () => {
           <div className="mt-[50px] lgss:mt-0 text-[34px] text-gold font-semibold px-[5%] mds:px-0">
             <h1>Appointments</h1>
           </div>
-          {loggedInUser && <DetailsProviderCard loggedInUser={loggedInUser} />}
           <div className="">
             <div className="flex flex-col justify-center lgss:items-start lgss:pt-14 pt-4">
               <div className=" flex flex-col lgss:grid lgss:grid-cols-3 gap-8">
@@ -41,10 +37,12 @@ const AppointmentsProviderPage = () => {
                   title="Appointments"
                   icon={<PiCalendarCheckFill />}
                 />
-                <DashboardCard
-                  title="Blood drives & centres"
-                  icon={<PiMapPinFill />}
-                />
+                <Link to={"/donations-provider/blood-drive"}>
+                  <DashboardCard
+                    title="Blood drives & centres"
+                    icon={<PiMapPinFill />}
+                  />
+                </Link>
               </div>
             </div>
           </div>

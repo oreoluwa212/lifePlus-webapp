@@ -3,23 +3,29 @@ import SideBar from "../../components/web-App/SideBar";
 import Header from "../../components/web-App/Header";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {
-  PiCalendarCheckFill,
-} from "react-icons/pi";
+import {  } from "react-icons/pi";
 import { FaAngleDown } from "react-icons/fa";
+import SubmitSchheduleDonor from "../../components/web-App/SubmitSchheduleDonor";
 
 const AppointmentsScheduleDonor = () => {
   const [isOpen, setIsOpen] = useState(false);
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
-  
+
   const [selectedDate, setSelectedDate] = useState(null);
-  
+
   const [calendarOpen, setCalendarOpen] = useState(false);
 
   const toggleCalendar = () => {
     setCalendarOpen(!calendarOpen);
   };
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setIsOpen(true);
+  };
 
+  const handleCloseModal = () => {
+    setIsOpen(false);
+  };
   return (
     <div className="flex flex-row h-screen w-full">
       <SideBar isOpen={isOpen} />
@@ -35,7 +41,14 @@ const AppointmentsScheduleDonor = () => {
           <div className="mt-[50px] lgss:mt-0 text-[34px] text-gold font-semibold px-[5%] mds:px-0 ">
             <h1>Appointments | Schedule</h1>
           </div>
-          <div className="flex flex-col px-[4%] lgss:px-0">
+          <SubmitSchheduleDonor
+            isOpen={isOpen}
+            handleClose={handleCloseModal}
+          />
+          <form
+            onSubmit={handleFormSubmit}
+            className="flex flex-col px-[4%] lgss:px-0"
+          >
             <div className="relative flex justify-between items-center bg-[#F3E4E4] mt-4 w-[80%] lgss:w-[400px] h-[50px] px-6 rounded-[32px]">
               <DatePicker
                 selected={selectedDate}
@@ -81,7 +94,7 @@ const AppointmentsScheduleDonor = () => {
                 Schedule
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

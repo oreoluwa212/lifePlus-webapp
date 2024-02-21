@@ -18,6 +18,7 @@ import axios from "axios";
 const DashboardPage = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
+  const [avatar, setAvatar] = useState("");
   const MySwal = withReactContent(Swal);
   let newUser = {};
   let location = useLocation();
@@ -78,6 +79,7 @@ const DashboardPage = () => {
         <div className="lgss:w-full lgss:h-full lgss:flex-1 lgss:overflow lgss:px-[4%] flex flex-col ">
           {loggedInUser && (
             <Header
+              avatar={avatar}
               setIsOpen={setIsOpen}
               isOpen={isOpen}
               currentUser={loggedInUser}
@@ -97,10 +99,6 @@ const DashboardPage = () => {
                   />
                 </Link>
 
-                <DashboardCard
-                  title="Leadership board & Challenges"
-                  icon={<PiLadderSimpleFill />}
-                />
                 <DashboardCard
                   title="News & Updates"
                   icon={<PiArticleFill />}

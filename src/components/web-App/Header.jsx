@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { user } from "../../assets";
 import {
   PiMagnifyingGlassBold,
@@ -7,8 +7,14 @@ import {
 } from "react-icons/pi";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import DropdownModal from "./DropdownModal";
 
-const Header = ({ currentUser, setIsOpen, isOpen }) => {
+const Header = ({ currentUser, setIsOpen, isOpen, loggedInUser, avatar }) => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const toggleDropdown = () => {
+      setIsDropdownOpen(!isDropdownOpen);
+    };
   const handleLogout = () => {
     localStorage.clear();
   };
@@ -25,26 +31,35 @@ const Header = ({ currentUser, setIsOpen, isOpen }) => {
         </div>
 
         <div className=" w-[100%] lgss:w-[30%] px-4 h-[45%] hidden lgss:flex gap-6 items-center rounded-[32px]">
-          <img src={user} alt="" className="w-[50px]" />
-          <button className="flex items-start flex-col justify-between gap-1 ">
-            <h1 className="text-[16px] mds:text-[20px] font-semibold">
-              Hi{" "}
+          {avatar ? (
+            <img
+              src={loggedInUser.avatar}
+              alt=""
+              className="w-[50px]"
+            />
+          ) : (
+            <img src={user} alt="" className="w-[50px]" />
+          )}
+          <button
+            onClick={toggleDropdown} className="flex items-start flex-col justify-between gap-1 "
+          >
+            <h1 className="text-[16px] mds:text-[20px] font-semibold lgss:w-[180px]">
               {currentUser.fullName
                 ? currentUser.fullName
                 : currentUser.facilityName}
             </h1>
             <div className="flex gap-2">
-              <PiMedalBold className="text-gold hidden mdss:flex text-[26px] mds:text-[22px]" />
+              <PiMedalBold className="text-gold mdss:flex text-[26px] mds:text-[22px]" />
               <p className="text-[18px]">Bronze member</p>
             </div>
-            <Link
-              to={currentUser.fullName ? "/login" : "/login-provider"}
-              className="text-gold text-[14px]"
-              onClick={handleLogout}
-            >
-              <p>Log Out</p>
-            </Link>
+
           </button>
+          <DropdownModal
+            isOpen={isDropdownOpen}
+            handleClose={() => setIsDropdownOpen(false)}
+            handleLogout={handleLogout}
+            currentUser={currentUser}
+          />
         </div>
       </div>
       <div className="flex lgss:hidden justify-between items-center h-[100px] w-full px-8">

@@ -123,7 +123,7 @@ const LoginPage = () => {
                 </div>
                 <div className="flex justify-between w-full lgss:items-center">
                   <div className="flex gap-2 px-4 lgss:gap-4 lgss:mt-2">
-                    <input type="checkbox" name="" id="" />
+                    <input type="checkbox" name="" id=""/>
                     <p className="mds:text-black  text-gold">Remember me</p>
                   </div>
                   <div className=" lgss:px-4 mds:text-black text-gold  ">

@@ -48,7 +48,7 @@ const DashboardProviderPage = () => {
           <div className="">
             <div className="flex flex-col justify-center lgss:items-start lgss:pt-14 pt-4">
               <div className=" flex flex-col lgss:grid lgss:grid-cols-3 gap-8">
-                <Link to={"/dashboard"}>
+                <Link to={""}>
                   <DashboardCard
                     title="Manage Profile"
                     icon={<PiUserCircleFill />}
