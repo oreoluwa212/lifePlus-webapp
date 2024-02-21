@@ -82,7 +82,7 @@ const SignUpMainPage = () => {
               </h3>
             </div>
             <form
-              className="mds:w-[60%] w-[100%] justify-between lgss:mt-6 h-full flex flex-col"
+              className="mds:w-[60%] w-[100%] justify-between lgss:mt-6 h-full flex flex-col gap-3"
               onSubmit={handleSubmit}
             >
               <input
