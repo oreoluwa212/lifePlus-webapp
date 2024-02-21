@@ -11,5 +11,6 @@ import map from '../assets/images/map.png'
 import donor1 from '../assets/images/donor.png'
 import donor2 from '../assets/images/donor1.png'
 import aboutUs from '../assets/images/about.png'
+import google from '../assets/images/google.png'
 
-export { donor1, donor2, landing, points, learning, homepage, overlap, gauge, onboard, signImg, user, map, aboutUs}
+export { donor1, donor2, landing, points, learning, homepage, overlap, gauge, onboard, signImg, user, map, google, aboutUs}

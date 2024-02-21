@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { FaGoogle } from "react-icons/fa";
 import { data } from "autoprefixer";
+import { google } from "../assets";
 
 const SignUpMainPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -70,8 +71,8 @@ const SignUpMainPage = () => {
       <NavBar />
       <div className="mds:flex relative mds:absolute flex mds:flex-row h-[83vh] mds:overflow-y-hidden border-t-2 border-red w-full">
         <Demo />
-        <div className=" mds:w-3/5 mx-[5%] mds:mx-0 bg-white rounded-[32px] mds:bg-transparent mt-[10%] mds:mt-[2%] mds:relative h-[75%] mds:h-screen overflow-auto flex flex-col items-center absolute top-0 left-0 ">
-          <div className="lgss:w-full px-[5%] mds:px-0 lgss:flex flex-col lgss:justify-center lgss:items-center lgss:gap-3 ">
+        <div className=" mds:w-3/5 mx-[5%] mds:mx-0 bg-white rounded-[32px] mds:bg-transparent mt-[10%] mds:mt-[5%] mds:relative h-[75%] mds:h-screen overflow-auto flex flex-col items-center absolute top-0 left-0 ">
+          <div className="lgss:w-full px-[5%] mds:px-0 lgss:flex flex-col lgss:justify-between lgss:items-center lgss:gap-3 lgss:h-[70vh] ">
             <div className="lgss:flex lgss:flex-col lgss:items-center ">
               <h1 className="text-gold font-bold text-[30px]">
                 Sign Up for LifePlus
@@ -81,7 +82,7 @@ const SignUpMainPage = () => {
               </h3>
             </div>
             <form
-              className="mds:w-[60%] w-[100%] justify-between flex flex-col gap-1.5"
+              className="mds:w-[60%] w-[100%] justify-between lgss:mt-6 h-full flex flex-col"
               onSubmit={handleSubmit}
             >
               <input
@@ -167,7 +168,7 @@ const SignUpMainPage = () => {
               )}
 
               <div className="flex px-4 gap-4 mt-2">
-                <input type="checkbox" name="aggree" id="aggree" required/>
+                <input type="checkbox" name="aggree" id="aggree" required />
                 <p className="text-black">
                   I agree to LifePlus Terms and conditions and the privacy
                   policy
@@ -179,19 +180,20 @@ const SignUpMainPage = () => {
               >
                 Next
               </button>
-              <h4>or</h4>
+              <div className='flex w-full flex-col justify-center items-center'>
+                <h4>or</h4>
+                <Link
+                  to={
+                    "https://lifeplus-api.onrender.com/auth/google/?usertype=donor"
+                  }
+                >
+                  <div className="bg-white text-black text-[18px] flex justify-center items-center gap-4 border-black border-[1px] p-3 m-auto  rounded-[32px] lgss:px-8 h-[50px] lgss:h-[48px] w-full mt-3">
+                    <img src={google} alt="" />
+                    <button>Login with Google</button>
+                  </div>
+                </Link>
+              </div>
             </form>
-            <div>
-              <Link
-                to={
-                  "https://lifeplus-api.onrender.com/auth/google/?usertype=donor"
-                }
-              >
-                <button className="bg-transparent text-black text-[18px] flex border-black border-2 justify-between p-3 m-auto  rounded-[32px] lgss:px-8 h-[50px] lgss:h-[48px] w-[90%] mt-3 md-4">
-                  <FaGoogle /> Signup with Google
-                </button>
-              </Link>
-            </div>
           </div>
         </div>
       </div>

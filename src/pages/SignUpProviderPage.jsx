@@ -3,10 +3,11 @@ import NavBar from "../components/NavBar";
 import Demo from "../components/Demo";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
+import { google } from "../assets";
 
 
 const SignUpProviderPage = () => {
@@ -185,6 +186,19 @@ const SignUpProviderPage = () => {
               >
                 Sign Up
               </button>
+              <div className='flex w-full flex-col justify-center items-center'>
+              <h4>or</h4>
+              <Link
+                to={
+                  "https://lifeplus-api.onrender.com/auth/google/?usertype=donor"
+                }
+              >
+                  <div className="bg-white text-black text-[18px] flex justify-center items-center gap-4 border-black border-[1px] p-3 m-auto  rounded-[32px] lgss:px-8 h-[50px] lgss:h-[48px] w-full mt-3">
+                    <img src={google} alt="" />
+                    <button>Login with Google</button>
+                  </div>
+              </Link>
+            </div>
             </form>
           </div>
         </div>

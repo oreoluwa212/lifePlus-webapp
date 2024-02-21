@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { FaGoogle } from "react-icons/fa";
+import { google } from "../assets";
 
 const LoginPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -139,17 +140,19 @@ const LoginPage = () => {
                   Log in
                 </button>
               </form>
-              <div>
-                <Link
-                  to={
-                    "https://lifeplus-api.onrender.com/auth/google/?usertype=donor"
-                  }
-                >
-                  <button className="bg-transparent text-black text-[18px] flex border-black border-2 justify-between p-3 m-auto  rounded-[32px] lgss:px-8 h-[50px] lgss:h-[48px] w-[90%] mt-3 md-4">
-                    <FaGoogle /> Login with Google
-                  </button>
-                </Link>
-              </div>
+              <div className='flex w-full flex-col justify-center items-center'>
+              <h4>or</h4>
+              <Link
+                to={
+                  "https://lifeplus-api.onrender.com/auth/google/?usertype=donor"
+                }
+              >
+                  <div className="bg-white text-black text-[18px] flex justify-center items-center gap-4 border-black border-[1px] p-3 m-auto  rounded-[32px] lgss:px-8 h-[50px] lgss:h-[48px] w-full mt-3">
+                    <img src={google} alt="" />
+                    <button>Login with Google</button>
+                  </div>
+              </Link>
+            </div>
             </div>
           </div>
         </div>
