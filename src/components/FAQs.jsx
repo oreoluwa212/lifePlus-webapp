@@ -42,7 +42,7 @@ const FAQs = () => {
     <div className="flex flex-col justify-center items-center lgss:my-7 my-0">
       <div className="flex justify-center items-center h-[126px] mds:h-[166px]">
         <h1 className="text-red text-center text-[28px] mds:text-[36px] font-extrabold uppercase">
-          FREQUENTLY ASKED QUESTIONS
+          FAQ
         </h1>
       </div>
       <div className="bg-white shadow-lg shadow-gray-500/50 h-[450px] lgss:h-[320px] w-[90%] lgss:w-[76%]  rounded-[16px] flex justify-center items-center">
