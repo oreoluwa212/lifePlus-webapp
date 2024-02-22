@@ -15,7 +15,7 @@ const HeroSection = () => {
         alt=""
         className="absolute w-full h-full object-cover bg-center"
       />
-      <div className="absolute text-white text-left w-[100%] h-[96%] flex flex-col justify-center xs:px-[5%] pt-[5%] mds:pt-[2%] lgss:pl-[5%] px-[10%] gap-5">
+      <div className="absolute text-white text-left w-[100%] h-[96%] flex flex-col justify-center xs:px-[5%] pt-[1%] mds:pt-[2%] lgss:pl-[5%] px-[10%] gap-5">
         <h1 className="lgss:text-[78px] font-extrabold text-[40px] mds:text-[46px] w-[100%] mds:w-[50%] transition-all duration-850 lgss:leading-[5rem]">
           Blood donation Revolutionized
         </h1>
