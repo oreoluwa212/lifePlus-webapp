@@ -3,7 +3,7 @@ import { FaAngleRight } from "react-icons/fa";
 import '../styles/Faq.css'
 
 const FAQs = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const faqData = [
     {
