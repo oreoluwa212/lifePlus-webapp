@@ -94,10 +94,10 @@ const SignUpProviderPage = () => {
   return (
     <div className="">
       <NavBar />
-      <div className="mds:flex relative mds:absolute flex flex-row mds:overflow-y-hidden border-t-2 border-red w-full">
+      <div className="relative mds:absolute mds:flex mds:flex-row h-[100vh] border-t-2 border-red w-full">
         <Demo />
-        <div className=" mds:w-3/5 bg-white rounded-[32px] mds:bg-transparent  mt-[10%] mds:mt-0 py-[2%] mds:relative h-[80%] mds:h-full overflow-auto flex flex-col justify-center items-center absolute top-0 left-0 ">
-          <div className="lgss:w-full px-[5%] mds:px-0 lgss:flex flex-col lgss:justify-center lgss:items-center lgss:gap-16 ">
+        <div className=" mds:w-3/5 w-full absolute mds:relative top-0 mt-[20%] mds:mt-0 h-full overflow-auto flex flex-col justify-end mds:justify-center items-center">
+          <div className="w-full flex flex-col justify-center items-center mds:gap-4 xs:gap-8">
             <div className="lgss:flex lgss:flex-col lgss:gap-6 lgss:items-center">
               <h1 className="text-gold font-bold text-[30px]">
                 Sign Up for LifePlus
@@ -107,14 +107,14 @@ const SignUpProviderPage = () => {
               </h3>
             </div>
             <form
-              className="mds:w-[60%] w-[100%] justify-between flex flex-col gap-6"
+              className="mds:w-[60%] w-[90%] justify-between flex flex-col gap-3"
               onSubmit={handleSubmit}
             >
               <input
                 type="text"
                 name="facilityName"
                 placeholder="Name of HealthCare Facility"
-                className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0 outline-none placeholder:text-[18px]"
+                className=" border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0 outline-none placeholder:text-[18px]"
                 onChange={(e) => {
                   setfacilityName(e.target.value);
                 }}
@@ -127,7 +127,7 @@ const SignUpProviderPage = () => {
                 name="address"
                 id="address"
                 placeholder="Address"
-                className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0  outline-none placeholder:text-[18px]"
+                className="border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0  outline-none placeholder:text-[18px]"
                 onChange={(e) => {
                   setAddress(e.target.value);
                 }}
@@ -140,7 +140,7 @@ const SignUpProviderPage = () => {
                 name="email"
                 id="email"
                 placeholder="Institution Email Address"
-                className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0  outline-none placeholder:text-[18px]"
+                className="border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0  outline-none placeholder:text-[18px]"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
@@ -175,8 +175,8 @@ const SignUpProviderPage = () => {
               )}
 
               <div className="flex px-4 gap-4 mt-2">
-                <input type="checkbox" name="aggree" id="aggree" required/>
-                <p className="text-black">
+                <input type="checkbox" name="aggree" id="aggree" required />
+                <p className="mds:text-black text-gold">
                   I agree to LifePlus Terms, conditions and the privacy policy
                 </p>
               </div>

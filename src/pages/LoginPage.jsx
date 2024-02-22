@@ -78,12 +78,12 @@ const LoginPage = () => {
       <div className="relative mds:absolute mds:flex mds:flex-row h-[100vh] border-t-2 border-red w-full">
         <Demo />
         <div className="mds:w-3/5 w-full absolute mds:relative top-0 mt-[5%] mds:mt-0 mds:h-full overflow-auto flex flex-col justify-end mds:justify-center pb-[40px] items-center h-full">
-          <div className="w-full flex flex-col justify-center items-center mds:gap-16 xs:gap-8">
+          <div className="w-full flex flex-col justify-center items-center mds:gap-8 xs:gap-8">
             <div className="flex flex-col mds:gap-6 items-center">
               <h1 className="text-gold font-bold text-[30px]">
                 Login to LifePlus
               </h1>
-              <h3 className="lgss:text-[18px] mds:text-black text-gold font-semibold">
+              <h3 className="lgss:text-[18px] mds:text-black text-gold">
                 Enter your details to sign in to your account
               </h3>
             </div>
@@ -125,12 +125,12 @@ const LoginPage = () => {
                     />
                   )}
                 </div>
-                <div className="flex justify-between w-full lgss:items-center font-extrabold">
+                <div className="flex justify-between w-full lgss:items-center">
                   <div className="flex gap-2 px-4 lgss:gap-3">
                     <input type="checkbox" name="" id="" />
-                    <p className="mds:text-black  text-gold">Remember me</p>
+                    <p className="mds:text-black  text-white">Remember me</p>
                   </div>
-                  <div className=" lgss:px-4 mds:text-black text-gold  ">
+                  <div className=" lgss:px-4 mds:text-black text-white">
                     <Link to={"/forgot-password"}>
                       <button>Forgot password?</button>
                     </Link>
@@ -145,8 +145,8 @@ const LoginPage = () => {
                   </button>
                 </div>
               </form>
-              <div className="flex w-full flex-col justify-center items-center">
-                <h4 className="text-red font-bold mds:text-black">or</h4>
+              <div className="flex w-full flex-col justify-center items-center pt-4">
+                <h4 className="text-white font-bold mds:text-black">or</h4>
                 <Link
                   to={
                     "https://lifeplus-api.onrender.com/auth/google/?usertype=donor"

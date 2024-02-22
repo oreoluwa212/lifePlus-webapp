@@ -68,11 +68,11 @@ const SignUpMainPage = () => {
   return (
     <div className="">
       <NavBar />
-      <div className="mds:flex relative mds:absolute flex flex-row mds:overflow-y-hidden border-t-2 border-red w-full">
+      <div className="relative mds:absolute mds:flex mds:flex-row h-[100vh] mds:h-screen border-t-2 border-red w-full">
         <Demo />
-        <div className=" mds:w-3/5 bg-white rounded-[32px] mds:bg-transparent mds:mt-0 py-[2%] mds:relative h-[60%] overflow-auto flex flex-col justify-center items-center absolute  ">
-          <div className="lgss:w-full px-[5%] mds:px-0 lgss:flex flex-col lgss:justify-center lgss:items-center lgss:gap-2 h-full">
-            <div className="lgss:flex lgss:flex-col lgss:items-center ">
+        <div className="mds:w-3/5 w-full absolute mds:relative top-0 mt-[20%] mds:mt-0 mds:h-full overflow-auto flex flex-col justify-end mds:justify-center pb-[40px] items-center">
+          <div className="w-full flex flex-col justify-center items-center mds:gap-1 xs:gap-8">
+            <div className="flex flex-col mds:gap-3 items-center">
               <h1 className="text-gold font-bold text-[30px]">
                 Sign Up for LifePlus
               </h1>
@@ -80,76 +80,77 @@ const SignUpMainPage = () => {
                 Enter your details to sign up or sign in to your account
               </h3>
             </div>
-            <form
-              className="mds:w-[60%] w-[100%] justify-between lgss:mt-6 h-full flex flex-col gap-3"
-              onSubmit={handleSubmit}
-            >
-              <input
-                type="text"
-                name="fullName"
-                id="fullName"
-                placeholder="full name"
-                className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0 outline-none placeholder:text-[18px]"
-                onChange={(e) => {
-                  setFullName(e.target.value);
-                }}
-              />
-              {fullNameError && (
-                <small className="text-red">full name is required</small>
-              )}
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="email"
-                className="bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0  outline-none placeholder:text-[18px]"
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                }}
-              />
-              {emailError && (
-                <small className="text-red">email is required</small>
-              )}
-              <div className=" border-gold bg-white lgss:bg-transparent border-2 rounded-[32px] lgss:pl-8 lgss:pr-2 lgss:h-[48px] h-[50px] pl-4 mds:px-0  flex outline-none  text-[16px] w-full justify-between">
+            <div className="mds:w-[100%] w-[90%] h-full justify-center items-center flex flex-col gap-4 lgss:gap-6">
+              <form
+                className="mds:w-[60%] w-[100%] justify-between lgss:mt-6 h-full flex flex-col gap-3"
+                onSubmit={handleSubmit}
+              >
                 <input
-                  type={isPasswordVisible ? "text" : "password"}
-                  placeholder="password"
-                  className=" lgss:h-[48px] outline-none bg-transparent text-[16px]"
+                  type="text"
+                  name="fullName"
+                  id="fullName"
+                  placeholder="full name"
+                  className="border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0 outline-none placeholder:text-[18px]"
                   onChange={(e) => {
-                    setPassword(e.target.value);
+                    setFullName(e.target.value);
                   }}
                 />
-
-                {isPasswordVisible ? (
-                  <IoMdEye
-                    onClick={togglePasswordVisibility}
-                    className="cursor-pointer text-xl relative top-4 text-gold right-4"
-                  />
-                ) : (
-                  <IoMdEyeOff
-                    onClick={togglePasswordVisibility}
-                    className="cursor-pointer text-xl relative top-4 text-gold right-4"
-                  />
+                {fullNameError && (
+                  <small className="text-red">full name is required</small>
                 )}
-              </div>
-              {passwordError && (
-                <small className="text-red">password is required</small>
-              )}
-              <div className="flex px-4 gap-4 mt-2">
-                <input type="checkbox" name="aggree" id="aggree" required />
-                <p className="text-black">
-                  I agree to LifePlus Terms and conditions and the privacy
-                  policy
-                </p>
-              </div>
-              <button
-                type="submit"
-                className="bg-red text-white text-[18px] border-none rounded-[32px] lgss:px-8 h-[50px] lgss:h-[48px] w-[100%]"
-              >
-                Next
-              </button>
-            </form>
-            <div className='flex w-full flex-col justify-center items-center'>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="email"
+                  className="border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0  outline-none placeholder:text-[18px]"
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                />
+                {emailError && (
+                  <small className="text-red">email is required</small>
+                )}
+                <div className=" border-gold bg-white lgss:bg-transparent border-2 rounded-[32px] lgss:pl-8 lgss:pr-2 lgss:h-[48px] h-[50px] pl-4 mds:px-0  flex outline-none  text-[16px] w-full justify-between">
+                  <input
+                    type={isPasswordVisible ? "text" : "password"}
+                    placeholder="password"
+                    className=" lgss:h-[48px] outline-none bg-transparent text-[16px]"
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                  />
+
+                  {isPasswordVisible ? (
+                    <IoMdEye
+                      onClick={togglePasswordVisibility}
+                      className="cursor-pointer text-xl relative top-4 text-gold right-4"
+                    />
+                  ) : (
+                    <IoMdEyeOff
+                      onClick={togglePasswordVisibility}
+                      className="cursor-pointer text-xl relative top-4 text-gold right-4"
+                    />
+                  )}
+                </div>
+                {passwordError && (
+                  <small className="text-red">password is required</small>
+                )}
+                <div className="flex px-4 gap-4 mt-2">
+                  <input type="checkbox" name="aggree" id="aggree" required />
+                  <p className="text-white mds:text-black">
+                    I agree to LifePlus Terms and conditions and the privacy
+                    policy
+                  </p>
+                </div>
+                <button
+                  type="submit"
+                  className="bg-red text-white text-[18px] border-none rounded-[32px] lgss:px-8 h-[50px] lgss:h-[48px] w-[100%]"
+                >
+                  Next
+                </button>
+              </form>
+              <div className="flex w-full flex-col justify-center items-center">
                 <h4>or</h4>
                 <Link
                   to={
@@ -162,6 +163,7 @@ const SignUpMainPage = () => {
                   </div>
                 </Link>
               </div>
+            </div>
           </div>
         </div>
       </div>
