@@ -45,7 +45,7 @@ const AppointmentsPage = () => {
                   title="Appointments"
                   icon={<PiCalendarCheckFill />}
                 />
-                <Link to={"/donations/history"}>
+                <Link to={"/donations-donor/track"}>
                   <DashboardCard
                     title="Blood drives & centres"
                     icon={<PiMapPinFill />}
