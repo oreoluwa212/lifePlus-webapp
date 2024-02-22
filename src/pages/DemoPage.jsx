@@ -3,7 +3,7 @@ import Demo from '../components/Demo'
 
 export const DemoPage = () => {
   return (
-    <div>
+    <div className='h-screen'>
 
         <Demo/>
         

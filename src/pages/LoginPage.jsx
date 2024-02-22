@@ -75,11 +75,11 @@ const LoginPage = () => {
   return (
     <div className="">
       <NavBar />
-      <div className="relative mds:absolute mds:flex mds:flex-row h-[80vh] border-t-2 border-red w-full">
+      <div className="relative mds:absolute mds:flex mds:flex-row h-[100vh] border-t-2 border-red w-full">
         <Demo />
-        <div className=" w-full px-[5%] mds:w-3/5 absolute mds:relative top-0 mds:h-full overflow-auto mds:flex mds:flex-col mds:justify-center mds:items-center">
-          <div className="lgss:w-full lgss:flex xs:flex flex-col mds:justify-center mds:items-center mds:gap-16 xs:gap-8">
-            <div className="lgss:flex lgss:flex-col mds:gap-6 lgss:items-center">
+        <div className="mds:w-3/5 w-full absolute mds:relative top-0 mt-[5%] mds:mt-0 mds:h-full overflow-auto flex flex-col justify-end mds:justify-center pb-[40px] items-center h-full">
+          <div className="w-full flex flex-col justify-center items-center mds:gap-16 xs:gap-8">
+            <div className="flex flex-col mds:gap-6 items-center">
               <h1 className="text-gold font-bold text-[30px]">
                 Login to LifePlus
               </h1>
@@ -87,20 +87,23 @@ const LoginPage = () => {
                 Enter your details to sign in to your account
               </h3>
             </div>
-            <div className="mds:w-[80%] w-[100%] h-[50%] mds:h-full justify-between flex flex-col gap-4 lgss:gap-6">
+            <div className="mds:w-[70%] w-[80%] justify-between mds:flex mds:flex-col mds:gap-6">
               <form
                 onSubmit={handleSubmit}
-                className="mds:w-full mds:px-[5%] w-[100%] h-[50%] mds:h-full justify-between flex flex-col gap-4 lgss:gap-6"
+                className="mds:w-full mds:px-[5%] w-[100%] h-[70%] mds:h-[50%] mds:h-full justify-between flex flex-col gap-4 lgss:gap-4"
               >
-                <input
-                  type="email"
-                  placeholder="email"
-                  className="bg-white lgss:bg-transparent px-4 h-[50px] border-gold border-2 rounded-[32px] lgss:px-4 lgss:h-[48px] outline-none placeholder:text-[18px]"
-                  onChange={(e) => {
-                    setEmail(e.target.value);
-                  }}
-                />
-                <div className=" border-gold bg-white lgss:bg-transparent border-2 rounded-[32px] lgss:pl-8 lgss:pr-2 lgss:h-[48px] h-[50px] pl-4 mds:px-0  flex outline-none  text-[16px] w-full justify-between">
+                <div className=" border-gold bg-white lgss:bg-transparent border-2 rounded-[32px] lgss:pl-4 lgss:pr-2 lgss:h-[48px] h-[50px] pl-4 mds:px-0  flex outline-none  text-[16px] w-full justify-between">
+                  <input
+                    type="email"
+                    placeholder="email"
+                    className="lgss:h-[48px] outline-none bg-transparent text-[16px]"
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                  />
+                </div>
+
+                <div className=" border-gold bg-white lgss:bg-transparent border-2 rounded-[32px] lgss:pl-4 lgss:pr-2 lgss:h-[48px] h-[50px] pl-4 mds:px-0  flex outline-none  text-[16px] w-full justify-between">
                   <input
                     type={isPasswordVisible ? "text" : "password"}
                     placeholder="password"
@@ -122,9 +125,9 @@ const LoginPage = () => {
                     />
                   )}
                 </div>
-                <div className="flex justify-between w-full lgss:items-center">
-                  <div className="flex gap-2 px-4 lgss:gap-4 lgss:mt-2">
-                    <input type="checkbox" name="" id=""/>
+                <div className="flex justify-between w-full lgss:items-center font-extrabold">
+                  <div className="flex gap-2 px-4 lgss:gap-3">
+                    <input type="checkbox" name="" id="" />
                     <p className="mds:text-black  text-gold">Remember me</p>
                   </div>
                   <div className=" lgss:px-4 mds:text-black text-gold  ">
@@ -133,26 +136,28 @@ const LoginPage = () => {
                     </Link>
                   </div>
                 </div>
-                <button
-                  type="submit"
-                  className="bg-red text-white text-[18px] lgss:w-[100%] border-none rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] w-full"
-                >
-                  Log in
-                </button>
+                <div className="">
+                  <button
+                    type="submit"
+                    className="bg-red text-white text-[18px] lgss:w-[100%] border-none rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] w-full"
+                  >
+                    Log in
+                  </button>
+                </div>
               </form>
-              <div className='flex w-full flex-col justify-center items-center'>
-              <h4>or</h4>
-              <Link
-                to={
-                  "https://lifeplus-api.onrender.com/auth/google/?usertype=donor"
-                }
-              >
+              <div className="flex w-full flex-col justify-center items-center">
+                <h4 className="text-red font-bold mds:text-black">or</h4>
+                <Link
+                  to={
+                    "https://lifeplus-api.onrender.com/auth/google/?usertype=donor"
+                  }
+                >
                   <div className="bg-white text-black text-[18px] flex justify-center items-center gap-4 border-black border-[1px] p-3 m-auto  rounded-[32px] lgss:px-8 h-[50px] lgss:h-[48px] w-full mt-3">
                     <img src={google} alt="" />
                     <button>Login with Google</button>
                   </div>
-              </Link>
-            </div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
