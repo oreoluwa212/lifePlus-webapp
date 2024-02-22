@@ -6,13 +6,13 @@ const AboutUs = () => {
     <>
 
       <div className="flex flex-col  w-full lgss:items-center">
-      <div className="flex justify-center items-center lgss:h-[166px] h-[50px]">
+      <div className="flex justify-center items-center lgss:h-[166px] h-[70px]">
         <h1 className="text-red mds:text-[36px] xs:text-[26px] font-bold">
           ABOUT US
         </h1>
       </div>
       <div className="flex flex-col lgss:flex-row">
-      <div className="text-[20px] lgss:w-[45%] w-full lgss:h-[500px] h-[320px] text-red flex flex-col justify-center items-center font-bold">
+      <div className="mds:text-[20px] text-[16px] lgss:w-[45%] w-full lgss:h-[500px] h-[230px] text-red flex flex-col justify-center items-center font-bold">
           <h1 className=" lgss:w-[70%] w-[90%] text-center lgss:leading-10">
             LifePlus AOB± offers a unique value proposition that addresses the
             pain points of both donors and healthcare professionals, while
