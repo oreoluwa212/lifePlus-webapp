@@ -151,7 +151,7 @@ const SignUpMainPage = () => {
                 </button>
               </form>
               <div className="flex w-full flex-col justify-center items-center">
-                <h4>or</h4>
+                <h4 className='text-white'>or</h4>
                 <Link
                   to={
                     "https://lifeplus-api.onrender.com/auth/google/?usertype=donor"
