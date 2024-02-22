@@ -27,7 +27,7 @@ const HealthSummary = () => {
                 </div>
                 <button
                     type="submit"
-                    className="bg-red text-white text-[18px] lgss:w-[130%] border-none rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] w-full"
+                    className="bg-red text-white text-[18px] w-[30%] border-none rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px]"
                   >
                     Donate Blood
                   </button>
