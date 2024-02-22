@@ -4,12 +4,14 @@ import Card from "./Card";
 
 const ServicesSection = () => {
   return (
-    <>
+    <div className="px-[10%]">
       <div className="flex justify-center items-center h-[166px] bg-transparent">
-        <h1 className="text-red text-[36px] font-bold uppercase">Our Services</h1>
+        <h1 className="text-red text-[36px] font-bold uppercase">
+          Our Services
+        </h1>
       </div>
       <div className=" h-[900px] lgss:h-[350px]">
-        <div className="flex flex-col gap-8 lgss:gap-0 lgss:flex-row lgss:justify-around">
+        <div className="flex flex-col gap-8 lgss:gap-0 lgss:flex-row lgss:justify-around ">
           <Card
             title="Personalized donor dashboard"
             description="Manage your profile, track donation history, get personalized alerts"
@@ -28,7 +30,7 @@ const ServicesSection = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

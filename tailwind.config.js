@@ -9,7 +9,7 @@ module.exports = {
         gold: "#B79455",
       },
       fontFamily: {
-        lexend: ["Lexend", "sans-serif"],
+        Urbanist: ["Urbanist", "sans-serif"],
       },
       screens: {
         xs: "340px",

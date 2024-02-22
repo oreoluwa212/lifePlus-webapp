@@ -7,6 +7,7 @@ import BenefitsSection from '../components/BenefitsSection'
 import Footer from '../components/Footer'
 import AboutUs from '../components/AboutUs'
 import TestimonialsSection from '../components/TestimonialsSection'
+import FAQs from '../components/FAQs'
 
 
 export const LandingPage = () => {
@@ -17,6 +18,7 @@ export const LandingPage = () => {
             <BenefitsSection/>
             <AboutUs/>
             <TestimonialsSection/>
+            <FAQs/>
             <ServicesSection/>
             <Footer/>
         </div>
