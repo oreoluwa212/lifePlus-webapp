@@ -96,10 +96,10 @@ const SignUpProviderPage = () => {
       <NavBar />
       <div className="relative mds:absolute mds:flex mds:flex-row h-[100vh] border-t-2 border-red w-full">
         <Demo />
-        <div className=" mds:w-3/5 w-full absolute mds:relative top-0 mt-[20%] mds:mt-0 h-full overflow-auto flex flex-col justify-end mds:justify-center items-center  h-[70vh]">
+        <div className=" mds:w-3/5 w-full absolute mds:relative top-0 mt-[20%] mds:mt-0 overflow-auto flex flex-col justify-end mds:justify-center items-center  h-[60vh]">
           <div className="w-full flex flex-col justify-center items-center mds:gap-4 xs:gap-8">
             <div className="lgss:flex lgss:flex-col lgss:gap-6 lgss:items-center">
-              <h1 className="text-gold font-bold text-[30px]">
+              <h1 className="text-gold text-center font-bold text-[30px]">
                 Sign Up for LifePlus
               </h1>
               <h3 className="lgss:text-[18px] mds:text-black lgss:w-[55%] lgss:text-center text-gold">
@@ -176,7 +176,7 @@ const SignUpProviderPage = () => {
 
               <div className="flex px-4 gap-4 mt-2">
                 <input type="checkbox" name="aggree" id="aggree" required />
-                <p className="mds:text-black text-gold">
+                <p className="mds:text-black text-white">
                   I agree to LifePlus Terms, conditions and the privacy policy
                 </p>
               </div>

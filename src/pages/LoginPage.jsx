@@ -87,10 +87,10 @@ const LoginPage = () => {
                 Enter your details to sign in to your account
               </h3>
             </div>
-            <div className="mds:w-[70%] w-[80%] justify-between mds:flex mds:flex-col mds:gap-6">
+            <div className="mds:w-[70%] w-[90%] justify-between mds:flex mds:flex-col mds:gap-6">
               <form
                 onSubmit={handleSubmit}
-                className="mds:w-full mds:px-[5%] w-[100%] h-[70%] mds:h-[50%] mds:h-full justify-between flex flex-col gap-4 lgss:gap-4"
+                className="mds:w-full mds:px-[5%] w-[100%] h-[70%] mds:h-[50%] justify-between flex flex-col gap-4 lgss:gap-4"
               >
                 <div className=" border-gold bg-white lgss:bg-transparent border-2 rounded-[32px] lgss:pl-4 lgss:pr-2 lgss:h-[48px] h-[50px] pl-4 mds:px-0  flex outline-none  text-[16px] w-full justify-between">
                   <input

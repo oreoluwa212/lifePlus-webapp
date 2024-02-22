@@ -3,7 +3,6 @@ import SideBar from "../../components/web-App/SideBar";
 import Header from "../../components/web-App/Header";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {  } from "react-icons/pi";
 import { FaAngleDown } from "react-icons/fa";
 import SubmitSchheduleDonor from "../../components/web-App/SubmitSchheduleDonor";
 
@@ -12,20 +11,34 @@ const AppointmentsScheduleDonor = () => {
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
 
   const [selectedDate, setSelectedDate] = useState(null);
-
   const [calendarOpen, setCalendarOpen] = useState(false);
+  const [selectedTime, setSelectedTime] = useState(null);
 
   const toggleCalendar = () => {
     setCalendarOpen(!calendarOpen);
   };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    setIsOpen(true);
+
+    if (selectedDate && selectedTime) {
+      setIsOpen(true);
+      // Add logic to handle the form submission
+    } else {
+      alert("Please select both date and time");
+    }
   };
 
   const handleCloseModal = () => {
     setIsOpen(false);
   };
+  const handleFormKeyPress = (e) => {
+    // Prevent form submission on Enter key
+    if (e.key === 'Enter') {
+      e.preventDefault();
+    }
+  };
+
   return (
     <div className="flex flex-row h-screen w-full">
       <SideBar isOpen={isOpen} />
@@ -37,18 +50,12 @@ const AppointmentsScheduleDonor = () => {
               isOpen={isOpen}
               currentUser={loggedInUser}
             />
-          )}{" "}
+          )}
           <div className="mt-[50px] lgss:mt-0 text-[34px] text-gold font-semibold px-[5%] mds:px-0 ">
             <h1>Appointments | Schedule</h1>
           </div>
-          <SubmitSchheduleDonor
-            isOpen={isOpen}
-            handleClose={handleCloseModal}
-          />
-          <form
-            onSubmit={handleFormSubmit}
-            className="flex flex-col px-[4%] lgss:px-0"
-          >
+          <SubmitSchheduleDonor isOpen={isOpen} handleClose={handleCloseModal} />
+          <form onSubmit={handleFormSubmit} onKeyPress={handleFormKeyPress} className="flex flex-col px-[4%] lgss:px-0">
             <div className="relative flex justify-between items-center bg-[#F3E4E4] mt-4 w-[80%] lgss:w-[400px] h-[50px] px-6 rounded-[32px]">
               <DatePicker
                 selected={selectedDate}
@@ -60,32 +67,30 @@ const AppointmentsScheduleDonor = () => {
                 className="w-full h-full bg-[#F3E4E4] outline-none placeholder:text-gold placeholder:font-semibold placeholder:text-[18px]"
                 open={calendarOpen}
               />
-              <FaAngleDown
-                className="cursor-pointer "
-                onClick={toggleCalendar}
-              />
+              <FaAngleDown className="cursor-pointer " onClick={toggleCalendar} />
             </div>
             <div className="mt-4 flex flex-col">
               <p className="font-semibold">Select a Time</p>
-              <div className="flex gap-6 mt-4">
-                <button className="h-[60px] w-[80px] rounded-[16px] bg-white shadow-lg shadow-gray-200/50 border border-gray-300">
+              <div className="flex gap-6 mt-4 text-[18px]">
+                <button
+                type="button"
+                  className={`h-[60px] w-[90px] rounded-[16px] ${
+                    selectedTime === "9:00am" ? "bg-pink-200" : "bg-white"
+                  } shadow-lg shadow-gray-200/50 border border-gray-300`}
+                  onClick={() => setSelectedTime("9:00am")}
+                >
                   9:00am
                 </button>
-                <button className="h-[60px] w-[80px] rounded-[16px] bg-pink-200 shadow-lg shadow-gray-200/50 border border-gray-300">
+                <button
+                type="button"
+                  className={`h-[60px] w-[90px] rounded-[16px] ${
+                    selectedTime === "10:00am" ? "bg-pink-200" : "bg-white"
+                  } shadow-lg shadow-gray-200/50 border border-gray-300`}
+                  onClick={() => setSelectedTime("10:00am")}
+                >
                   10:00am
                 </button>
-                <button className="h-[60px] w-[80px] rounded-[16px] bg-white shadow-lg shadow-gray-200/50 border border-gray-300">
-                  11:00am
-                </button>
-                <button className="h-[60px] w-[80px] rounded-[16px] bg-pink-200 shadow-lg shadow-gray-200/50 border border-gray-300">
-                  12:00am
-                </button>
-                <button className="h-[60px] w-[80px] rounded-[16px] bg-white shadow-lg shadow-gray-200/50 border border-gray-300">
-                  1:00pm
-                </button>
-                <button className="h-[60px] w-[80px] rounded-[16px] bg-pink-200 shadow-lg shadow-gray-200/50 border border-gray-300">
-                  2:00pm
-                </button>
+                {/* Repeat for other buttons, updating the time value */}
               </div>
               <button
                 type="submit"

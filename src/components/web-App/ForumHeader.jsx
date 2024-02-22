@@ -30,7 +30,7 @@ const ForumHeader = ({ currentUser }) => {
             {getTitleText()}
           </h1>
         </div>
-        <div className=" lgss:w-[30%] w-[40%] px-4 h-[45%] flex justify-end gap-6 items-center rounded-[32px]">
+        <div className=" lgss:w-[40%] w-[40%] px-4 h-[45%] flex justify-end gap-6 items-center rounded-[32px]">
           <img src={user} alt="" className="hidden mds:flex" />
           <button className="flex items-start flex-col justify-between gap-1 ">
             <h1 className="text-[16px] mds:text-[20px] font-semibold">

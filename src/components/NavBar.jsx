@@ -26,7 +26,7 @@ const NavBar = () => {
                 onClick={() => handleButtonClick("login")}
                 className={`h-[48px] w-[80px] lgss:w-[130px] flex justify-center items-center ${
                   pathname.includes("/login")
-                    ? "bg-red text-white"
+                    ? "bg-red rounded-[14px] text-white"
                     : "bg-transparent text-black"
                 } rounded-[32px]`}
               >
@@ -40,7 +40,7 @@ const NavBar = () => {
                 onClick={() => handleButtonClick("signup")}
                 className={`h-[48px]  w-[80px] lgss:w-[130px] flex justify-center items-center text-white  ${
                   pathname.includes("/signup")
-                    ? "bg-red text-white"
+                    ? "bg-red text-white "
                     : "bg-transparent text-black"
                 } rounded-[32px]`}
               >
