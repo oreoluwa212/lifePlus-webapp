@@ -13,6 +13,7 @@ import { useLocation, useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useEffect } from "react";
+import axios from "axios";
 
 const DashboardPage = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const DashboardPage = () => {
     newUser = location.state.user;
   }
 
-  const loggedInUser = JSON.parse(localStorage.getItem("user"));
+  let loggedInUser = JSON.parse(localStorage.getItem("user"));
   if (newUser && newUser.new) {
     useEffect(() => {
       MySwal.fire({
@@ -37,7 +38,34 @@ const DashboardPage = () => {
       navigate("/update-profile", { state: { user: newUser } });
     }, []);
   } else {
-    if (!loggedInUser) {
+    // check for googleOauth loggedin User
+    let userId = "";
+    if (location.search) {
+      userId = location.search.slice(1);
+      useEffect(() => {
+        const fetchgoogleUser = async () => {
+          try {
+            let response = await axios.get(
+              `https://lifeplus-api.onrender.com/user?userid=${userId}`
+            );
+
+            MySwal.fire({
+              icon: "info",
+              title: "Profile Update Required",
+              text: "hi, in other for us to know you better and personalize your experience, you are expected to update your profile",
+              footer: '<a href="/update-profile">Update Now</a>',
+            });
+            // location.search
+            loggedInUser = response.data;
+            localStorage.setItem("user", JSON.stringify(response.data));
+            navigate("/update-profile", { state: { user: response.data } });
+          } catch (error) {
+            console.log(error);
+          }
+        };
+        fetchgoogleUser();
+      }, []);
+    } else if (!loggedInUser) {
       useEffect(() => {
         MySwal.fire("you dont have access to view this page");
         navigate("/login");

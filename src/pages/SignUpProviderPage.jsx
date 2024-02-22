@@ -3,10 +3,11 @@ import NavBar from "../components/NavBar";
 import Demo from "../components/Demo";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
+import { google } from "../assets";
 
 
 const SignUpProviderPage = () => {

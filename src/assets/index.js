@@ -11,5 +11,9 @@ import map from '../assets/images/map.png'
 import donor1 from '../assets/images/donor.png'
 import donor2 from '../assets/images/donor1.png'
 import aboutUs from '../assets/images/about.png'
+import google from '../assets/images/google.png'
+import user1 from '../assets/images/user1.png'
+import user2 from '../assets/images/user2.png'
+import user3 from '../assets/images/user3.png'
 
-export { donor1, donor2, landing, points, learning, homepage, overlap, gauge, onboard, signImg, user, map, aboutUs}
+export {user1, user2, user3,  donor1, donor2, landing, points, learning, homepage, overlap, gauge, onboard, signImg, user, map, google, aboutUs}

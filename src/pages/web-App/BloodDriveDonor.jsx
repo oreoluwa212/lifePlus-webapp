@@ -3,6 +3,7 @@ import Header from "../../components/web-App/Header";
 import SideBar from "../../components/web-App/SideBar";
 import { donor1, donor2, map } from "../../assets";
 
+
 const BloodDriveDonor = () => {
   const [isOpen, setIsOpen] = useState(false);
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
@@ -24,7 +25,7 @@ const BloodDriveDonor = () => {
           <div className="px-6 lgss:px-0">
             <img src={map} alt="" />
           </div>
-          <div className="px-6 mt-6 lgss:px-0 h-[200px] w-full flex gap-4">
+          <div className="px-6 mt-6 lgss:px-0 h-[200px] w-[80%] flex gap-4">
             <img src={donor1} alt="" className="hidden lgss:flex" />
             <div className="w-[90%] flex justify-between font-semibold py-2">
               <div className="flex flex-col gap-4">
@@ -51,7 +52,7 @@ const BloodDriveDonor = () => {
               </div>
             </div>
           </div>
-          <div className="px-6 mt-6 lgss:px-0 h-[200px] w-full flex gap-4">
+          <div className="px-6 mt-6 lgss:px-0 h-[200px] w-[80%] flex gap-4">
             <img src={donor2} alt="" className="hidden lgss:flex" />
             <div className="w-[90%] flex justify-between font-semibold py-2">
               <div className="flex flex-col gap-4">

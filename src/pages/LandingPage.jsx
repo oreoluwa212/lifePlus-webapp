@@ -6,6 +6,7 @@ import ServicesSection from '../components/ServicesSection'
 import BenefitsSection from '../components/BenefitsSection'
 import Footer from '../components/Footer'
 import AboutUs from '../components/AboutUs'
+import TestimonialsSection from '../components/TestimonialsSection'
 
 
 export const LandingPage = () => {
@@ -15,6 +16,7 @@ export const LandingPage = () => {
             <HeroSection />
             <BenefitsSection/>
             <AboutUs/>
+            <TestimonialsSection/>
             <ServicesSection/>
             <Footer/>
         </div>

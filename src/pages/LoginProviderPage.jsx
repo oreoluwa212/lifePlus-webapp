@@ -8,6 +8,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { google } from "../assets";
 
 const LoginProviderPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
