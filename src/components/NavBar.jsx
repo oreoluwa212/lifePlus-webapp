@@ -19,7 +19,7 @@ const NavBar = () => {
             </h1>
           </Link>
         </div>
-        <div className="mds:w-[10%] gap-6 w-[50%] justify-between flex ">
+        <div className="mds:w-[20%] gap-6 w-[50%] justify-between flex ">
           <Link to={"/login-as"}>
             <div className="bg-red rounded-[16px] shadow-sm border-white border-[1px] shadow-black ">
               <button

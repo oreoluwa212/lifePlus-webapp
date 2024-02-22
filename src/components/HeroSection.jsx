@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
-    <div className="relative w-full h-[80vh]">
+    <div className="relative w-full h-[100vh]">
       <img
         src={homepage}
         alt=""
