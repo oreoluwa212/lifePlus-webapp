@@ -54,29 +54,31 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-[400px] mt-8">
+    <div className="flex flex-col justify-center items-center mt-4">
       <div className="flex justify-center items-center h-[166px]">
-        <h1 className="text-red text-[36px] font-bold uppercase">Our Testimonials</h1>
+        <h1 className="text-red text-[36px] font-bold uppercase">
+          Our Testimonials
+        </h1>
       </div>
 
-      <div className="w-[70%] relative">
+      <div className="w-[70%] relative h-full pb-4">
         <Slider ref={sliderRef} {...settings}>
-        <TestimonialsCard
-          title="Tunde Musa"
-          description="Very simple easy and quick I have never seen anything like this before"
-          img={user1}
-        />
-        <TestimonialsCard
-          title="Emeka Bamidele"
-          description="Very simple easy and quick I have never seen anything like this before"
-          img={user3}
-        />
-        <TestimonialsCard
-          title="Jenny Elizabeth "
-          description="Very simple easy and quick I have never seen anything like this before"
-          img={user2}
-        />
-      </Slider>
+          <TestimonialsCard
+            title="Tunde Musa"
+            description="Very simple easy and quick I have never seen anything like this before"
+            img={user1}
+          />
+          <TestimonialsCard
+            title="Emeka Bamidele"
+            description="Very simple easy and quick I have never seen anything like this before"
+            img={user3}
+          />
+          <TestimonialsCard
+            title="Jenny Elizabeth "
+            description="Very simple easy and quick I have never seen anything like this before"
+            img={user2}
+          />
+        </Slider>
 
         {/* Manual navigation buttons */}
         <button
@@ -84,14 +86,14 @@ const TestimonialsSection = () => {
           className="absolute top-1/2 mds:left-[-10%] left-[-15%] transform -translate-y-1/2 text-2xl lgss:text-4xl text-red border-2 border-red w-10 mds:w-14 h-10 rounded-[50%] focus:outline-none flex justify-center items-center"
           onClick={goToPrev}
         >
-          {<FaArrowLeft/>}
+          {<FaArrowLeft />}
         </button>
         <button
           type="button"
           className="absolute top-1/2 mds:right-[-10%] right-[-15%] transform -translate-y-1/2  text-2xl lgss:text-4xl text-red border-2 border-red w-10 mds:w-14 h-10 rounded-[50%] focus:outline-none flex justify-center items-center"
           onClick={goToNext}
         >
-          {<FaArrowRight/>}
+          {<FaArrowRight />}
         </button>
       </div>
     </div>

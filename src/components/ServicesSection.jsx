@@ -5,7 +5,7 @@ import Card from "./Card";
 const ServicesSection = () => {
   return (
     <>
-      <div className="flex justify-center items-center h-[166px]">
+      <div className="flex justify-center items-center h-[166px] bg-transparent">
         <h1 className="text-red text-[36px] font-bold uppercase">Our Services</h1>
       </div>
       <div className=" h-[900px] lgss:h-[350px]">
