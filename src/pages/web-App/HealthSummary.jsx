@@ -18,7 +18,7 @@ const HealthSummary = () => {
             </Link>
             {loggedInUser && <ForumHeader currentUser={loggedInUser} />}
           </div>
-          <div className="flex flex-col gap-8 justify-start items-center lgss:mt-9 mt-6">
+          <div className="flex flex-col gap-8 lgss:mt-9 mt-6">
             <h1 className="text-left text-[46px]">
               There are no records available.
             </h1>
