@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../../components/web-App/Header";
 import SideBar from "../../components/web-App/SideBar";
 import { donor1, donor2, map } from "../../assets";
+import { Link } from "react-router-dom";
 
 
 const BloodDriveDonor = () => {
@@ -43,12 +44,14 @@ const BloodDriveDonor = () => {
                 <p>25 points</p>
                 <p>Deadline</p>
                 <p>25/03/2024</p>
-                <button
-                  type="submit"
-                  className="bg-red text-white text-[16px] border-none rounded-[32px] lgss:px-8 lgss:h-[40px] h-[45px] w-[80%] font-medium"
-                >
-                  Schedule
-                </button>
+                <Link to={"/appointments/schedule"}>
+                  <button
+                    type="submit"
+                    className="bg-red text-white text-[16px] border-none rounded-[32px] lgss:px-8 h-[45px] w-[80%] font-medium"
+                  >
+                    Schedule
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -70,12 +73,14 @@ const BloodDriveDonor = () => {
                 <p>25 points</p>
                 <p>Deadline</p>
                 <p>25/03/2024</p>
-                <button
-                  type="submit"
-                  className="bg-red text-white text-[16px] border-none rounded-[32px] lgss:px-8 lgss:h-[40px] h-[45px] w-[80%] font-medium"
-                >
-                  Schedule
-                </button>
+                <Link to={"/appointments/schedule"}>
+                  <button
+                    type="submit"
+                    className="bg-red text-white text-[16px] border-none rounded-[32px] lgss:px-8 h-[45px] w-[80%] font-medium"
+                  >
+                    Schedule
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
