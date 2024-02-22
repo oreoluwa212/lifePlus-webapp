@@ -96,7 +96,7 @@ const LoginPage = () => {
                   <input
                     type="email"
                     placeholder="email"
-                    className="lgss:h-[48px] outline-none bg-transparent text-[16px]"
+                    className="lgss:h-[48px] w-full outline-none bg-transparent text-[16px]"
                     onChange={(e) => {
                       setEmail(e.target.value);
                     }}
@@ -107,7 +107,7 @@ const LoginPage = () => {
                   <input
                     type={isPasswordVisible ? "text" : "password"}
                     placeholder="password"
-                    className=" lgss:h-[48px] outline-none bg-transparent text-[16px]"
+                    className=" lgss:h-[48px] outline-none bg-transparent text-[16px] w-full"
                     onChange={(e) => {
                       setPassword(e.target.value);
                     }}

@@ -11,7 +11,7 @@ const ServicesSection = () => {
         </h1>
       </div>
       <div className=" h-[1000px] lgss:h-[350px]">
-        <div className="flex flex-col gap-12 lgss:gap-0 lgss:flex-row lgss:justify-around ">
+        <div className="flex flex-col gap-12 lgss:flex-row lgss:justify-around ">
           <Card
             title="Personalized donor dashboard"
             description="Manage your profile, track donation history, get personalized alerts"
