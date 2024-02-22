@@ -5,10 +5,11 @@ import DetailsCard from "../../components/web-App/DetailsCard";
 import DashboardCard from "../../components/web-App/DashboardCard";
 import {
   PiArticleFill,
-  PiLadderSimpleFill,
   PiShieldCheckFill,
   PiUserCircleFill,
+  PiCrownSimpleBold,
 } from "react-icons/pi";
+import { FaStethoscope } from "react-icons/fa";
 import { useLocation, useNavigate, Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
@@ -98,15 +99,26 @@ const DashboardPage = () => {
                     icon={<PiUserCircleFill />}
                   />
                 </Link>
-
-                <DashboardCard
-                  title="News & Updates"
-                  icon={<PiArticleFill />}
-                />
                 <Link to={"/dashboard/points"}>
                   <DashboardCard
                     title="Points & Badges"
                     icon={<PiShieldCheckFill />}
+                  />
+                </Link>
+                <DashboardCard
+                  title="News & Updates"
+                  icon={<PiArticleFill />}
+                />
+                <Link to={''}>
+                  <DashboardCard
+                    title="Health Summary"
+                    icon={<PiCrownSimpleBold/>}
+                  />
+                </Link>
+                <Link to={''}>
+                  <DashboardCard
+                    title="Leaderboard"
+                    icon={<FaStethoscope />}
                   />
                 </Link>
               </div>
