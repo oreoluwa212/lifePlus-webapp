@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DashboardCard = ({ title, description, icon }) => {
+const DashboardCard = ({ title, icon }) => {
   return (
     <div className="max-w-md mx-auto cursor-pointer bg-[#F3E4E4] border-none border-[1px] h-[220px] mds:w-[300px] w-[250px] rounded-md overflow-hidden shadow-md flex justify-center items-center text-center">
       <div className="p-4">

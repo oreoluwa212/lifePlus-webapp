@@ -109,7 +109,7 @@ const DashboardPage = () => {
                   title="News & Updates"
                   icon={<PiArticleFill />}
                 />
-                <Link to={''}>
+                <Link to={'/dashboard/health-summary'}>
                   <DashboardCard
                     title="Health Summary"
                     icon={<PiCrownSimpleBold/>}
