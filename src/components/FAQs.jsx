@@ -35,8 +35,9 @@ const FAQs = () => {
   ];
 
   const handleToggle = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+    setActiveIndex((prevIndex) => (prevIndex === index ? 0 : index));
   };
+
   return (
     <div className="flex flex-col justify-center items-center lgss:my-7 my-0">
       <div className="flex justify-center items-center h-[126px] mds:h-[166px]">

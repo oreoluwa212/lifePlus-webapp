@@ -82,14 +82,14 @@ const TestimonialsSection = () => {
 
         <button
           type="button"
-          className="absolute top-1/2 mds:left-[-10%] left-[-15%] transform -translate-y-1/2 text-2xl lgss:text-4xl text-red border-2 border-red w-10 mds:w-14 h-10 rounded-[50%] focus:outline-none flex justify-center items-center"
+          className="absolute top-1/2 mds:left-[-10%] left-[-15%] transform -translate-y-1/2 text-2xl text-red border-2 border-red w-10 h-10 rounded-[50%] focus:outline-none flex justify-center items-center"
           onClick={goToPrev}
         >
           {<FaArrowLeft />}
         </button>
         <button
           type="button"
-          className="absolute top-1/2 mds:right-[-10%] right-[-15%] transform -translate-y-1/2  text-2xl lgss:text-4xl text-red border-2 border-red w-10 mds:w-14 h-10 rounded-[50%] focus:outline-none flex justify-center items-center"
+          className="absolute top-1/2 mds:right-[-10%] right-[-15%] transform -translate-y-1/2  text-2xl text-red border-2 border-red w-10 h-10 rounded-[50%] focus:outline-none flex justify-center items-center"
           onClick={goToNext}
         >
           {<FaArrowRight />}
