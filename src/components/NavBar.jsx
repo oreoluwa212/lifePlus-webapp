@@ -28,7 +28,7 @@ const NavBar = () => {
                   pathname.includes("/login")
                     ? "bg-red rounded-[14px] text-white"
                     : "bg-transparent text-black"
-                } rounded-[32px]`}
+                } rounded-[16px]`}
               >
                 Log In
               </button>
@@ -42,7 +42,7 @@ const NavBar = () => {
                   pathname.includes("/signup")
                     ? "bg-red text-white "
                     : "bg-transparent text-black"
-                } rounded-[32px]`}
+                } rounded-[16px]`}
               >
                 Sign Up
               </button>
