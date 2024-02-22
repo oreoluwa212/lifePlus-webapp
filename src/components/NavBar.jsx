@@ -19,12 +19,12 @@ const NavBar = () => {
             </h1>
           </Link>
         </div>
-        <div className="mds:w-[20%] gap-6 w-[50%] justify-between flex ">
+        <div className="mds:w-[20%] gap-6 w-[30%] justify-between flex ">
           <Link to={"/login-as"}>
-            <div className="bg-red rounded-[16px] shadow-sm border-white border-[1px] shadow-black ">
+            <div className="bg-transparent rounded-[16px] shadow-sm border-red border-[1px] shadow-black ">
               <button
                 onClick={() => handleButtonClick("login")}
-                className={`h-[48px] w-[100px] lgss:w-[130px] flex justify-center items-center  text-white ${
+                className={`h-[48px] w-[80px] lgss:w-[130px] flex justify-center items-center ${
                   pathname.includes("/login")
                     ? "bg-red text-white"
                     : "bg-transparent text-black"
@@ -38,7 +38,7 @@ const NavBar = () => {
             <div className="bg-red rounded-[16px] shadow-sm border-white border-[1px] shadow-black">
               <button
                 onClick={() => handleButtonClick("signup")}
-                className={`h-[48px]  w-[100px] lgss:w-[130px] flex justify-center items-center text-white  ${
+                className={`h-[48px]  w-[80px] lgss:w-[130px] flex justify-center items-center text-white  ${
                   pathname.includes("/signup")
                     ? "bg-red text-white"
                     : "bg-transparent text-black"
