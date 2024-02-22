@@ -18,6 +18,8 @@ const ForumHeader = ({ currentUser }) => {
         return "Manage Profile";
       case "/dashboard/points":
         return "Points";
+      case "/dashboard/health-summary":
+        return "Health Summary";
       default:
         return "Community Forum";
     }
