@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
-    <div className="relative w-full h-[100vh]">
+    <div className="relative w-full h-[100vh] ">
       <img
         src={homepage}
         alt=""
-        className="absolute w-full h-full object-cover"
+        className="absolute w-full h-full object-cover rounded-b-[26px]"
       />
       <img
         src={overlap}
         alt=""
-        className="absolute w-full h-full object-cover bg-center"
+        className="absolute w-full h-full object-cover bg-center rounded-b-[26px]"
       />
       <div className="absolute text-white text-left w-[100%] h-[96%] flex flex-col justify-center xs:px-[5%] pt-[1%] mds:pt-[2%] lgss:pl-[5%] px-[10%] gap-5">
         <h1 className="lgss:text-[78px] font-extrabold text-[40px] mds:text-[46px] w-[100%] mds:w-[50%] transition-all duration-850 lgss:leading-[5rem]">
