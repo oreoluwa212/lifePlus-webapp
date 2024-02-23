@@ -91,6 +91,22 @@ const BenefitsSection = () => {
         ) : activeScreen === 2 ? (
           <div className="">
             <div className="flex flex-col lgss:flex-row justify-center">
+            <div className="lgss:flex lgss:items-center ">
+                <div className="flex flex-col gap-5">
+                  <Benefits
+                    title="Transparency & impact"
+                    description="Monitor blood supply levels, donor behavior and trends, for decision making and resource allocation."
+                    icon={benefit2}
+                  />
+
+                  <Benefits
+                    title="Personalized experience"
+                    description="Collaborate with institutions and organizations to offer diverse rewards and incentives."
+                    icon={benefit5}
+                  />
+                </div>
+                <div className="h-[300px] hidden mds:block bg-gold w-[3px]"></div>
+              </div>
               <div className="flex items-center">
                 <div className="flex flex-col gap-5">
                   <Benefits
@@ -107,22 +123,7 @@ const BenefitsSection = () => {
                 </div>
                 <div className="h-[300px] hidden mds:block bg-gold w-[2px]"></div>
               </div>
-              <div className="lgss:flex lgss:items-center ">
-                <div className="flex flex-col gap-5">
-                  <Benefits
-                    title="Transparency & impact"
-                    description="Monitor blood supply levels, donor behavior and trends, for decision making and resource allocation."
-                    icon={benefit2}
-                  />
 
-                  <Benefits
-                    title="Personalized experience"
-                    description="Collaborate with institutions and organizations to offer diverse rewards and incentives."
-                    icon={benefit5}
-                  />
-                </div>
-                <div className="h-[300px] hidden mds:block bg-gold w-[3px]"></div>
-              </div>
               <div className="lgss:flex lgss:items-center hidden w-[60%]">
                 <div className="flex flex-col gap-5">
                   <Benefits
