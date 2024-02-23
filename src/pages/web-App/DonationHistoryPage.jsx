@@ -33,16 +33,18 @@ const DonationHistoryPage = () => {
           <div className="">
             <div className="flex flex-col justify-center lgss:items-start lgss:pt-14 pt-4">
               <div className=" flex flex-col lgss:grid lgss:grid-cols-3 gap-8">
-                <Link to={""}>
+                <Link to={"/donations/history"}>
                   <DashboardCard
                     title="Donation History"
                     icon={<PiLadderSimpleFill />}
                   />
                 </Link>
-                <DashboardCard
-                  title="Track Donations"
-                  icon={<PiBinocularsFill />}
-                />
+                <Link to={"/donations-donor/track"}>
+                  <DashboardCard
+                    title="Track Donations"
+                    icon={<PiBinocularsFill />}
+                  />
+                </Link>
                 <Link to={"/donations-donor/track"}>
                   <DashboardCard
                     title="Blood centres & drives"
