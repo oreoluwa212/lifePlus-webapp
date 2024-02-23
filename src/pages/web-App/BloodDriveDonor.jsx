@@ -15,7 +15,7 @@ const BloodDriveDonor = () => {
     const getBloodDrives = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:3000/all-blood-drive"
+          "https://lifeplus-api.onrender.com/all-blood-drive"
         );
         if (!ignore) {
           setBloodDrives(response.data);
