@@ -15,7 +15,7 @@ const BloodDriveDonor = () => {
     const getBloodDrives = async () => {
       try {
         const response = await axios.get(
-          "https://lifeplus-api.onrender.com/all-blood-drive"
+          "http://localhost:3000/all-blood-drive"
         );
         if (!ignore) {
           setBloodDrives(response.data);
@@ -30,29 +30,6 @@ const BloodDriveDonor = () => {
       ignore = true;
     };
   }, []);
-
-  const FetchDetails = ({ userId }) => {
-    useEffect(() => {
-      const getProviderDetails = async () => {
-        try {
-          const response = await axios.post(
-            `https://lifeplus-api.onrender.com/provider/get-single?providerId=${userId}`
-          );
-
-          if (!ignore) {
-            setProviders(response.data);
-          }
-        } catch (error) {
-          console.log(error);
-        }
-      };
-      let ignore = false;
-      getProviderDetails();
-      return () => {
-        ignore = true;
-      };
-    }, []);
-  };
 
   return (
     <div className="flex flex-row h-screen w-full">
@@ -79,7 +56,6 @@ const BloodDriveDonor = () => {
                   key={bloodDrive._id}
                   className="px-6 mt-6 lgss:py-5 h-[300px] lgss:w-[75%] bg-[#F8E9E9] shadow-lg shadow-gray-400/40 flex flex-col lgss:flex-row gap-4"
                 >
-                  <FetchDetails userId={bloodDrive.userId} />
                   <img src={donor1} alt="" className=" flex w-[60px] h-[50px] mds:w-[130px] mds:h-[150px]" />
                   <div className="w-[90%] flex justify-between font-semibold py-2">
                     <div className="flex flex-col gap-4">
