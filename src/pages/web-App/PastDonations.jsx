@@ -1,15 +1,21 @@
 import React from "react";
 import SideBar from "../../components/web-App/SideBar";
 import ForumHeader from "../../components/web-App/ForumHeader";
+import { Link } from "react-router-dom";
 
 const PastDonations = () => {
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
-  
+
   return (
     <div className="flex flex-row h-screen">
       <SideBar />
-      <div className=" lgss:w-4/5 w-full h-full overflow-auto lgss:px-[4%] flex flex-col lgss:gap-12">
-        <ForumHeader currentUser={loggedInUser} />
+      <div className=" lgss:w-4/5 w-full h-full overflow-auto lgss:px-[4%] flex flex-col lgss:gap-1">
+        <div className="flex justify-center items-center w-[100%]">
+          <Link to={"/dashboard"}>
+            <PiArrowLeftBold className="text-gold text-[32px] mt-6" />
+          </Link>
+          {loggedInUser && <ForumHeader currentUser={loggedInUser} />}
+        </div>
         <div className="flex gap-9 mt-10 lgss:mt-4 px-[5%] mds:px-0 w-full">
           <div className="flex flex-col justify-between lgss:gap-5 lgss:items-center ">
             <div className="">
