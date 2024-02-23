@@ -33,7 +33,7 @@ const CommunityForumPage = () => {
           </div>
 
           <div className="flex flex-col gap-9 mt-4 lgss:mt-4 px-[5%] mds:px-0">
-            <button className="bg-[#F3E4E4] w-[20%] h-[50px] border-red border-[2px] rounded-[16px] text-red font-semibold text-[24px] shadow-lg shadow-red/30 flex justify-between items-center px-4"><span><PiPlusBold/> </span> Make a Post</button>
+            <button className="bg-[#F3E4E4] w-[50%] lgss:w-[15%] h-[50px] border-red border-[2px] rounded-[16px] text-red font-semibold text-[24px] shadow-lg shadow-red/30 flex justify-between items-center px-4"><span><PiPlusBold/> </span> Make a Post</button>
 
             <div className="bg-[#F3E4E4] lgss:h-[150px] h-[170px] lgss:mt-4 lgss:w-[80%] lgss:flex flex-col justify-center gap-2 items-center rounded-[32px] px-6 pt-2">
               <div className="flex justify-between w-full">
