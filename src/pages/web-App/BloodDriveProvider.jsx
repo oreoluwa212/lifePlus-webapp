@@ -139,7 +139,7 @@ const BloodDriveProvider = ({currentUser}) => {
           <div className="flex justify-center items-center">
             <form
               id="createDrive"
-              className="mds:w-[100%] w-[90%] justify-between flex flex-col gap-6 h-[80vh] items-center bg-[#F3E4E4] mds:mt-8 mt-4 mds:py-12 py-4 rounded-[32px]"
+              className="mds:w-[100%] w-[90%] justify-between flex flex-col gap-6 h-[60vh] items-center bg-[#F3E4E4] mds:mt-8 mt-4 mds:py-12 py-4 rounded-[32px]"
               onSubmit={handleSubmit}
             >
               <input
