@@ -123,7 +123,7 @@ const AppointmentsScheduleDonor = () => {
                   className={`h-[60px] w-[90px] rounded-[16px] ${
                     selectedTime === "01:00pm" ? "bg-pink-200" : "bg-white"
                   } shadow-lg shadow-gray-200/50 border border-gray-300`}
-                  onClick={() => setSelectedTime("1:00pm")}
+                  onClick={() => setSelectedTime("01:00pm")}
                 >
                   01:00pm
                 </button>
