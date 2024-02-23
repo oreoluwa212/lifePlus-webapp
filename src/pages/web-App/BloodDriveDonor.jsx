@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import Header from "../../components/web-App/Header";
 import SideBar from "../../components/web-App/SideBar";
-import { donor1, donor2, map } from "../../assets";
-import axios from "axios";
+import { donor1, map } from "../../assets";
+import { get } from "../../helpers/axios.helper";
 
 const BloodDriveDonor = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,20 +12,18 @@ const BloodDriveDonor = () => {
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
   let ignore = false;
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const getBloodDrives = async () => {
       try {
-        const response = await axios.get(
-          "https://lifeplus-api.onrender.com/all-blood-drive"
-        );
-        if (!ignore) {
-          setBloodDrives(response.data);
-        }
-      } catch (error) {
+        let data = await get("/all-blood-drive");
+        setBloodDrives(data);
+      } catch (err) {
         console.log(error);
       }
     };
-    let ignore = false;
+    ignore = false;
     getBloodDrives();
     return () => {
       ignore = true;
@@ -56,18 +55,23 @@ const BloodDriveDonor = () => {
                   key={bloodDrive._id}
                   className="px-6 mt-6 lgss:py-5 h-[300px] lgss:w-[75%] bg-[#F8E9E9] shadow-lg shadow-gray-400/40 flex flex-col lgss:flex-row gap-4"
                 >
-                  <img src={donor1} alt="" className=" flex w-[60px] h-[50px] mds:w-[130px] mds:h-[150px]" />
+                  <img
+                    src={donor1}
+                    alt=""
+                    className=" flex w-[60px] h-[50px] mds:w-[130px] mds:h-[150px]"
+                  />
                   <div className="w-[90%] flex justify-between font-semibold py-2">
                     <div className="flex flex-col gap-4">
                       <h1 className="text-[22px] text-gold ">
                         {bloodDrive.userId.facilityName}
                       </h1>
-                      <h1 className="text-[20px]">Need For {bloodDrive.title}</h1>
+                      <h1 className="text-[20px]">
+                        Need For {bloodDrive.title}
+                      </h1>
                       <a href="#" className="text-red underline">
                         Locate
                       </a>
                       <p>Start Date: {bloodDrive.startDate}</p>
-
                     </div>
                     <div className="flex flex-col w-[30%] gap-4 px-2">
                       <h1>Donor Recieve</h1>
@@ -78,6 +82,11 @@ const BloodDriveDonor = () => {
                       <button
                         type="submit"
                         className="bg-red text-white text-[16px] border-none rounded-[32px] lgss:px-8 lgss:h-[50px] h-[45px] lgss:w-[70%] font-medium"
+                        onClick={() => {
+                          navigate(
+                            `/appointments/schedule/${bloodDrive.userId._id}/${bloodDrive?._id}`
+                          );
+                        }}
                       >
                         Schedule
                       </button>
