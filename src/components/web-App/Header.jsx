@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { user } from "../../assets";
 import {
-  PiMagnifyingGlassBold,
   PiMagnifyingGlassFill,
   PiMedalBold,
 } from "react-icons/pi";
