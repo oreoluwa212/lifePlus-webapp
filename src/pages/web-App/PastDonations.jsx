@@ -27,7 +27,7 @@ const PastDonations = () => {
                 className="w-[80%] h-[48px] px-2 outline-none placeholder:text-gold placeholder:font-semibold placeholder:text-[18px] bg-transparent"
               />
             </div>
-            <div className="border-b-[1px] border-gold lgss:h-[60vh] h-[75vh] lgss:w-[90%] w-full mt-4 pl-[10px] lgss:pl-[10%] py-[5%] flex flex-col gap-5">
+            <div className="border-b-[1px] border-gold lgss:h-[45vh] h-[50vh] lgss:w-[90%] w-full mt-4 pl-[10px] lgss:pl-[10%] py-[5%] flex flex-col gap-5">
               <div className="flex flex-col">
                 <h2 className="text-[18px] font-semibold">
                   Your last donation
@@ -79,7 +79,7 @@ const PastDonations = () => {
                 </button>
               </div>
             </div>
-            <div className="border-b-[1px] border-gold lgss:h-[60vh] h-[75vh] lgss:w-[90%] w-full mt-4 pl-[10px] lgss:pl-[10%] py-[5%] flex flex-col gap-5">
+            <div className="border-b-[1px] border-gold lgss:h-[45vh] h-[50vh] lgss:w-[90%] w-full mt-4 pl-[10px] lgss:pl-[10%] py-[5%] flex flex-col gap-5">
               <div className="flex flex-col">
                 <h2 className="text-[18px] font-semibold">
                   Your last donation
@@ -131,7 +131,7 @@ const PastDonations = () => {
                 </button>
               </div>
             </div>
-            <div className="border-b-[1px] border-gold lgss:h-[60vh] h-[75vh] lgss:w-[90%] w-full mt-4 pl-[10px] lgss:pl-[10%] py-[5%] flex flex-col gap-5">
+            <div className="border-b-[1px] border-gold lgss:h-[45vh] h-[50vh] lgss:w-[90%] w-full mt-4 pl-[10px] lgss:pl-[10%] py-[5%] flex flex-col gap-5">
               <div className="flex flex-col">
                 <h2 className="text-[18px] font-semibold">
                   Your last donation

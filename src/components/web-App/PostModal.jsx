@@ -36,8 +36,8 @@ const PostModal = ({ onClose }) => {
       backgroundColor: "rgba(0, 0, 0, 0.8)",
     },
     content: {
-      width: "40%",
-      height: "60%",
+      width: "30%",
+      height: "40%",
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",

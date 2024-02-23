@@ -77,22 +77,23 @@ const BloodDriveDonor = () => {
               return (
                 <div
                   key={bloodDrive._id}
-                  className="px-6 mt-6 lgss:px-0 h-[200px] w-[80%] flex gap-4"
+                  className="px-6 mt-6 lgss:py-5 h-[300px] lgss:w-[75%] bg-[#F8E9E9] shadow-lg shadow-gray-400/40 flex flex-col lgss:flex-row gap-4"
                 >
-                  <FetchDetails userId={bloodDrive.userId} />;
-                  <img src={donor1} alt="" className="hidden lgss:flex" />
+                  <FetchDetails userId={bloodDrive.userId} />
+                  <img src={donor1} alt="" className=" flex w-[60px] h-[50px] mds:w-[130px] mds:h-[150px]" />
                   <div className="w-[90%] flex justify-between font-semibold py-2">
                     <div className="flex flex-col gap-4">
                       <h1 className="text-[22px] text-gold ">
-                        {providers.facilityName}
+                        {bloodDrive.userId.facilityName}
                       </h1>
-                      <p> {providers.address}</p>
-                      <a href="#" className="text-red">
+                      <h1 className="text-[20px]">Need For {bloodDrive.title}</h1>
+                      <a href="#" className="text-red underline">
                         Locate
                       </a>
+                      <p>Start Date: {bloodDrive.startDate}</p>
+
                     </div>
                     <div className="flex flex-col w-[30%] gap-4 px-2">
-                      <h1>Need For {bloodDrive.title}</h1>
                       <h1>Donor Recieve</h1>
                       <p className="text-red">
                         {bloodDrive.tokenAmount} points
@@ -100,7 +101,7 @@ const BloodDriveDonor = () => {
                       <p>Deadline: {bloodDrive.endDate}</p>
                       <button
                         type="submit"
-                        className="bg-red text-white text-[16px] border-none rounded-[32px] lgss:px-8 lgss:h-[40px] h-[45px] w-[80%] font-medium"
+                        className="bg-red text-white text-[16px] border-none rounded-[32px] lgss:px-8 lgss:h-[50px] h-[45px] lgss:w-[70%] font-medium"
                       >
                         Schedule
                       </button>
