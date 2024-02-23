@@ -19,7 +19,7 @@ const PastDonations = () => {
         </div>
         <div className="flex gap-9 mt-10 lgss:mt-4 px-[5%] mds:px-0 w-full">
           <div className="flex flex-col justify-between lgss:gap-5 lgss:items-center ">
-              <div className="bg-[#F3E4E4] w-[50%] lgss:w-[65%] lgss:h-[80%] flex justify-between items-center px-4 rounded-[32px]">
+              <div className="bg-[#F3E4E4] w-[60%] lgss:w-[600px] h-[48px] flex justify-between items-center px-4 rounded-[32px]">
                 <PiMagnifyingGlassFill className="text-gold text-[35px] mds:text-[24px] cursor-pointer" />
                 <input
                   type="text"
