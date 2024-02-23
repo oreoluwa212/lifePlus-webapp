@@ -111,7 +111,7 @@ const CommunityForumPage = () => {
           <div className="flex flex-col gap-9 mt-4 lgss:mt-10 px-[5%] mds:px-0">
             <button
               onClick={openModal}
-              className="bg-[#F3E4E4] w-[40%] lgss:w-[18%] h-[50px] border-red border-[2px] rounded-[16px] text-red font-semibold text-[18px] lgss:text-[20px] shadow-lg shadow-red/30 flex justify-between items-center px-4"
+              className="bg-[#F3E4E4] w-[40%] lgss:w-[14%] h-[50px] border-red border-[2px] rounded-[16px] text-red font-semibold text-[18px] lgss:text-[20px] shadow-lg shadow-red/30 flex justify-between items-center px-4"
             >
               <span>
                 <PiPlusBold />{" "}
