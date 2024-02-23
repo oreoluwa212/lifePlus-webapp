@@ -35,7 +35,7 @@ const CommunityForumPage = () => {
           <div className="flex flex-col gap-9 mt-4 lgss:mt-4 px-[5%] mds:px-0">
             <button className="bg-[#F3E4E4] w-[40%] lgss:w-[20%] h-[50px] border-red border-[2px] rounded-[16px] text-red font-semibold text-[24px] shadow-lg shadow-red/30 flex justify-between items-center px-4"><span><PiPlusBold/> </span> Make a Post</button>
 
-            <div className="bg-[#F3E4E4] lgss:h-[150px] h-[170px] lgss:mt-4 lgss:w-[80%] lgss:flex flex-col justify-center gap-2 items-center rounded-[32px] px-6 pt-2">
+            {/* <div className="bg-[#F3E4E4] lgss:h-[150px] h-[170px] lgss:mt-4 lgss:w-[80%] lgss:flex flex-col justify-center gap-2 items-center rounded-[32px] px-6 pt-2">
               <div className="flex justify-between w-full">
                 <h2 className="text-gold font-bold">Donors Team Bonding</h2>
                 <h2 className="text-red font-bold">Posted 3 days ago</h2>
@@ -74,7 +74,7 @@ const CommunityForumPage = () => {
                   </h2>
                 </li>
               </ul>
-            </div>
+            </div> */}
             <div className="">
               <button className="bg-red px-2 h-[50px] lgss:w-[30%] w-[60%] rounded-[32px] text-white font-medium text-[16px] lgss:text-[18px]">
                 Proceed to Donate Blood
