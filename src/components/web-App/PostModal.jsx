@@ -65,7 +65,7 @@ const PostModal = ({ onClose }) => {
         </h2>
         <form className="flex flex-col gap-6">
           <div className="flex items-center gap-4">
-            <label className="font-semibold w-[20%]" htmlFor="postTitle">
+            <label className="font-semibold w-[25%]" htmlFor="postTitle">
               Post Title:
             </label>
             <input
@@ -78,7 +78,7 @@ const PostModal = ({ onClose }) => {
             />
           </div>
           <div className="flex items-center gap-4">
-            <label htmlFor="postContent" className="w-[20%] font-semibold">
+            <label htmlFor="postContent" className="w-[25%] font-semibold">
               Post Content:
             </label>
             <textarea
@@ -90,13 +90,22 @@ const PostModal = ({ onClose }) => {
               onChange={handleInputChange}
             />
           </div>
-          <button
-            className="bg-red text-white w-[40%] h-[48px] rounded-[32px]"
-            type="button"
-            onClick={handlePostSubmission}
-          >
-            Submit Post
-          </button>
+          <div className="flex gap-4 w-full justify-end">
+            <button
+              className="bg-transparent text-black w-[20%] h-[48px] font-semibold"
+              type="button"
+              onClick={handlePostSubmission}
+            >
+              Save as draft
+            </button>
+            <button
+              className="bg-red text-white w-[30%] h-[48px] rounded-[32px]"
+              type="button"
+              onClick={handlePostSubmission}
+            >
+              Submit Post
+            </button>
+          </div>
         </form>
       </Modal>
 
