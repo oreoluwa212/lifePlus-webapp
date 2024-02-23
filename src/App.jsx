@@ -50,7 +50,7 @@ function App() {
         <Route path="/update-profile" element={<UpdateProfilePage />} />
         <Route path="/appointments" element={<AppointmentsPage />} />
         <Route
-          path="/appointments/schedule"
+          path="/appointments/schedule/:provider_id/:drive_id"
           element={<AppointmentsScheduleDonor />}
         />
         <Route

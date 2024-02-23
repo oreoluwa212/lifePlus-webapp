@@ -54,6 +54,8 @@ const CommunityForumPage = () => {
 
     if (diff.as("days") > 1) {
       return `${Math.floor(diff.as("days"))} days ago`;
+    } else if (diff.as("hours") > 1) {
+      return `${Math.floor(diff.as("hours"))} hours ago`;
     } else if (diff.as("minutes") > 1) {
       return `${Math.floor(diff.as("minutes"))} minutes ago`;
     } else {
