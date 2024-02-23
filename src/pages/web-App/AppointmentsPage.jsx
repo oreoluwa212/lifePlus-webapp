@@ -45,10 +45,13 @@ const AppointmentsPage = () => {
                   title="Appointments"
                   icon={<PiCalendarCheckFill />}
                 />
-                <DashboardCard
-                  title="Blood drives & centres"
-                  icon={<PiMapPinFill />}
-                />
+                <Link to={"/donations-donor/track"}>
+                  <DashboardCard
+                    title="Blood drives & centres"
+                    icon={<PiMapPinFill />}
+                  />
+                </Link>
+
                 <DashboardCard title="Records" icon={<PiLadderSimpleFill />} />
               </div>
             </div>

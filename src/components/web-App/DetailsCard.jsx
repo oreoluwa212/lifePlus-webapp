@@ -11,9 +11,9 @@ const DetailsCard = ({ loggedInUser }) => {
           </h1>
         </div>
         <div className="lgss:flex lgss:flex-col items-center">
-          <p className="text-[20px]">Weight</p>
+          <p className="text-[20px]">Weight(kg)</p>
           <h1 className="lgss:text-[40px] font-semibold">
-            {loggedInUser.weight}kg
+            {loggedInUser.weight}
           </h1>
         </div>
         <div className="lgss:flex lgss:flex-col items-center">

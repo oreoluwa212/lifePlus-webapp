@@ -74,12 +74,12 @@ const LoginProviderPage = () => {
   return (
     <div className="">
       <NavBar />
-      <div className="relative mds:absolute mds:flex mds:flex-row h-[100vh] border-t-2 border-red w-full">
+      <div className="relative mds:flex mds:flex-row h-[100vh] border-t-2 border-red w-full">
         <Demo />
-        <div className=" mds:w-3/5 w-full absolute mds:relative top-0 mt-[5%] mds:mt-0 overflow-auto flex flex-col justify-end mds:justify-center items-center h-[60vh]">
-          <div className="w-full flex flex-col justify-center items-center mds:gap-8 xs:gap-8">
+        <div className=" mds:w-3/5 w-full absolute mds:relative top-0 mt-[5%] mds:mt-10 overflow-auto flex flex-col justify-end mds:justify-start items-center">
+          <div className="w-full flex flex-col items-center mds:gap-8 xs:gap-8">
             <div className="flex flex-col lgss:gap-3 items-center w-4/5">
-              <h1 className="text-gold font-bold text-[30px] text-center">
+              <h1 className="text-gold font-bold text-[30px] text-center w-[50%]">
                 Login to LifePlus As An Health Care Provider
               </h1>
               <h3 className="lgss:text-[18px] mds:text-black text-gold">
@@ -94,7 +94,7 @@ const LoginProviderPage = () => {
                 <input
                   type="email"
                   placeholder="email"
-                  className="mdss:bg-transparent px-4 h-[50px] bg-white border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px]"
+                  className="mdss:bg-transparent px-4 h-[50px] bg-white border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px] w-full"
                   onChange={(e) => {
                     setEmail(e.target.value);
                   }}
@@ -103,7 +103,7 @@ const LoginProviderPage = () => {
                   <input
                     type={isPasswordVisible ? "text" : "password"}
                     placeholder="password"
-                    className=" lgss:h-[48px] outline-none bg-transparent text-[16px]"
+                    className=" lgss:h-[48px] outline-none bg-transparent text-[16px] w-full"
                     onChange={(e) => {
                       setPassword(e.target.value);
                     }}

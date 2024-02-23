@@ -13,7 +13,7 @@ const BenefitsSection = () => {
           Our Benefits
         </h1>
       </div>
-      <div className="w-full h-screen lgss:h-[520px] bg-[#EFD9D8]">
+      <div className="w-full pb-6 lgss:h-[490px] bg-[#EFD9D8]">
         <div className="flex flex-row px-8 gap-14 xs:text-[16px] text-[22px] h-[100px] justify-center items-center text-black font-medium">
           <button
             onClick={() => setActiveScreen(1)}
@@ -51,13 +51,12 @@ const BenefitsSection = () => {
                     title="Recognition & rewards"
                     description="Send urgent notifications to donors in case of critical shortages, mobilizing the community to save lives"
                     icon={benefit4}
-
                   />
                 </div>
-                <div className="h-[370px] hidden mds:block bg-gold w-[2px]"></div>
+                <div className="h-[300px] hidden mds:block bg-gold w-[2px]"></div>
               </div>
               <div className="lgss:flex lgss:items-center ">
-              <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-5">
                   <Benefits
                     title="Transparency & impact"
                     description="Monitor blood supply levels, donor behavior and trends, for decision making and resource allocation."
@@ -70,11 +69,10 @@ const BenefitsSection = () => {
                     icon={benefit5}
                   />
                 </div>
-                <div className="h-[370px] hidden mds:block bg-gold w-[2px]"></div>
-                
+                <div className="h-[300px] hidden mds:block bg-gold w-[3px]"></div>
               </div>
-              <div className="lgss:flex lgss:items-center hidden">
-              <div className="flex flex-col gap-5">
+              <div className="lgss:flex lgss:items-center hidden w-[60%]">
+                <div className="flex flex-col gap-5">
                   <Benefits
                     title="Engage with other donors"
                     description="Target donors based on eligibility, location, and blood type, at the right time"
@@ -93,8 +91,24 @@ const BenefitsSection = () => {
         ) : activeScreen === 2 ? (
           <div className="">
             <div className="flex flex-col lgss:flex-row justify-center">
+              <div className="flex items-center">
+                <div className="flex flex-col gap-5">
+                  <Benefits
+                    title="Convenience & empowerment"
+                    description="Efficiency in appointment scheduling, and inventory tracking"
+                    icon={benefit1}
+                  />
+
+                  <Benefits
+                    title="Recognition & rewards"
+                    description="Send urgent notifications to donors in case of critical shortages, mobilizing the community to save lives"
+                    icon={benefit4}
+                  />
+                </div>
+                <div className="h-[300px] hidden mds:block bg-gold w-[2px]"></div>
+              </div>
               <div className="lgss:flex lgss:items-center ">
-              <div className="flex flex-col gap-5">
+                <div className="flex flex-col gap-5">
                   <Benefits
                     title="Transparency & impact"
                     description="Monitor blood supply levels, donor behavior and trends, for decision making and resource allocation."
@@ -107,29 +121,10 @@ const BenefitsSection = () => {
                     icon={benefit5}
                   />
                 </div>
-                <div className="h-[370px] hidden mds:block bg-gold w-[2px]"></div>
-                
+                <div className="h-[300px] hidden mds:block bg-gold w-[3px]"></div>
               </div>
-              <div className="flex items-center ">
+              <div className="lgss:flex lgss:items-center hidden w-[60%]">
                 <div className="flex flex-col gap-5">
-                  <Benefits
-                    title="Convenience & empowerment"
-                    description="Efficiency in appointment scheduling, and inventory tracking"
-                    icon={benefit1}
-                  />
-
-                  <Benefits
-                    title="Recognition & rewards"
-                    description="Send urgent notifications to donors in case of critical shortages, mobilizing the community to save lives"
-                    icon={benefit4}
-
-                  />
-                </div>
-                <div className="h-[370px] hidden mds:block bg-gold w-[2px]"></div>
-                
-              </div>
-              <div className="lgss:flex lgss:items-center hidden">
-              <div className="flex flex-col gap-5">
                   <Benefits
                     title="Engage with other donors"
                     description="Target donors based on eligibility, location, and blood type, at the right time"
@@ -143,7 +138,6 @@ const BenefitsSection = () => {
                   />
                 </div>
               </div>
-
             </div>
           </div>
         ) : null}
