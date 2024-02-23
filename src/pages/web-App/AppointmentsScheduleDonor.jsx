@@ -23,7 +23,7 @@ const AppointmentsScheduleDonor = () => {
 
     if (selectedDate && selectedTime) {
       setIsOpen(true);
-      // Add logic to handle the form submission
+
     } else {
       alert("Please select both date and time");
     }
@@ -32,12 +32,7 @@ const AppointmentsScheduleDonor = () => {
   const handleCloseModal = () => {
     setIsOpen(false);
   };
-  const handleFormKeyPress = (e) => {
-    // Prevent form submission on Enter key
-    if (e.key === 'Enter') {
-      e.preventDefault();
-    }
-  };
+
 
   return (
     <div className="flex flex-row h-screen w-full">
@@ -60,7 +55,6 @@ const AppointmentsScheduleDonor = () => {
           />
           <form
             onSubmit={handleFormSubmit}
-            onKeyPress={handleFormKeyPress}
             className="flex flex-col px-[4%] lgss:px-0"
           >
             <div className="relative flex justify-between items-center bg-[#F3E4E4] mt-4 w-[80%] lgss:w-[400px] h-[50px] px-6 rounded-[32px]">
@@ -81,7 +75,7 @@ const AppointmentsScheduleDonor = () => {
             </div>
             <div className="mt-4 flex flex-col">
               <p className="font-semibold">Select a Time</p>
-              <div className="flex gap-6 mt-4 text-[18px]">
+              <div className="lgss:flex gap-6 mt-4 text-[18px]">
                 <button
                   type="button"
                   className={`h-[60px] w-[90px] rounded-[16px] ${
