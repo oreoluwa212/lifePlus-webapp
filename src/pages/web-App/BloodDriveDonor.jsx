@@ -66,7 +66,7 @@ const BloodDriveDonor = () => {
                         {bloodDrive.userId.facilityName}
                       </h1>
                       <h1 className="text-[20px]">
-                        Need For {bloodDrive.title}
+                       {bloodDrive.title}
                       </h1>
                       <a href="#" className="text-red underline">
                         Locate
