@@ -34,7 +34,7 @@ const CommunityForumPage = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-9 mt-4 lgss:mt-4 px-[5%] mds:px-0">
+          <div className="flex flex-col gap-9 mt-4 lgss:mt-10 px-[5%] mds:px-0">
             <button className="bg-[#F3E4E4] w-[40%] lgss:w-[20%] h-[50px] border-red border-[2px] rounded-[16px] text-red font-semibold text-[18px] lgss:text-[24px] shadow-lg shadow-red/30 flex justify-between items-center px-4">
               <span>
                 <PiPlusBold />{" "}
@@ -42,7 +42,7 @@ const CommunityForumPage = () => {
               Make a Post
             </button>
             <div className="flex flex-col w-[90%] gap-5">
-              <div className="bg-[#F3E4E4] lgss:mt-4 lgss:w-[90%] w-full flex flex-col gap-4 rounded-[32px] p-6">
+              <div className="bg-[#F3E4E4] lgss:mt-4 shadow-md shadow-red/30 lgss:w-[90%] w-full flex flex-col gap-4 rounded-[32px] p-6">
                 <div className="flex justify-between w-full">
                   <h2 className="text-gold font-bold">Donors Team Bonding</h2>
                   <h2 className="text-red font-bold">Posted 3 days ago</h2>
@@ -76,7 +76,7 @@ const CommunityForumPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-[#F3E4E4] lgss:mt-4 lgss:w-[90%] w-full flex flex-col gap-6 rounded-[32px] p-6">
+              <div className="bg-[#F3E4E4] shadow-md shadow-red/30 lgss:mt-4 lgss:w-[90%] w-full flex flex-col gap-6 rounded-[32px] p-6">
                 <div className="flex justify-between w-full">
                   <h2 className="text-gold font-bold">
                     Post-Donation Self-Care
@@ -84,7 +84,6 @@ const CommunityForumPage = () => {
                   <h2 className="text-red font-bold">Posted 1 week ago</h2>
                 </div>
                 <ul className="flex flex-col w-full px-10 justify-between gap-2 list-disc font-semibold">
-                
                   <li>
                     <h2 className="text-black">
                       Discuss the importance of staying hydrated and having a
