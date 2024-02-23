@@ -1,16 +1,37 @@
-import React, { useState } from "react";
+// CommunityForumPage.js
+import React, { useState, useEffect } from "react";
 import SideBar from "../../components/web-App/SideBar";
-import ForumHeader from "../../components/web-App/ForumHeader";
+import PostModal from "../../components/web-App/PostModal";
+import Modal from "react-modal";
 import { PiMagnifyingGlassFill, PiPlusBold } from "react-icons/pi";
 import { TiArrowBack } from "react-icons/ti";
 import { BiSolidBookmarkAltPlus } from "react-icons/bi";
 import Header from "../../components/web-App/Header";
 import { FaThumbsUp } from "react-icons/fa";
 
-
 const CommunityForumPage = () => {
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
   const [isOpen, setIsOpen] = useState(false);
+
+  const handlePostSubmission = () => {
+    // Perform any necessary actions on post submission
+    console.log("Post submitted!");
+
+    // Close the modal
+    closeModal();
+  };
+
+  useEffect(() => {
+    Modal.setAppElement("#root");
+  }, []);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div className="flex flex-row h-screen w-full">
@@ -30,12 +51,15 @@ const CommunityForumPage = () => {
                   isOpen={isOpen}
                   currentUser={loggedInUser}
                 />
-              )}{" "}
+              )}
             </div>
           </div>
 
           <div className="flex flex-col gap-9 mt-4 lgss:mt-10 px-[5%] mds:px-0">
-            <button className="bg-[#F3E4E4] w-[40%] lgss:w-[20%] h-[50px] border-red border-[2px] rounded-[16px] text-red font-semibold text-[18px] lgss:text-[24px] shadow-lg shadow-red/30 flex justify-between items-center px-4">
+            <button
+              onClick={openModal}
+              className="bg-[#F3E4E4] w-[40%] lgss:w-[20%] h-[50px] border-red border-[2px] rounded-[16px] text-red font-semibold text-[18px] lgss:text-[24px] shadow-lg shadow-red/30 flex justify-between items-center px-4"
+            >
               <span>
                 <PiPlusBold />{" "}
               </span>{" "}
@@ -122,6 +146,9 @@ const CommunityForumPage = () => {
           </div>
         </div>
       </div>
+      <Modal isOpen={isOpen} onRequestClose={closeModal} className={"w-0"}>
+        <PostModal onClose={closeModal} onPostSubmit={handlePostSubmission} />
+      </Modal>
     </div>
   );
 };
