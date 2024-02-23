@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/web-App/Header";
 import SideBar from "../../components/web-App/SideBar";
 import { donor1, donor2, map } from "../../assets";
-import axios from "axios";
+import { get } from "../../helpers/axios.helper";
 
 const BloodDriveDonor = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,17 +14,13 @@ const BloodDriveDonor = () => {
   useEffect(() => {
     const getBloodDrives = async () => {
       try {
-        const response = await axios.get(
-          "https://lifeplus-api.onrender.com/all-blood-drive"
-        );
-        if (!ignore) {
-          setBloodDrives(response.data);
-        }
-      } catch (error) {
+        let data = await get('/all-blood-drive')
+        setBloodDrives(data);
+      } catch (err) {
         console.log(error);
       }
     };
-    let ignore = false;
+    ignore = false;
     getBloodDrives();
     return () => {
       ignore = true;

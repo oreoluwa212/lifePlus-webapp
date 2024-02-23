@@ -1,18 +1,26 @@
 import React, { useState } from "react";
 import { FaTimes } from "react-icons/fa";
 import Modal from "react-modal";
+import { post } from "../../helpers/axios.helper";
 
-const PostModal = ({ onClose }) => {
-  const [changesMade, setChangesMade] = useState(false);
+const PostModal = ({ onClose, onPostSubmit }) => {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const loggedInUser = JSON.parse(localStorage.getItem("user"));
   const [isPostSuccessful, setIsPostSuccessful] = useState(false);
+  const [posting, setPosting] = useState(false);
 
-  const handleInputChange = () => {
-    setChangesMade(true);
-  };
-
-  const handlePostSubmission = () => {
-    setChangesMade(false);
+  const handlePostSubmission = async () => {
+    setPosting(true);
+    const data = {
+      title,
+      content,
+      posted_by: loggedInUser._id,
+    };
+    let response = await post("/create-discussion", data);
+    onPostSubmit();
     onClose();
+    setPosting(false);
     window.alert("Post successful");
     setTimeout(() => setIsPostSuccessful(true), 1000);
   };
@@ -36,8 +44,8 @@ const PostModal = ({ onClose }) => {
       backgroundColor: "rgba(0, 0, 0, 0.8)",
     },
     content: {
-      width: "30%",
-      height: "40%",
+      width: "65%",
+      height: "fit-content",
       top: "50%",
       left: "50%",
       transform: "translate(-50%, -50%)",
@@ -74,7 +82,9 @@ const PostModal = ({ onClose }) => {
               placeholder="Enter the title"
               className="w-full h-[48px] outline-none bg-[#D9D9D9] rounded-[8px] shadow-lg shadow-black/20 px-2"
               name="postTitle"
-              onChange={handleInputChange}
+              onChange={(e) => {
+                setTitle(e.target.value);
+              }}
             />
           </div>
           <div className="flex items-center gap-4">
@@ -87,7 +97,9 @@ const PostModal = ({ onClose }) => {
               placeholder="Type anything..."
               className="w-full px-2 bg-[#D9D9D9] rounded-[8px] shadow-lg outline-none shadow-black/20"
               rows="4"
-              onChange={handleInputChange}
+              onChange={(e) => {
+                setContent(e.target.value);
+              }}
             />
           </div>
           <div className="flex gap-4 w-full justify-end">
@@ -102,6 +114,7 @@ const PostModal = ({ onClose }) => {
               className="bg-red text-white w-[30%] h-[48px] rounded-[32px]"
               type="button"
               onClick={handlePostSubmission}
+              disabled={posting}
             >
               Submit Post
             </button>
