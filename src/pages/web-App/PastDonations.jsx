@@ -2,6 +2,7 @@ import React from "react";
 import SideBar from "../../components/web-App/SideBar";
 import ForumHeader from "../../components/web-App/ForumHeader";
 import { Link } from "react-router-dom";
+import { PiArrowLeftBold } from "react-icons/pi";
 
 const PastDonations = () => {
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
