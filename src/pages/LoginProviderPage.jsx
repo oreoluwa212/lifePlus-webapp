@@ -76,10 +76,10 @@ const LoginProviderPage = () => {
       <NavBar />
       <div className="relative mds:flex mds:flex-row h-[100vh] border-t-2 border-red w-full">
         <Demo />
-        <div className=" mds:w-3/5 w-full absolute mds:relative top-0 mt-[10%] overflow-auto flex flex-col justify-end mds:justify-start items-center">
+        <div className=" mds:w-3/5 w-full absolute mds:relative top-0 lgss:mt-[10%] mt-[40%] overflow-auto flex flex-col justify-end mds:justify-start items-center">
           <div className="w-full flex flex-col items-center mds:gap-8 xs:gap-8">
             <div className="flex flex-col lgss:gap-3 items-center w-4/5">
-              <h1 className="text-gold font-bold text-[30px] text-center w-[70%]">
+              <h1 className="text-gold font-bold text-[30px] text-center lgss:w-[70%]">
                 Login to LifePlus as an Health Care Provider
               </h1>
               <h3 className="lgss:text-[18px] mds:text-black text-gold">
@@ -89,7 +89,7 @@ const LoginProviderPage = () => {
             <div className="mds:w-[80%] w-[100%] h-full justify-center items-center flex flex-col gap-4 lgss:gap-3">
               <form
                 onSubmit={handleSubmit}
-                className="mds:w-full mds:px-[5%] w-[90%] h-full justify-between flex flex-col gap-4 lgss:gap-6"
+                className="mds:w-full mds:px-[5%] w-[90%] lgss:w-[80%] h-full justify-between flex flex-col gap-4 lgss:gap-6"
               >
                 <input
                   type="email"
