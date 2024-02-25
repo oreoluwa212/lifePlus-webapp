@@ -80,7 +80,7 @@ const LoginProviderPage = () => {
           <div className="w-full flex flex-col items-center mds:gap-8 xs:gap-8">
             <div className="flex flex-col lgss:gap-3 items-center w-4/5">
               <h1 className="text-gold font-bold text-[30px] text-center w-[70%]">
-                Login to LifePlus As An Health Care Provider
+                Login to LifePlus as an Health Care Provider
               </h1>
               <h3 className="lgss:text-[18px] mds:text-black text-gold">
                 Enter your details to sign in to your account

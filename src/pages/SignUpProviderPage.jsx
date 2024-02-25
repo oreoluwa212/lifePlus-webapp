@@ -94,15 +94,15 @@ const SignUpProviderPage = () => {
   return (
     <div className="">
       <NavBar />
-      <div className="relative mds:absolute mds:flex mds:flex-row border-t-2 border-red w-full pt-0 lgss:pt-3 ">
+      <div className="relative mds:flex mds:flex-row h-[100vh] border-t-2 border-red w-full">
         <Demo />
-        <div className=" mds:w-3/5 w-full absolute mds:relative top-0 mt-[10%] overflow-auto flex flex-col justify-end mds:justify-center items-center h-full">
-          <div className="w-full h-full flex flex-col justify-center items-center mds:gap-4 xs:gap-8">
-            <div className="lgss:flex lgss:flex-col lgss:gap-4 lgss:items-center">
-              <h1 className="text-gold text-center font-bold text-[30px]">
-                Sign Up for LifePlus
+        <div className=" mds:w-3/5 w-full absolute mds:relative top-0 mt-[10%] overflow-auto flex flex-col justify-end mds:justify-start items-center">
+          <div className="w-full flex flex-col items-center mds:gap-8 xs:gap-8">
+            <div className="flex flex-col lgss:gap-3 items-center w-4/5">
+              <h1 className="text-gold font-bold text-[30px] text-center w-[70%]">
+                Sign Up for LifePlus as a HealthCare Prrovider
               </h1>
-              <h3 className="lgss:text-[18px] mds:text-black lgss:w-[55%] lgss:text-center text-gold">
+              <h3 className="lgss:text-[18px] mds:text-black lgss:w-[40%] lgss:text-center text-gold">
                 Enter your details to sign up or sign in to your account
               </h3>
             </div>

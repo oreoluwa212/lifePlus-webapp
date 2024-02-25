@@ -81,7 +81,7 @@ const LoginPage = () => {
           <div className="w-full flex flex-col justify-center items-center mds:gap-8 xs:gap-8">
             <div className="flex flex-col mds:gap-6 items-center">
               <h1 className="text-gold font-bold text-[30px]">
-                Login to LifePlus
+                Login to LifePlus as a donor
               </h1>
               <h3 className="lgss:text-[18px] mds:text-black text-gold">
                 Enter your details to sign in to your account
