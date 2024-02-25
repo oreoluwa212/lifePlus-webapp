@@ -94,9 +94,9 @@ const SignUpProviderPage = () => {
   return (
     <div className="">
       <NavBar />
-      <div className="relative mds:absolute mds:flex mds:flex-row h-[100vh] mds:h-screen border-t-2 border-red w-full">
+      <div className="relative mds:absolute mds:flex mds:flex-row mds:h-screen border-t-2 border-red w-full">
         <Demo />
-        <div className="mds:w-3/5 w-full absolute mds:relative top-0 lgss:mt-[0%] mt-[20%] mds:mt-5 mds:h-full overflow-auto flex flex-col justify-end mds:justify-center pb-[40px] items-center h-[70vh]">
+        <div className="mds:w-3/5 w-full absolute mds:relative top-0 lgss:mt-[0%] mt-[20%] mds:mt-5 mds:h-full overflow-auto flex flex-col justify-end mds:justify-center pb-[40px] items-center h-[100vh]">
           <div className="w-full flex flex-col justify-center items-center mds:gap-1 xs:gap-8">
             <div className="flex flex-col mds:gap-3 items-center">
               <h1 className="text-gold font-bold text-[30px]">
