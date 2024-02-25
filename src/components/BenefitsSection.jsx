@@ -53,7 +53,7 @@ const BenefitsSection = () => {
                     icon={benefit4}
                   />
                 </div>
-                <div className="h-[300px] hidden mds:block bg-gold w-[2px]"></div>
+                <div className="h-[300px] hidden lgss:block bg-gold w-[2px]"></div>
               </div>
               <div className="lgss:flex lgss:items-center">
                 <div className="flex flex-col gap-5">
@@ -69,7 +69,7 @@ const BenefitsSection = () => {
                     icon={benefit5}
                   />
                 </div>
-                <div className="h-[300px] hidden mds:block bg-gold w-[3px]"></div>
+                <div className="h-[300px] hidden lgss:block bg-gold w-[3px]"></div>
               </div>
               <div className="lgss:flex lgss:items-center hidden w-[60%]">
                 <div className="flex flex-col gap-5">
@@ -105,7 +105,7 @@ const BenefitsSection = () => {
                     icon={benefit5}
                   />
                 </div>
-                <div className="h-[300px] hidden mds:block bg-gold w-[3px]"></div>
+                <div className="h-[300px] hidden lgss:block bg-gold w-[3px]"></div>
               </div>
               <div className="flex items-center">
                 <div className="flex flex-col gap-5">
@@ -121,7 +121,7 @@ const BenefitsSection = () => {
                     icon={benefit4}
                   />
                 </div>
-                <div className="h-[300px] hidden mds:block bg-gold w-[2px]"></div>
+                <div className="h-[300px] hidden lgss:block bg-gold w-[2px]"></div>
               </div>
 
               <div className="lgss:flex lgss:items-center hidden w-[60%]">
