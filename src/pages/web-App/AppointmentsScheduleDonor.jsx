@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { FaAngleDown } from "react-icons/fa";
 import SubmitSchheduleDonor from "../../components/web-App/SubmitSchheduleDonor";
+import { Link } from "react-router-dom";
 
 const AppointmentsScheduleDonor = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -131,12 +132,14 @@ const AppointmentsScheduleDonor = () => {
                   02:00pm
                 </button>
               </div>
-              <button
-                type="submit"
-                className="bg-red text-white text-[18px] lgss:w-[40%] border-none rounded-[32px] lgss:px-8 mt-6 lgss:h-[48px] h-[50px] w-full"
-              >
-                Schedule
-              </button>
+              <Link to={"/appointments/schedule/:provider_id/:drive_id/submit"}>
+                <button
+                  type="submit"
+                  className="bg-red text-white text-[18px] lgss:w-[40%] border-none rounded-[32px] lgss:px-8 mt-6 lgss:h-[48px] h-[50px] w-full"
+                >
+                  Schedule
+                </button>
+              </Link>
             </div>
           </form>
         </div>

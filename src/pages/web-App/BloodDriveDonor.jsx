@@ -46,14 +46,14 @@ const BloodDriveDonor = () => {
             <h1>Donations | Track Donatiions</h1>
           </div>
           <div className="px-6 lgss:px-0">
-            <img src={map} alt="" />
+            <img src={map} alt="" className="w-[80%]" />
           </div>
           {bloodDrives &&
             bloodDrives.map((bloodDrive) => {
               return (
                 <div
                   key={bloodDrive._id}
-                  className="px-6 mt-6 lgss:py-5 h-[300px] lgss:w-[75%] bg-[#F8E9E9] shadow-lg shadow-gray-400/40 flex flex-col lgss:flex-row gap-4"
+                  className="px-6 mt-6 lgss:py-5 h-[300px] lgss:w-[80%] bg-[#F8E9E9] shadow-lg shadow-gray-400/40 flex flex-col lgss:flex-row gap-4"
                 >
                   <img
                     src={donor1}
@@ -65,9 +65,7 @@ const BloodDriveDonor = () => {
                       <h1 className="text-[22px] text-gold ">
                         {bloodDrive.userId.facilityName}
                       </h1>
-                      <h1 className="text-[20px]">
-                       {bloodDrive.title}
-                      </h1>
+                      <h1 className="text-[20px]">{bloodDrive.title}</h1>
                       <a href="#" className="text-red underline">
                         Locate
                       </a>
@@ -81,14 +79,14 @@ const BloodDriveDonor = () => {
                       <p>Deadline: {bloodDrive.endDate}</p>
                       <button
                         type="submit"
-                        className="bg-red text-white text-[16px] border-none rounded-[32px] lgss:px-8 lgss:h-[50px] h-[45px] lgss:w-[70%] font-medium"
+                        className="bg-red text-white text-center text-[16px] border-none rounded-[32px] lgss:px-8 lgss:h-[45px] h-[45px] lgss:w-[150px] font-medium"
                         onClick={() => {
                           navigate(
                             `/appointments/schedule/${bloodDrive.userId._id}/${bloodDrive?._id}`
                           );
                         }}
                       >
-                        Schedule
+                        <p>Schedule</p>
                       </button>
                     </div>
                   </div>
