@@ -54,6 +54,10 @@ function App() {
           element={<AppointmentsScheduleDonor />}
         />
         <Route
+          path="/appointments/schedule/:provider_id/:drive_id/submit"
+          element={<SubmitSchheduleDonor />}
+        />
+        <Route
           path="/appointments-provider"
           element={<AppointmentsProviderPage />}
         />

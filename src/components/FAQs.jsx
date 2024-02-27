@@ -87,7 +87,7 @@ const FAQs = () => {
             </div>
           ))}
         </div>
-        <div className=" w-[45%] h-full flex flex-col gap-5 py-8 hidden mds:flex">
+        <div className=" w-[45%] h-full flex flex-col gap-5 py-8 hidden lgss:flex">
           {activeIndex !== null && (
             <>
               <h1 className=" text-[20px] font-bold ">
