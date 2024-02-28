@@ -22,6 +22,8 @@ const ForumHeader = ({ currentUser }) => {
         return "Health Summary";
       case "/donations/history":
         return "Donation History";
+      case "/dashboard/leader-board":
+        return "Donor of The Month";
       default:
         return "Community Forum";
     }

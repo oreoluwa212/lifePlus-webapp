@@ -30,11 +30,11 @@ const HealthSummary = () => {
               Having issues? Please contact customer support.
             </h3>
             <button
-              type="submit"
-              className="bg-red text-white text-[18px] w-[30%] border-none rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] mt-4 lgss:mt-12 "
-            >
-              Donate Blood
-            </button>
+            type="submit"
+            className="bg-red text-white text-[18px] border-none rounded-[32px] h-[50px] w-40 lgss:px-8 lgss:h-[48px] lgss:w-[30%] mt-4 lgss:mt-12 "
+          >
+            Donate Blood
+          </button>
           </div>
         </div>
       </div>
