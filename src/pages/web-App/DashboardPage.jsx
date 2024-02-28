@@ -115,7 +115,7 @@ const DashboardPage = () => {
                     icon={<PiCrownSimpleBold/>}
                   />
                 </Link>
-                <Link to={''}>
+                <Link to={'/dashboard/leader-board'}>
                   <DashboardCard
                     title="Leaderboard"
                     icon={<FaStethoscope />}
