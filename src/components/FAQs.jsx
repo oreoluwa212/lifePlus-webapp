@@ -48,12 +48,12 @@ const FAQs = () => {
           Frequently Asked Questions
         </h1>
       </div>
-      <div className="bg-white shadow-lg shadow-gray-500/50 h-[450px] lgss:h-[320px] w-[90%] lgss:w-[76%]  rounded-[16px] flex justify-center items-center">
-        <div className=" mds:w-[55%] h-full flex flex-col justify-between lgss:p-10 p-4">
+      <div className="bg-white shadow-lg shadow-gray-500/50 h-[450px] lgss:h-[320px]  rounded-[16px] flex justify-center items-center">
+        <div className=" mds:w-[80%] lgss:w-[50%] h-full flex flex-col justify-between p-10 ">
           {faqData.map((faq, index) => (
             <div
               key={index}
-              className="flex flex-col mds:flex-row w-[90%] items-center cursor-pointer"
+              className="flex flex-col lgss:flex-row items-center cursor-pointer"
               onClick={() => handleToggle(index)}
             >
               <div className="flex justify-center items-center cursor-pointer w-full">
@@ -87,7 +87,7 @@ const FAQs = () => {
             </div>
           ))}
         </div>
-        <div className=" w-[45%] h-full flex flex-col gap-5 py-8 hidden lgss:flex">
+        <div className=" w-[45%] h-full flex-col gap-5 py-10 hidden lgss:flex">
           {activeIndex !== null && (
             <>
               <h1 className=" text-[20px] font-bold ">
