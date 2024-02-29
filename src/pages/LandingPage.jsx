@@ -1,5 +1,4 @@
 import React from 'react'
-import { homepage, landing } from '../assets'
 import HeroSection from '../components/HeroSection'
 import NavBar from '../components/NavBar'
 import ServicesSection from '../components/ServicesSection'
