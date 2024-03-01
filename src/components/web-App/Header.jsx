@@ -29,7 +29,7 @@ const Header = ({ currentUser, setIsOpen, isOpen, loggedInUser, avatar }) => {
           />
         </div>
 
-        <div className=" w-[100%] lgss:w-[30%] px-4 h-[45%] hidden lgss:flex gap-6 items-center rounded-[32px]">
+        <div className=" w-[100%] lgss:w-[30%] px-4 h-[45%] hidden lg:flex gap-6 items-center rounded-[32px]">
           {avatar ? (
             <img
               src={loggedInUser.avatar}
