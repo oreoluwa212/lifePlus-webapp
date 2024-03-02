@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import { user } from "../../assets";
-import {
-  PiMagnifyingGlassFill,
-  PiMedalBold,
-} from "react-icons/pi";
+import { PiMagnifyingGlassFill, PiMedalBold } from "react-icons/pi";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import DropdownModal from "./DropdownModal";
+import generateBlob from "./generateBlob";
 
-const Header = ({ currentUser, setIsOpen, isOpen, loggedInUser, avatar }) => {
+const Header = ({ currentUser, setIsOpen, isOpen }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    const toggleDropdown = () => {
-      setIsDropdownOpen(!isDropdownOpen);
-    };
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
   const handleLogout = () => {
     localStorage.clear();
   };
+  const avatar = generateBlob(currentUser);
   return (
     <div className="">
       <div className="w-full h-[100px] hidden lgss:flex lgss:justify-between items-center lgss:pt-8 lgss:mb-10">
@@ -30,17 +29,18 @@ const Header = ({ currentUser, setIsOpen, isOpen, loggedInUser, avatar }) => {
         </div>
 
         <div className=" w-[100%] lgss:w-[30%] px-4 h-[45%] hidden lg:flex gap-6 items-center rounded-[32px]">
-          {avatar ? (
+          {currentUser.avatar ? (
             <img
-              src={loggedInUser.avatar}
-              alt=""
-              className="w-[50px]"
+              src={avatar}
+              alt="user Avatar"
+              className="w-[50px] rounded-[50px]"
             />
           ) : (
             <img src={user} alt="" className="w-[50px]" />
           )}
           <button
-            onClick={toggleDropdown} className="flex items-start flex-col justify-between gap-1 "
+            onClick={toggleDropdown}
+            className="flex items-start flex-col justify-between gap-1 "
           >
             <h1 className="text-[16px] mds:text-[20px] font-semibold lgss:w-[180px]">
               {currentUser.fullName
@@ -51,7 +51,6 @@ const Header = ({ currentUser, setIsOpen, isOpen, loggedInUser, avatar }) => {
               <PiMedalBold className="text-gold mdss:flex text-[26px] mds:text-[22px]" />
               <p className="text-[18px]">Bronze member</p>
             </div>
-
           </button>
           <DropdownModal
             isOpen={isDropdownOpen}

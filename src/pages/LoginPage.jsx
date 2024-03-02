@@ -43,6 +43,7 @@ const LoginPage = () => {
         setLoading(false);
         if (response[0]) {
           localStorage.setItem("user", JSON.stringify(response[1]));
+          MySwal.fire("welcome back");
           navigate("/dashboard");
         }
       } catch (error) {
