@@ -1,13 +1,17 @@
 import React from "react";
 
-function generateBlob(imgData) {
+function generateBlob(userData) {
   // converting the image buffer from the server to a blob so browser understands it
-  const blob = new Blob([Int8Array.from(imgData.avatar.data.data)], {
-    type: imgData.avatar.contentType,
-  });
+  if (userData.avatar) {
+    const blob = new Blob([Int8Array.from(userData.avatar.data.data)], {
+      type: userData.avatar.contentType,
+    });
 
-  const image = window.URL.createObjectURL(blob);
-  return image;
+    const image = window.URL.createObjectURL(blob);
+    return image;
+  } else {
+    return "";
+  }
 }
 
 export default generateBlob;
