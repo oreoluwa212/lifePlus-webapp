@@ -72,78 +72,75 @@ const LoginProviderPage = () => {
     }
   }, []);
   return (
-    <div className="">
+    <>
       <NavBar />
-      <div className="relative mds:flex mds:flex-row h-[100vh] border-t-2 border-red w-full">
+      <section className="relative h-[86vh] w-full mds:flex mds:flex-row border-t-2 border-red">
         <Demo />
-        <div className=" mds:w-3/5 w-full absolute mds:relative top-0 lgss:mt-[10%] mt-[40%] overflow-hidden flex flex-col justify-end mds:justify-start items-center">
-          <div className="w-full flex flex-col items-center mds:gap-8 xs:gap-8">
-            <div className="flex flex-col lgss:gap-3 items-center w-4/5">
-              <h1 className="text-gold font-bold text-[30px] text-center lgss:w-[70%]">
-                Login to LifePlus as an Health Care Provider
-              </h1>
-              <h3 className="lgss:text-[18px] mds:text-black text-gold">
-                Enter your details to sign in to your account
-              </h3>
-            </div>
-            <div className="mds:w-[80%] w-[100%] h-full justify-center items-center flex flex-col gap-4 lgss:gap-3">
-              <form
-                onSubmit={handleSubmit}
-                className="mds:w-full mds:px-[5%] w-[90%] lgss:w-[80%] h-full justify-between flex flex-col gap-4 lgss:gap-6"
-              >
+        <div className="mds:w-3/5 w-full absolute top-14 mds:relative mds:top-0 overflow-hidden flex flex-col justify-center items-center gap-10 text-center px-5">
+          <span className="flex flex-col mds:gap-4 items-center">
+            <h1 className="text-gold font-bold text-[30px]">
+              Login to LifePlus as an Health Care Provider
+            </h1>
+            <h3 className="lgss:text-[18px] mds:text-black text-gold">
+              Enter your details to sign in to your account
+            </h3>
+          </span>
+          <div className="md:w-[70%] w-[90%] justify-between flex flex-col">
+            <form
+              onSubmit={handleSubmit}
+              className="w-[100%] justify-between flex flex-col gap-4"
+            >
+              <input
+                type="email"
+                placeholder="email"
+                className="border-gold bg-white bg-transparent border-2 rounded-[32px] h-[48px] px-4 flex w-full justify-between outline-none text-[16px]"
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+
+              <div className=" border-gold bg-white bg-transparent border-2 rounded-[32px] h-[48px] px-4 flex outline-none  text-[16px] w-full justify-between">
                 <input
-                  type="email"
-                  placeholder="email"
-                  className="mdss:bg-transparent px-4 h-[50px] bg-white border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] outline-none placeholder:text-[18px] w-full"
+                  type={isPasswordVisible ? "text" : "password"}
+                  placeholder="password"
+                  className="h-[100%] outline-none bg-transparent text-[16px] w-full"
                   onChange={(e) => {
-                    setEmail(e.target.value);
+                    setPassword(e.target.value);
                   }}
                 />
-                <div className=" border-gold bg-white lgss:bg-transparent border-2 rounded-[32px] lgss:pl-8 lgss:pr-2 lgss:h-[48px] h-[50px] pl-4 mds:px-0  flex outline-none  text-[16px] w-full justify-between">
-                  <input
-                    type={isPasswordVisible ? "text" : "password"}
-                    placeholder="password"
-                    className=" lgss:h-[48px] outline-none bg-transparent text-[16px] w-full"
-                    onChange={(e) => {
-                      setPassword(e.target.value);
-                    }}
-                  />
 
-                  {isPasswordVisible ? (
-                    <IoMdEye
-                      onClick={togglePasswordVisibility}
-                      className="cursor-pointer text-xl relative top-4 text-gold right-4"
-                    />
-                  ) : (
-                    <IoMdEyeOff
-                      onClick={togglePasswordVisibility}
-                      className="cursor-pointer text-xl relative top-4 text-gold right-4"
-                    />
-                  )}
-                </div>
-                <div className="flex justify-between items-center">
-                  <div className="flex gap-2 px-4 lgss:gap-4 lgss:mt-2">
-                    <input type="checkbox" name="" />
-                    <p className="mds:text-black text-white">Remember me</p>
-                  </div>
-                  <div className=" lgss:px-4 mds:text-black text-white">
-                    <Link to={"/forgot-password"}>
-                      <button>Forgot password?</button>
-                    </Link>
-                  </div>
-                </div>
-                <button
-                  type="submit"
-                  className="bg-red text-white text-[18px] lgss:w-[100%] border-none rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] w-full"
-                >
-                  Log in
-                </button>
-              </form>
-            </div>
+                {isPasswordVisible ? (
+                  <IoMdEye
+                    onClick={togglePasswordVisibility}
+                    className="cursor-pointer text-xl relative top-4 text-gold right-4"
+                  />
+                ) : (
+                  <IoMdEyeOff
+                    onClick={togglePasswordVisibility}
+                    className="cursor-pointer text-xl relative top-4 text-gold right-4"
+                  />
+                )}
+              </div>
+              <div className="flex justify-between items-center">
+                <span className="flex gap-2 px-4">
+                  <input type="checkbox" name="" />
+                  <p className="mds:text-black text-white">Remember me</p>
+                </span>
+                <Link to={"/forgot-password"}>
+                  <span className="lgss:px-4 mds:text-black text-white">Forgot password?</span>
+                </Link>
+              </div>
+              <button
+                type="submit"
+                className="bg-red text-white text-[18px] border-none rounded-[32px] lgss:px-8 h-[48px] w-full"
+              >
+                Log in
+              </button>
+            </form>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 
