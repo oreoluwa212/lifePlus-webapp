@@ -20,12 +20,12 @@ function LoginAsPage() {
           </span>
           <div className="w-[90%] justify-between flex flex-col gap-6">
             <Link to={"/login"}>
-              <button className="h-[48px] w-[100%] mds:max-w-[400px] md:w-[100%] bg-red text-white rounded-[32px] text-[1.2rem]">
+              <button className="h-[48px] w-[100%] mds:max-w-[400px] md:max-w-[100%] md:w-[100%] bg-red text-white rounded-[32px] text-[1.2rem]">
                 Login as a Donor
               </button>
             </Link>
             <Link to={"/login-provider"}>
-              <button className="h-[48px] w-[100%] mds:max-w-[400px] md:w-[100%] bg-gold text-white rounded-[32px] text-[1.2rem]">
+              <button className="h-[48px] w-[100%] mds:max-w-[400px] md:max-w-[100%] md:w-[100%] bg-gold text-white rounded-[32px] text-[1.2rem]">
                 Login as an Healthcare Provider
               </button>
             </Link>
