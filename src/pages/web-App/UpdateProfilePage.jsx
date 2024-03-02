@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import Demo from "../../components/Demo";
 import NavBar from "../../components/NavBar";
+import { postFormData } from "../../helpers/axios.helper";
 
 const UpdateProfilePage = () => {
   const [gender, setGender] = useState("");
@@ -14,16 +15,15 @@ const UpdateProfilePage = () => {
   const [genoType, setGenoType] = useState("");
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [role, setRole] = useState("");
   const [avatar, setAvatar] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
 
-    const handleImageChange = (e) => {
-      const file = e.target.files[0];
-      setAvatar(file);
-    };
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setAvatar(file);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -52,30 +52,30 @@ const UpdateProfilePage = () => {
           address: address,
           phoneNumber: phoneNumber,
           avatar: avatar,
-          role: role,
         };
         setLoading(true);
-        let response = await axios.post(
+        let response = await postFormData(
           "https://lifeplus-api.onrender.com/user/update",
           data
         );
         setLoading(false);
-        response = JSON.parse(response.data);
-        if (response[0]) {
+        if (response.data) {
+          response = JSON.parse(response.data);
           localStorage.setItem("user", JSON.stringify(response[2]));
           MySwal.fire(response[1]);
           navigate("/dashboard", { state: { user: response[2] } });
+        } else {
+          MySwal.fire({
+            icon: "error",
+            title: "Oops...",
+          }).then(() => {
+            return MySwal.fire(
+              <p className="text-red">{response.response.data.error}</p>
+            );
+          });
         }
       } catch (error) {
         setLoading(false);
-        MySwal.fire({
-          icon: "error",
-          title: "Oops...",
-        }).then(() => {
-          return MySwal.fire(
-            <p className="text-red">{JSON.parse(error.response.data).error}</p>
-          );
-        });
       }
     }
   };
@@ -87,7 +87,8 @@ const UpdateProfilePage = () => {
     });
     setLoading(false);
   }
-  const loggedInUser = localStorage.getItem("user");
+  const loggedInUser = JSON.parse(localStorage.getItem("user"));
+
   useEffect(() => {
     if (!loggedInUser) {
       MySwal.fire("you dont have access to view this page");
@@ -98,6 +99,8 @@ const UpdateProfilePage = () => {
   let currentUser = {};
   if (location.state) {
     currentUser = location.state.user;
+  } else {
+    currentUser = loggedInUser;
   }
 
   return (

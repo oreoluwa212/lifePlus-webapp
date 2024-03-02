@@ -19,7 +19,6 @@ import axios from "axios";
 const DashboardPage = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
-  const [avatar, setAvatar] = useState("");
   const MySwal = withReactContent(Swal);
   let newUser = {};
   let location = useLocation();
@@ -59,7 +58,9 @@ const DashboardPage = () => {
             // location.search
             loggedInUser = response.data;
             localStorage.setItem("user", JSON.stringify(response.data));
-            navigate("/update-profile", { state: { user: response.data } });
+            if (!loggedInUser.accountUpdated) {
+              navigate("/update-profile", { state: { user: response.data } });
+            }
           } catch (error) {
             console.log(error);
           }
@@ -80,7 +81,6 @@ const DashboardPage = () => {
         <div className="lgss:w-full lgss:h-full lgss:flex-1 lgss:overflow lgss:px-[4%] flex flex-col ">
           {loggedInUser && (
             <Header
-              avatar={avatar}
               setIsOpen={setIsOpen}
               isOpen={isOpen}
               currentUser={loggedInUser}
@@ -112,14 +112,11 @@ const DashboardPage = () => {
                 <Link to={"/dashboard/health-summary"}>
                   <DashboardCard
                     title="Health Summary"
-                    icon={<PiCrownSimpleBold/>}
+                    icon={<PiCrownSimpleBold />}
                   />
                 </Link>
-                <Link to={'/dashboard/leader-board'}>
-                  <DashboardCard
-                    title="Leaderboard"
-                    icon={<FaStethoscope />}
-                  />
+                <Link to={"/dashboard/leader-board"}>
+                  <DashboardCard title="Leaderboard" icon={<FaStethoscope />} />
                 </Link>
               </div>
             </div>
