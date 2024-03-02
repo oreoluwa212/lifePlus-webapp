@@ -12,6 +12,7 @@ function generateBlob(userData) {
   } else {
     return "";
   }
+
 }
 
 export default generateBlob;
