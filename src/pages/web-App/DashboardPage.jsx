@@ -49,16 +49,16 @@ const DashboardPage = () => {
               `https://lifeplus-api.onrender.com/user?userid=${userId}`
             );
 
-            MySwal.fire({
-              icon: "info",
-              title: "Profile Update Required",
-              text: "hi, in other for us to know you better and personalize your experience, you are expected to update your profile",
-              footer: '<a href="/update-profile">Update Now</a>',
-            });
             // location.search
             loggedInUser = response.data;
             localStorage.setItem("user", JSON.stringify(response.data));
             if (!loggedInUser.accountUpdated) {
+              MySwal.fire({
+                icon: "info",
+                title: "Profile Update Required",
+                text: "hi, in other for us to know you better and personalize your experience, you are expected to update your profile",
+                footer: '<a href="/update-profile">Update Now</a>',
+              });
               navigate("/update-profile", { state: { user: response.data } });
             }
           } catch (error) {
