@@ -2,11 +2,15 @@ import React from "react";
 import "../../styles/DropdownModal.css"; 
 import { Link } from "react-router-dom";
 import { user } from "../../assets";
+import generateBlob from "./generateBlob";
+
 
 const DropdownModal = ({ isOpen, handleClose, currentUser }) => {
      const handleLogout = () => {
        localStorage.clear();
      };
+  const avatar = generateBlob(currentUser);
+
   return (
     <div
       className={`modal-overlay ${isOpen ? "open" : ""}`}
@@ -16,7 +20,15 @@ const DropdownModal = ({ isOpen, handleClose, currentUser }) => {
         <div className="btn-div">
           <div className="flex items-start flex-col justify-between gap-1 w-full cursor-pointer">
             <div className="flex justify-center items-center w-full">
-              <img src={user} alt="" />
+            {currentUser.avatar ? (
+            <img
+              src={avatar}
+              alt="user Avatar"
+              className="w-[50px] rounded-[50px]"
+            />
+          ) : (
+            <img src={user} alt="" className="w-[50px]" />
+          )}
             </div>
             <div className="flex justify-between w-full">
               <p>Full name:</p>

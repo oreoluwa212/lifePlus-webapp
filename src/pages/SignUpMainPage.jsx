@@ -1,68 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
 import NavBar from "../components/NavBar";
 import Demo from "../components/Demo";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { IoMdEye, IoMdEyeOff } from "react-icons/io";
+import { google } from "../assets";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-import { IoMdEye, IoMdEyeOff } from "react-icons/io";
-import { google } from "../assets";
+import axios from "axios";
 
 const SignUpMainPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [fullNameError, setfullNameError] = useState(false);
-  const [emailError, setemailError] = useState(false);
-  const [passwordError, setpasswordError] = useState(false);
+  const [fullNameError, setFullNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [passwordError, setPasswordError] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
 
-  function togglePasswordVisibility() {
+  const togglePasswordVisibility = () => {
     setIsPasswordVisible((prevState) => !prevState);
-  }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!fullName) {
-      setfullNameError(true);
-    } else if (!email) {
-      setemailError(true);
-    } else if (!password) {
-      setpasswordError(true);
-    }
 
-    const data = {
-      fullName: fullName,
-      email: email,
-      password: password,
-    };
-    let response = await axios.post(
-      "https://lifeplus-api.onrender.com/signup",
-      data
-    );
-    response = JSON.parse(response.data);
-    if (response[0]) {
-      setLoggedIn(true);
-      localStorage.setItem("user", response[1]);
-      setUser(response[1]);
+    if (!fullName) {
+      setFullNameError(true);
+    } else if (!email) {
+      setEmailError(true);
+    } else if (!password) {
+      setPasswordError(true);
     } else {
-      MySwal.fire({
-        icon: "error",
-        title: "Oops...",
-      }).then(() => {
-        return MySwal.fire(<p className="text-red">{response[1]}</p>);
-      });
+      try {
+        const data = {
+          fullName: fullName,
+          email: email,
+          password: password,
+        };
+
+        let response = await axios.post(
+          "https://lifeplus-api.onrender.com/signup",
+          data
+        );
+
+        response = JSON.parse(response.data);
+
+        if (response[0]) {
+          setLoggedIn(true);
+          localStorage.setItem("user", response[1]);
+          setUser(response[1]);
+        } else {
+          MySwal.fire({
+            icon: "error",
+            title: "Oops...",
+          }).then(() => {
+            return MySwal.fire(
+              <p className="text-red">{response[1]}</p>
+            );
+          });
+        }
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
   if (loggedIn) {
     user.new = true;
     navigate("/update-profile", { state: { user: user } });
-    // localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("user", JSON.stringify(user));
   }
 
   return (
@@ -156,9 +166,9 @@ const SignUpMainPage = () => {
                   "https://lifeplus-api.onrender.com/auth/google/?usertype=donor"
                 }
               >
-                <div className="bg-white text-black text-[18px] flex justify-center items-center gap-4 border-black border-[1px] rounded-[32px] px-10 h-[48px] w-full mt-3">
+                <div className="bg-white text-black text-[1rem] flex justify-center items-center gap-4 border-black border-[1px] rounded-[32px] px-10 h-[48px] w-full mt-3">
                   <img src={google} alt="" />
-                  <button>Signup with Google</button>
+                  <button className="">Signup with Google</button>
                 </div>
               </Link>
             </div>
@@ -170,3 +180,4 @@ const SignUpMainPage = () => {
 };
 
 export default SignUpMainPage;
+
