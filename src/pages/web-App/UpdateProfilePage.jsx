@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import Demo from "../../components/Demo";
 import NavBar from "../../components/NavBar";
-import { postFormData } from "../../helpers/axios.helper";
 
 const UpdateProfilePage = () => {
   const [gender, setGender] = useState("");
@@ -15,6 +12,7 @@ const UpdateProfilePage = () => {
   const [genoType, setGenoType] = useState("");
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [role, setRole] = useState("");
   const [avatar, setAvatar] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -27,18 +25,20 @@ const UpdateProfilePage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const currentUser = JSON.parse(localStorage.getItem("user"));
+
     if (
       gender.length === 0 &&
       weight.length === 0 &&
       genoType.length === 0 &&
       address.length === 0 &&
-      phoneNumber.length === 0 &&
-      role.length === 0
+      phoneNumber.length === 0
     ) {
       MySwal.fire({
         icon: "error",
-        title: "Oopss..",
-        text: "One or more filled is not filled",
+        title: "Oops...",
+        text: "One or more fields are not filled",
       });
     } else {
       try {
@@ -52,7 +52,9 @@ const UpdateProfilePage = () => {
           address: address,
           phoneNumber: phoneNumber,
           avatar: avatar,
+          role: role,
         };
+
         setLoading(true);
         let response = await postFormData(
           "https://lifeplus-api.onrender.com/user/update",
@@ -90,11 +92,13 @@ const UpdateProfilePage = () => {
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
+    const loggedInUser = JSON.parse(localStorage.getItem("user"));
     if (!loggedInUser) {
-      MySwal.fire("you dont have access to view this page");
+      MySwal.fire("You don't have access to view this page");
       navigate("/login");
     }
-  }, []);
+  }, [navigate]);
+
   const location = useLocation();
   let currentUser = {};
   if (location.state) {
@@ -108,7 +112,7 @@ const UpdateProfilePage = () => {
       <NavBar currentUser={currentUser} />
       <div className="mds:flex relative mds:absolute flex mds:flex-row h-[83vh] mds:overflow-y-hidden border-t-2 border-red w-full">
         <Demo />
-        <div className=" mds:w-3/5 mds:relative  mds:h-full overflow-auto mds:flex mds:flex-col mds:justify-center mds:items-center absolute top-0 left-0 ">
+        <div className="mds:w-3/5 mds:relative mds:h-full overflow-auto mds:flex mds:flex-col mds:justify-center mds:items-center absolute top-0 left-0 ">
           <div className="lgss:w-full lgss:flex flex-col lgss:justify-center lgss:items-center lgss:gap-16 mt-[5%] lgss:mt-0">
             <div className="flex justify-center items-center">
               <h1 className="text-gold font-bold text-[30px]">
@@ -192,7 +196,7 @@ const UpdateProfilePage = () => {
                       id="avatar"
                       accept="image/*"
                       onChange={handleImageChange}
-                      className="lgss:bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 px-3 font-medium lgss:h-[48px] outline-none text-black placeholder:text-red placeholder:text-[18px]"
+                      className="lgss:bg-transparent bg-transparent border-gold border-2 rounded-[32px] lgss:px-8 px-3 font-medium lgss:h-[48px] outline-none text-black placeholder:text-red placeholder:text-[18px] "
                     />
                   </div>
                 </div>

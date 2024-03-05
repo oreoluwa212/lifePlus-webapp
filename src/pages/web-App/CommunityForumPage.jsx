@@ -97,7 +97,7 @@ const CommunityForumPage = () => {
                 <h1>Forum</h1>
               </div>
             </div>
-            <div className="w-[75%]">
+            <div className="w-[90%]">
               {loggedInUser && (
                 <Header
                   setIsOpen={setIsOpen}
@@ -108,10 +108,10 @@ const CommunityForumPage = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-9 mt-4 lgss:mt-10 px-[5%] mds:px-0">
+          <div className="flex flex-col gap-9 mt-4 lgss:mt-10 px-[5%]">
             <button
               onClick={openModal}
-              className="bg-[#F3E4E4] w-[40%] mds:w-[20%] h-[50px] border-red border-[2px] rounded-[16px] text-red font-semibold text-[16px] lgss:text-[18px] shadow-lg shadow-red/30 flex justify-between items-center px-4"
+              className="bg-[#F3E4E4] w-[40%] mds:w-[25%] h-[50px] border-red border-[2px] rounded-[16px] text-red font-semibold text-[16px] lgss:text-[18px] shadow-lg shadow-red/30 flex justify-between items-center px-4"
             >
               <span>
                 <PiPlusBold />{" "}

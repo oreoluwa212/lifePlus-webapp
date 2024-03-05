@@ -62,6 +62,7 @@ const SignUpMainPage = () => {
   if (loggedIn) {
     user.new = true;
     navigate("/update-profile", { state: { user: user } });
+    // localStorage.setItem("user", JSON.stringify(user));
   }
 
   return (
