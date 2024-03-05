@@ -4,6 +4,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import Demo from "../../components/Demo";
 import NavBar from "../../components/NavBar";
+import { postFormData } from "../../helpers/axios.helper";
 
 const UpdateProfilePage = () => {
   const [gender, setGender] = useState("");
@@ -20,7 +21,13 @@ const UpdateProfilePage = () => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    setAvatar(file);
+    if (file.size > 1000000) {
+      MySwal.fire("image must not exceed 1MB'");
+
+      setAvatar("");
+    } else {
+      setAvatar(file);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -92,7 +99,6 @@ const UpdateProfilePage = () => {
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
-    const loggedInUser = JSON.parse(localStorage.getItem("user"));
     if (!loggedInUser) {
       MySwal.fire("You don't have access to view this page");
       navigate("/login");

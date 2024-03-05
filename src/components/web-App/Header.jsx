@@ -15,6 +15,7 @@ const Header = ({ currentUser, setIsOpen, isOpen }) => {
   const handleLogout = () => {
     localStorage.clear();
   };
+
   const avatar = generateBlob(currentUser);
   return (
     <div className="">

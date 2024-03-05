@@ -129,7 +129,9 @@ const LoginPage = () => {
                   <p className="mds:text-black  text-white">Remember me</p>
                 </span>
                 <Link to={"/forgot-password"}>
-                  <span className="lgss:px-4 mds:text-black text-white">Forgot password?</span>
+                  <span className="lgss:px-4 mds:text-black text-white">
+                    Forgot password?
+                  </span>
                 </Link>
               </div>
               <button

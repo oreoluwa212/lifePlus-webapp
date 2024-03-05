@@ -17,10 +17,6 @@ const DashboardProviderPage = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const MySwal = withReactContent(Swal);
-  let location = useLocation();
-  if (location.state) {
-    newUser = location.state.user;
-  }
 
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
   if (!loggedInUser) {
