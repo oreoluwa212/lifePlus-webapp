@@ -9,7 +9,6 @@ import withReactContent from "sweetalert2-react-content";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { google } from "../assets";
 
-
 const SignUpProviderPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [facilityName, setfacilityName] = useState("");
@@ -25,7 +24,6 @@ const SignUpProviderPage = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
-
 
   function togglePasswordVisibility() {
     setIsPasswordVisible((prevState) => !prevState);
@@ -68,8 +66,8 @@ const SignUpProviderPage = () => {
               MySwal.hideLoading();
             },
           });
-          navigate("/dashboard-provider", { state: { user: response } });
-          localStorage.setItem("user", JSON.stringify(response));
+          navigate("/dashboard-provider");
+          localStorage.setItem("user", JSON.stringify(response[1]));
         } else {
           MySwal.fire({
             icon: "error",

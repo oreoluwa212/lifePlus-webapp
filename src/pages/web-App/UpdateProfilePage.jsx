@@ -13,6 +13,7 @@ const UpdateProfilePage = () => {
   const [genoType, setGenoType] = useState("");
   const [address, setAddress] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [role, setRole] = useState("");
   const [avatar, setAvatar] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -20,7 +21,13 @@ const UpdateProfilePage = () => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    setAvatar(file);
+    if (file.size > 1000000) {
+      MySwal.fire("image must not exceed 1MB'");
+
+      setAvatar("");
+    } else {
+      setAvatar(file);
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -52,6 +59,7 @@ const UpdateProfilePage = () => {
           address: address,
           phoneNumber: phoneNumber,
           avatar: avatar,
+          role: role,
         };
 
         setLoading(true);
@@ -60,7 +68,6 @@ const UpdateProfilePage = () => {
           data
         );
         setLoading(false);
-
         if (response.data) {
           response = JSON.parse(response.data);
           localStorage.setItem("user", JSON.stringify(response[2]));
@@ -77,14 +84,21 @@ const UpdateProfilePage = () => {
           });
         }
       } catch (error) {
-        console.error(error);
         setLoading(false);
       }
     }
   };
+  if (loading) {
+    MySwal.fire({
+      didOpen: () => {
+        MySwal.showLoading();
+      },
+    });
+    setLoading(false);
+  }
+  const loggedInUser = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
-    const loggedInUser = JSON.parse(localStorage.getItem("user"));
     if (!loggedInUser) {
       MySwal.fire("You don't have access to view this page");
       navigate("/login");
@@ -92,13 +106,17 @@ const UpdateProfilePage = () => {
   }, [navigate]);
 
   const location = useLocation();
-  const currentUser = location.state
-    ? location.state.user
-    : JSON.parse(localStorage.getItem("user"));
+  let currentUser = {};
+  if (location.state) {
+    currentUser = location.state.user;
+  } else {
+    currentUser = loggedInUser;
+  }
 
   return (
     <div className="">
-      <NavBar currentUser={currentUser} /><div className="mds:flex relative mds:absolute flex mds:flex-row h-[83vh] mds:overflow-y-hidden border-t-2 border-red w-full">
+      <NavBar currentUser={currentUser} />
+      <div className="mds:flex relative mds:absolute flex mds:flex-row h-[83vh] mds:overflow-y-hidden border-t-2 border-red w-full">
         <Demo />
         <div className="mds:w-3/5 mds:relative mds:h-full overflow-auto mds:flex mds:flex-col mds:justify-center mds:items-center absolute top-0 left-0 ">
           <div className="lgss:w-full lgss:flex flex-col lgss:justify-center lgss:items-center lgss:gap-16 mt-[5%] lgss:mt-0">
@@ -204,4 +222,3 @@ const UpdateProfilePage = () => {
 };
 
 export default UpdateProfilePage;
-
