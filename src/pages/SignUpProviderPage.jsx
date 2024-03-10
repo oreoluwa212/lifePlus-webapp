@@ -9,7 +9,6 @@ import withReactContent from "sweetalert2-react-content";
 import { IoMdEye, IoMdEyeOff } from "react-icons/io";
 import { google } from "../assets";
 
-
 const SignUpProviderPage = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [facilityName, setfacilityName] = useState("");
@@ -25,7 +24,6 @@ const SignUpProviderPage = () => {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
   const MySwal = withReactContent(Swal);
-
 
   function togglePasswordVisibility() {
     setIsPasswordVisible((prevState) => !prevState);
@@ -68,8 +66,8 @@ const SignUpProviderPage = () => {
               MySwal.hideLoading();
             },
           });
-          navigate("/dashboard-provider", { state: { user: response } });
-          localStorage.setItem("user", JSON.stringify(response));
+          navigate("/dashboard-provider");
+          localStorage.setItem("user", JSON.stringify(response[1]));
         } else {
           MySwal.fire({
             icon: "error",
@@ -92,29 +90,29 @@ const SignUpProviderPage = () => {
   };
 
   return (
-    <div className="">
+    <>
       <NavBar />
-      <div className="relative mds:absolute mds:flex mds:flex-row mds:h-screen border-t-2 border-red w-full">
+      <section className="relative h-[95vh] w-full mds:flex mds:flex-row border-t-2 border-red">
         <Demo />
-        <div className="mds:w-3/5 w-full absolute mds:relative top-0 mt-[20%] lgss:mt-0 mds:mt-5 mds:h-full overflow-hidden flex flex-col justify-end mds:justify-center pb-[40px] items-center h-[70vh]">
-          <div className="w-full flex flex-col justify-center items-center mds:gap-1 xs:gap-8">
-            <div className="flex flex-col mds:gap-3 items-center">
-              <h1 className="text-gold text-center font-bold text-[30px]">
-                Sign Up for LifePlus as a HealthCare Prrovider
-              </h1>
-              <h3 className="lgss:text-[18px] mds:text-black lgss:w-[40%] lgss:text-center text-gold">
-                Enter your details to sign up or sign in to your account
-              </h3>
-            </div>
+        <div className="mds:w-3/5 w-full absolute top-14 mds:relative mds:top-0 overflow-hidden flex flex-col justify-center items-center gap-10 text-center px-5">
+          <span className="flex flex-col mds:gap-4 items-center">
+            <h1 className="text-gold text-center font-bold text-[30px]">
+              Sign Up for LifePlus as a HealthCare Prrovider
+            </h1>
+            <h3 className="lgss:text-[18px] mds:text-black lgss:w-[40%] lgss:text-center text-gold">
+              Enter your details to sign up or sign in to your account
+            </h3>
+          </span>
+          <div className="md:w-[70%] w-[90%] justify-between flex flex-col">
             <form
-              className="mds:w-[60%] w-[90%] justify-between flex flex-col gap-3"
               onSubmit={handleSubmit}
+              className="w-[100%] justify-between flex flex-col gap-4"
             >
               <input
                 type="text"
                 name="facilityName"
                 placeholder="Name of HealthCare Facility"
-                className=" border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0 outline-none placeholder:text-[18px]"
+                className="border-gold bg-white bg-transparent border-2 rounded-[32px] h-[48px] px-4 flex w-full justify-between outline-none text-[16px]"
                 onChange={(e) => {
                   setfacilityName(e.target.value);
                 }}
@@ -127,7 +125,7 @@ const SignUpProviderPage = () => {
                 name="address"
                 id="address"
                 placeholder="Address"
-                className="border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0  outline-none placeholder:text-[18px]"
+                className="border-gold bg-white bg-transparent border-2 rounded-[32px] h-[48px] px-4 flex w-full justify-between outline-none text-[16px]"
                 onChange={(e) => {
                   setAddress(e.target.value);
                 }}
@@ -140,7 +138,7 @@ const SignUpProviderPage = () => {
                 name="email"
                 id="email"
                 placeholder="Institution Email Address"
-                className="border-gold border-2 rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] px-4 mds:px-0  outline-none placeholder:text-[18px]"
+                className="border-gold bg-white bg-transparent border-2 rounded-[32px] h-[48px] px-4 flex w-full justify-between outline-none text-[16px]"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
@@ -148,11 +146,11 @@ const SignUpProviderPage = () => {
               {emailError && (
                 <small className="text-red">email is required</small>
               )}
-              <div className=" border-gold bg-white lgss:bg-transparent border-2 rounded-[32px] lgss:pl-8 lgss:pr-2 lgss:h-[48px] h-[50px] pl-4 mds:px-0  flex outline-none  text-[16px] w-full justify-between">
+              <div className="border-gold bg-white bg-transparent border-2 rounded-[32px] h-[48px] px-4 flex outline-none  text-[16px] w-full justify-between">
                 <input
                   type={isPasswordVisible ? "text" : "password"}
                   placeholder="password"
-                  className=" lgss:h-[48px] outline-none bg-transparent text-[16px]"
+                  className="h-[100%] outline-none bg-transparent text-[16px] w-full"
                   onChange={(e) => {
                     setPassword(e.target.value);
                   }}
@@ -174,23 +172,23 @@ const SignUpProviderPage = () => {
                 <small className="text-red">password is required</small>
               )}
 
-              <div className="flex px-4 gap-4 mt-2">
+              <div className="flex gap-4 items-center justify-center">
                 <input type="checkbox" name="aggree" id="aggree" required />
-                <p className="mds:text-black text-white">
+                <p className="text-white mds:text-black text-[12px]">
                   I agree to LifePlus Terms, conditions and the privacy policy
                 </p>
               </div>
               <button
                 type="submit"
-                className="bg-red text-white text-[18px] border-none rounded-[32px] lgss:px-8 lgss:h-[48px] h-[50px] w-full"
+                className="bg-red text-white text-[18px] border-none rounded-[32px] lgss:px-8 h-[48px] w-full"
               >
                 Sign Up
               </button>
             </form>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+    </>
   );
 };
 

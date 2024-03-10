@@ -28,6 +28,7 @@ import AppointmentsScheduleDonor from "./pages/web-App/AppointmentsScheduleDonor
 
 import SubmitSchheduleDonor from "./components/web-App/SubmitSchheduleDonor.jsx";
 import HealthSummary from "./pages/web-App/HealthSummary.jsx";
+import LeaderBoardPage from "./pages/web-App/LeaderBoard.jsx";
 LoginAsPage;
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path="/dashboard/profile" element={<DonorsManageProfile />} />
         <Route path="/dashboard/health-summary" element={<HealthSummary />} />
         <Route path="/dashboard/points" element={<PointsDonor />} />
+        <Route path="/dashboard/leader-board" element={<LeaderBoardPage/>}/>
         <Route path="/update-profile" element={<UpdateProfilePage />} />
         <Route path="/appointments" element={<AppointmentsPage />} />
         <Route

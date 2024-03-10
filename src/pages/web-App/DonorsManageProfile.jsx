@@ -8,7 +8,7 @@ import {
   PiArrowLeftBold,
 } from "react-icons/pi";
 
-const DonorsManageProfile = ({ }) => {
+const DonorsManageProfile = ({}) => {
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
   return (
     <div className="flex flex-row h-screen">
@@ -61,7 +61,10 @@ const DonorsManageProfile = ({ }) => {
               </div>
               <div className="flex justify-between w-full items-center ">
                 <p>
-                  Phone: <span className="font-semibold">{loggedInUser.phoneNumber}</span>{" "}
+                  Phone:{" "}
+                  <span className="font-semibold">
+                    {loggedInUser.phoneNumber}
+                  </span>{" "}
                 </p>
                 <PiPencilSimpleFill className="text-gold text-[20px]" />
               </div>

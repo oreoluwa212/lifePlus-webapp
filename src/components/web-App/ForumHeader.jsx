@@ -2,6 +2,7 @@ import React from "react";
 import { PiMedalBold } from "react-icons/pi";
 import { user } from "../../assets";
 import { Link, useLocation } from "react-router-dom";
+import generateBlob from "./generateBlob";
 
 const ForumHeader = ({ currentUser }) => {
   const location = useLocation();
@@ -22,10 +23,14 @@ const ForumHeader = ({ currentUser }) => {
         return "Health Summary";
       case "/donations/history":
         return "Donation History";
+      case "/dashboard/leader-board":
+        return "Donor of The Month";
       default:
         return "Community Forum";
     }
   };
+
+  const avatar = generateBlob(currentUser);
   return (
     <div className="w-screen px-3 mds:w-full">
       <div className="w-full h-[100px] flex justify-between items-center pt-8">
@@ -35,7 +40,11 @@ const ForumHeader = ({ currentUser }) => {
           </h1>
         </div>
         <div className=" lgss:w-[40%] w-[40%] px-4 h-[45%] flex justify-end gap-6 items-center rounded-[32px]">
-          <img src={user} alt="" className="hidden mds:flex" />
+          <img
+            src={avatar}
+            alt="user avatar"
+            className="hidden mds:flex w-[50px] rounded-[50px]"
+          />
           <button className="flex items-start flex-col justify-between gap-1 ">
             <h1 className="text-[16px] mds:text-[20px] font-semibold">
               {currentUser.fullName}

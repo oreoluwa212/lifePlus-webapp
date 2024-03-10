@@ -7,8 +7,8 @@ import { benefit1, benefit2, benefit3, benefit4, benefit5 } from '../assets';
 const BenefitsSection = () => {
   const [activeScreen, setActiveScreen] = useState(1);
   return (
-    <div className="">
-      <div className="flex justify-center items-center h-[166px]">
+    <>
+      <div className="flex justify-center items-center h-[150px]">
         <h1 className="text-red mds:text-[36px] xs:text-[26px] font-bold uppercase">
           Our Benefits
         </h1>
@@ -37,113 +37,109 @@ const BenefitsSection = () => {
           </button>
         </div>
         {activeScreen === 1 ? (
-          <div className="">
-            <div className="flex flex-col lgss:flex-row justify-center gap-5 mds:gap-0">
-              <div className="flex items-center ">
-                <div className="flex flex-col gap-5">
-                  <Benefits
-                    title="Convenience & empowerment"
-                    description="Efficiency in appointment scheduling, and inventory tracking"
-                    icon={benefit1}
-                  />
+          <section className="flex flex-col justify-center items-center lgss:flex-row">
+            <div className="flex items-center flex-1 ">
+              <div className="flex flex-col gap-5">
+                <Benefits
+                  title="Convenience & empowerment"
+                  description="Efficiency in appointment scheduling, and inventory tracking"
+                  icon={benefit1}
+                />
 
-                  <Benefits
-                    title="Recognition & rewards"
-                    description="Send urgent notifications to donors in case of critical shortages, mobilizing the community to save lives"
-                    icon={benefit4}
-                  />
-                </div>
-                <div className="h-[300px] hidden lgss:block bg-gold w-[2px]"></div>
+                <Benefits
+                  title="Recognition & rewards"
+                  description="Send urgent notifications to donors in case of critical shortages, mobilizing the community to save lives"
+                  icon={benefit4}
+                />
               </div>
-              <div className="lgss:flex lgss:items-center">
-                <div className="flex flex-col gap-5">
-                  <Benefits
-                    title="Transparency & impact"
-                    description="Monitor blood supply levels, donor behavior and trends, for decision making and resource allocation."
-                    icon={benefit2}
-                  />
+              <div className="h-[300px] hidden lgss:block bg-gold w-[2px]"></div>
+            </div>
+            <div className="flex items-center flex-1">
+              <div className="flex flex-col gap-5">
+                <Benefits
+                  title="Transparency & impact"
+                  description="Monitor blood supply levels, donor behavior and trends, for decision making and resource allocation."
+                  icon={benefit2}
+                />
 
-                  <Benefits
-                    title="Personalized experience"
-                    description="Collaborate with institutions and organizations to offer diverse rewards and incentives."
-                    icon={benefit5}
-                  />
-                </div>
-                <div className="h-[300px] hidden lgss:block bg-gold w-[3px]"></div>
+                <Benefits
+                  title="Personalized experience"
+                  description="Collaborate with institutions and organizations to offer diverse rewards and incentives."
+                  icon={benefit5}
+                />
               </div>
-              <div className="lgss:flex lgss:items-center hidden w-[60%]">
-                <div className="flex flex-col gap-5">
-                  <Benefits
-                    title="Engage with other donors"
-                    description="Target donors based on eligibility, location, and blood type, at the right time"
-                    icon={benefit3}
-                  />
+              <div className="h-[300px] hidden lgss:block bg-gold w-[3px]"></div>
+            </div>
+            <div className="lg:flex  lg:items-center lg:flex-1 hidden">
+              <div className="flex flex-col gap-5">
+                <Benefits
+                  title="Engage with other donors"
+                  description="Target donors based on eligibility, location, and blood type, at the right time"
+                  icon={benefit3}
+                />
 
-                  <Benefits
-                    title="Recognition & rewards"
-                    description="For every blood donation, you earn points that are redeemable."
-                    icon={benefit4}
-                  />
-                </div>
+                <Benefits
+                  title="Recognition & rewards"
+                  description="For every blood donation, you earn points that are redeemable."
+                  icon={benefit4}
+                />
               </div>
             </div>
-          </div>
+          </section>
         ) : activeScreen === 2 ? (
-          <div className="">
-            <div className="flex flex-col lgss:flex-row justify-center gap-5 mds:gap-0">
-              <div className="lgss:flex lgss:items-center ">
-                <div className="flex flex-col gap-5">
-                  <Benefits
-                    title="Transparency & impact"
-                    description="Monitor blood supply levels, donor behavior and trends, for decision making and resource allocation."
-                    icon={benefit2}
-                  />
+          <section className="flex flex-col justify-center items-center lgss:flex-row">
+            <div className="flex items-center flex-1 ">
+              <div className="flex flex-col gap-5">
+                <Benefits
+                  title="Transparency & impact"
+                  description="Monitor blood supply levels, donor behavior and trends, for decision making and resource allocation."
+                  icon={benefit2}
+                />
 
-                  <Benefits
-                    title="Personalized experience"
-                    description="Collaborate with institutions and organizations to offer diverse rewards and incentives."
-                    icon={benefit5}
-                  />
-                </div>
-                <div className="h-[300px] hidden lgss:block bg-gold w-[3px]"></div>
+                <Benefits
+                  title="Personalized experience"
+                  description="Collaborate with institutions and organizations to offer diverse rewards and incentives."
+                  icon={benefit5}
+                />
               </div>
-              <div className="flex items-center">
-                <div className="flex flex-col gap-5">
-                  <Benefits
-                    title="Convenience & empowerment"
-                    description="Efficiency in appointment scheduling, and inventory tracking"
-                    icon={benefit1}
-                  />
+              <div className="h-[300px] hidden lgss:block bg-gold w-[3px]"></div>
+            </div>
+            <div className="flex items-center flex-1">
+              <div className="flex flex-col gap-5">
+                <Benefits
+                  title="Convenience & empowerment"
+                  description="Efficiency in appointment scheduling, and inventory tracking"
+                  icon={benefit1}
+                />
 
-                  <Benefits
-                    title="Recognition & rewards"
-                    description="Send urgent notifications to donors in case of critical shortages, mobilizing the community to save lives"
-                    icon={benefit4}
-                  />
-                </div>
-                <div className="h-[300px] hidden lgss:block bg-gold w-[2px]"></div>
+                <Benefits
+                  title="Recognition & rewards"
+                  description="Send urgent notifications to donors in case of critical shortages, mobilizing the community to save lives"
+                  icon={benefit4}
+                />
               </div>
+              <div className="h-[300px] hidden lgss:block bg-gold w-[2px]"></div>
+            </div>
 
-              <div className="lgss:flex lgss:items-center hidden w-[60%]">
-                <div className="flex flex-col gap-5">
-                  <Benefits
-                    title="Engage with other donors"
-                    description="Target donors based on eligibility, location, and blood type, at the right time"
-                    icon={benefit3}
-                  />
+            <div className="lg:flex lg:items-center lg:flex-1 hidden">
+              <div className="flex flex-col gap-5">
+                <Benefits
+                  title="Engage with other donors"
+                  description="Target donors based on eligibility, location, and blood type, at the right time"
+                  icon={benefit3}
+                />
 
-                  <Benefits
-                    title="Recognition & rewards"
-                    description="For every blood donation, you earn points that are redeemable."
-                    icon={benefit4}
-                  />
-                </div>
+                <Benefits
+                  title="Recognition & rewards"
+                  description="For every blood donation, you earn points that are redeemable."
+                  icon={benefit4}
+                />
               </div>
             </div>
-          </div>
+          </section>
         ) : null}
       </div>
-    </div>
+    </>
   );
 };
 

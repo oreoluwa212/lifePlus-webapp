@@ -1,56 +1,39 @@
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const NavBar = () => {
-  const [activeButton, setActiveButton] = useState("signup");
+  const navigate = useNavigate();
   const location = useLocation();
   const pathname = location.pathname;
-  const handleButtonClick = (button) => {
-    setActiveButton(button);
-  };
 
   return (
-    <div className="flex bg-[#fafafa] text-white justify-between h-[100px] w-[90%] lgss:w-full">
-      <div className="flex justify-between items-center w-[90%] px-[5%]">
-        <div className="">
-          <Link to={"/"}>
-            <h1 className="text-black text-[36px] font-semibold">
-              Life<span className="text-red">Plus</span>
-            </h1>
-          </Link>
-        </div>
-        <div className="mds:w-[20%] gap-6 w-[30%] justify-between flex ">
-          <Link to={"/login-as"}>
-            <div className="bg-transparent rounded-[16px] shadow-sm border-red border-[1px] shadow-black ">
-              <button
-                onClick={() => handleButtonClick("login")}
-                className={`h-[48px] w-[80px] lgss:w-[130px] flex justify-center items-center ${
-                  pathname.includes("/login")
-                    ? "bg-red rounded-[14px] text-white"
-                    : "bg-transparent text-black"
-                } rounded-[16px]`}
-              >
-                Log In
-              </button>
-            </div>
-          </Link>
-          <Link to={"/signup"}>
-            <div className="bg-red rounded-[16px] shadow-sm border-white border-[1px] shadow-black">
-              <button
-                onClick={() => handleButtonClick("signup")}
-                className={`h-[48px]  w-[80px] lgss:w-[130px] flex justify-center items-center text-white  ${
-                  pathname.includes("/signup")
-                    ? "bg-red text-white "
-                    : "bg-transparent text-black"
-                } rounded-[16px]`}
-              >
-                Sign Up
-              </button>
-            </div>
-          </Link>
-        </div>
+    <section className="flex bg-[#fafafa] text-white items-center justify-between h-[100px] w-[100%] px-[5%]">
+      <Link to={"/"}>
+        <h1 className="text-black text-[36px] font-semibold">
+          Life<span className="text-red">Plus</span>
+        </h1>
+      </Link>
+      <div className="flex justify-between gap-6">
+        <button
+          onClick={() => { navigate("/login-as") }}
+          className={`rounded-[16px] shadow-sm border-red border-[1px] shadow-black flex justify-center items-center h-[48px] w-[80px] lgss:w-[130px] ${pathname.includes("/login")
+            ? "bg-red rounded-[14px] text-white"
+            : "bg-transparent text-black"
+            }`}
+        >
+          Log In
+        </button>
+        <button
+          onClick={() => { navigate("/signup") }}
+          className={`bg-red rounded-[16px] shadow-sm border-white border-[1px] shadow-black flex justify-center items-center h-[48px]  w-[80px] lgss:w-[130px] ${pathname.includes("/login")
+            ? "bg-transparent text-black"
+            : "bg-red text-white "
+            }`}
+        >
+          Sign Up
+        </button>
       </div>
-    </div>
+    </section>
   );
 };
 

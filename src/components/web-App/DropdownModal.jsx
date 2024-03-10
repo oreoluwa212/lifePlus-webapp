@@ -1,12 +1,14 @@
 import React from "react";
-import "../../styles/DropdownModal.css"; 
+import "../../styles/DropdownModal.css";
 import { Link } from "react-router-dom";
 import { user } from "../../assets";
+import generateBlob from "./generateBlob";
 
 const DropdownModal = ({ isOpen, handleClose, currentUser }) => {
-     const handleLogout = () => {
-       localStorage.clear();
-     };
+  const handleLogout = () => {
+    localStorage.clear();
+  };
+  const avatar = generateBlob(currentUser);
   return (
     <div
       className={`modal-overlay ${isOpen ? "open" : ""}`}
@@ -16,7 +18,11 @@ const DropdownModal = ({ isOpen, handleClose, currentUser }) => {
         <div className="btn-div">
           <div className="flex items-start flex-col justify-between gap-1 w-full cursor-pointer">
             <div className="flex justify-center items-center w-full">
-              <img src={user} alt="" />
+              <img
+                src={avatar}
+                alt="user avatar"
+                className="w-[50px] rounded-[50px]"
+              />
             </div>
             <div className="flex justify-between w-full">
               <p>Full name:</p>
@@ -56,7 +62,9 @@ const DropdownModal = ({ isOpen, handleClose, currentUser }) => {
                 className="text-gold text-[14px]"
                 onClick={handleLogout}
               >
-                <button className="w-[100%] text-white font-semibold h-[48px]">Log Out</button>
+                <button className="w-[100%] text-white font-semibold h-[48px]">
+                  Log Out
+                </button>
               </Link>
             </div>
           </div>

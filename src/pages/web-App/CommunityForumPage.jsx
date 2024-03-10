@@ -109,7 +109,7 @@ const CommunityForumPage = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-9 mt-4 lgss:mt-10 px-[5%] mds:px-0">
+          <div className="flex flex-col gap-9 mt-4 lgss:mt-10 px-[5%]">
             <button
               onClick={() => setIsPostOpen(prev => !prev)}
               className="bg-[#F3E4E4] w-[40%] lgss:w-[16%] h-[50px] border-red border-[2px] rounded-[16px] text-red font-semibold text-[16px] lgss:text-[18px] shadow-lg shadow-red/30 flex justify-between items-center px-4"
@@ -117,7 +117,7 @@ const CommunityForumPage = () => {
               <span>
                 <PiPlusBold />{" "}
               </span>{" "}
-              Make a Post
+              <p className="w-[200px]">Make a Post</p>
             </button>
             {discussions &&
               discussions.map((discussion, index) => {
@@ -126,7 +126,7 @@ const CommunityForumPage = () => {
                     key={discussion._id}
                     className="flex flex-col w-full gap-5"
                   >
-                    <div className="bg-[#F3E4E4] lgss:mt-4 shadow-md shadow-red/30 lgss:w-[90%] w-full flex flex-col gap-4 rounded-[32px] p-6">
+                    <div className="bg-[#F3E4E4] lgss:mt-4 shadow-md shadow-red/30 w-full flex flex-col gap-4 rounded-[32px] p-6">
                       <div className="flex justify-between w-full">
                         <h2 className="text-gold font-bold">
                           {discussion.title}
