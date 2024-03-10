@@ -3,7 +3,7 @@ import { FaTimes } from "react-icons/fa";
 import Modal from "react-modal";
 import { post } from "../../helpers/axios.helper";
 
-const PostModal = ({ onClose, onPostSubmit }) => {
+const PostModal = ({ setIsPostOpen, onPostSubmit, isPostOpen }) => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
@@ -58,13 +58,13 @@ const PostModal = ({ onClose, onPostSubmit }) => {
   return (
     <div className="">
       <Modal
-        isOpen={!isPostSuccessful} // Show the modal only if post is not successful
+        isOpen={isPostOpen} // Show the modal only if post is not successful
         onRequestClose={handleModalClose}
         style={customStyles}
         contentLabel="Post Modal"
       >
         <div className="flex w-full justify-end">
-          <button type="button" onClick={onClose}>
+          <button type="button" onClick={() => setIsPostOpen(prev =>!prev)}>
             <FaTimes className="text-red" />
           </button>
         </div>
@@ -104,14 +104,14 @@ const PostModal = ({ onClose, onPostSubmit }) => {
           </div>
           <div className="flex gap-4 w-full justify-end">
             <button
-              className="bg-transparent text-black w-[20%] h-[48px] font-semibold"
+              className="bg-transparent text-black w-[40%] lgss:w-[20%] h-[48px] font-semibold"
               type="button"
               onClick={handlePostSubmission}
             >
               Save as draft
             </button>
             <button
-              className="bg-red text-white w-[30%] h-[48px] rounded-[32px]"
+              className="bg-red text-white w-[40%] lgss:w-[30%] h-[48px] rounded-[32px] text-[14px]"
               type="button"
               onClick={handlePostSubmission}
               disabled={posting}

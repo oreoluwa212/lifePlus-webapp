@@ -14,6 +14,7 @@ import { DateTime } from "luxon";
 const CommunityForumPage = () => {
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
   const [isOpen, setIsOpen] = useState(false);
+  const [isPostOpen, setIsPostOpen] = useState(false);
   const [showCommentModal, setShowCommentModal] = useState(false);
   const [commentStates, setCommentStates] = useState([]);
   const [comment, setComment] = useState(null);
@@ -97,7 +98,7 @@ const CommunityForumPage = () => {
                 <h1>Forum</h1>
               </div>
             </div>
-            <div className="w-[75%]">
+            <div className="w-full">
               {loggedInUser && (
                 <Header
                   setIsOpen={setIsOpen}
@@ -110,7 +111,7 @@ const CommunityForumPage = () => {
 
           <div className="flex flex-col gap-9 mt-4 lgss:mt-10 px-[5%] mds:px-0">
             <button
-              onClick={openModal}
+              onClick={() => setIsPostOpen(prev => !prev)}
               className="bg-[#F3E4E4] w-[40%] lgss:w-[16%] h-[50px] border-red border-[2px] rounded-[16px] text-red font-semibold text-[16px] lgss:text-[18px] shadow-lg shadow-red/30 flex justify-between items-center px-4"
             >
               <span>
@@ -123,7 +124,7 @@ const CommunityForumPage = () => {
                 return (
                   <div
                     key={discussion._id}
-                    className="flex flex-col w-[90%] gap-5"
+                    className="flex flex-col w-full gap-5"
                   >
                     <div className="bg-[#F3E4E4] lgss:mt-4 shadow-md shadow-red/30 lgss:w-[90%] w-full flex flex-col gap-4 rounded-[32px] p-6">
                       <div className="flex justify-between w-full">
@@ -211,9 +212,11 @@ const CommunityForumPage = () => {
           </div>
         </div>
       </div>
-      <Modal isOpen={isOpen} onRequestClose={closeModal} className={"w-0"}>
-        <PostModal onClose={closeModal} onPostSubmit={handlePostSubmission} />
-      </Modal>
+      <PostModal
+        setIsPostOpen={setIsPostOpen}
+        isPostOpen={isPostOpen}
+        onPostSubmit={handlePostSubmission}
+      />
     </div>
   );
 };
