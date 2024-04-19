@@ -21,8 +21,8 @@ As a blood donor, you can:
 ### Healthcare Facilities
 As a healthcare facility, you can:
 - Sign up or sign in to your account
-- View nearby blood centers and available appointments
-- Schedule appointments to receive blood donations
+- View donors scheduled appointments
+- Accept appointments to receive blood donations
 - Connect with blood donors and communicate donation needs
 
 ## How to Use
