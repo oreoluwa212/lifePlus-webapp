@@ -4,7 +4,7 @@
 Welcome to LifePlus, the blood donation app that connects blood donors with healthcare facilities in need of blood. This README will guide you through the features and functionality of the app, helping both donors and healthcare facilities understand how to use it effectively.
 
 ## Installation
-LifePlus is a web-based application, accessible through any modern web browser. Simply visit [lifePlus-webapp.vercel.app](https://lifePlus-webapp.vercel.app) to start using the app immediately. There's no need to download or install anything!
+LifePlus is a web-based application, accessible through any modern web browser. Simply visit [lifePlus-webapp.vercel.app]([https://lifePlus-webapp.vercel.app](https://life-plus-webapp.vercel.app/)) to start using the app immediately. There's no need to download or install anything!
 
 ## Getting Started
 LifePlus caters to two types of users:
